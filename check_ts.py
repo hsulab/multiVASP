@@ -11,6 +11,7 @@ import re
 import sys
 ###
 def check_ts(OUTCAR, echo_option = 1):
+    ###
     forces = []
     distance_inputs = []
     distance_opts = []
@@ -21,14 +22,19 @@ def check_ts(OUTCAR, echo_option = 1):
     forces_file = os.popen(r'grep %s %s' %('RMS', OUTCAR))
     inputs_file = os.popen(r'grep %s %s' %('\'distance input to fix\'', OUTCAR))
     opts_file = os.popen(r'grep %s %s' %('\'distance after opt\'', OUTCAR))
-    if not ( (forces_file == []) or (inputs_file == []) or (opts_file == []) ):
-        for line in forces_file.readlines():
+    ###
+    forces_content = forces_file.readlines()
+    inputs_content = inputs_file.readlines()
+    opts_content = opts_file.readlines()
+    if len(forces_content) == len(inputs_content) and len(forces_content) == len(opts_content) \
+            and len(forces_content) >0:
+        for line in forces_content:
             line = line.strip('\n').split(' ')[-5]
             forces.append(line) 
-        for line in inputs_file.readlines():
+        for line in inputs_content:
             line = line.strip('\n').split(' ')[-1]
             distance_inputs.append(line)
-        for line in opts_file.readlines():
+        for line in opts_content:
             line = line.strip('\n').split(' ')[-1]
             distance_opts.append(line)
         ###
@@ -50,11 +56,15 @@ def check_ts(OUTCAR, echo_option = 1):
         #
         content = ''
         for step in steps:
-            content += '{:<25}{:^15}Step:{:<10}Input:{:<15}Force:{:<15}Opt:{:<15}\n'\
-                    .format(name, finish_flag, step, \
-                    distance_inputs[step-1], forces[step-1], distance_opts[step-1])
+            if step-1 >= 0:
+                content += '{:<25}{:^15}Step:{:<10}Input:{:<15}Force:{:<15}Opt:{:<15}\n'\
+                        .format(name, finish_flag, step, \
+                        distance_inputs[step-1], forces[step-1], distance_opts[step-1])
+            else:
+                content = '{:<25}{:^15}\n'.format(name, '=Waiting=')
     else:
-        content = '{:<25}{:^15}\n'.format(name, '=Waiting=')
+        finish_flag = '=Waiting='
+        content = '{:<25}{:^15}\n'.format(name, finish_flag)
         #
     if echo_option == 1:
         print(content.split('\n')[-2])
@@ -72,6 +82,7 @@ def multi_check(check_dir = r'./'):
                 finish_list.append(check_ts(outcar_path))
     ###
     content = ''
+    print('{:^5}{:<15}'.format(len(finish_list), '=Total='))
     for item in set(finish_list):
         content += '{:^5}{:<15}   '.format(finish_list.count(item), item)
     print(content)

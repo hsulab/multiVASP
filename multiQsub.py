@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #########################################################################
-# File Name: qsuball.py
+# File Name: multiQsub.py
 # Author: jyxu
 # mail: ahcigar@foxmail.com
 # Created Time: 日  3/18 21:28:59 2018
@@ -14,48 +14,43 @@ import os
 import sys
 import re
 ###
-global qsub_path
-global qsub_dirs
-qsub_dirs = []
-###
-if len(sys.argv) == 1:
-    qsub_path = r'./'
-elif len(sys.argv) == 2:
-    qsub_path = sys.argv[1]
-else:
-    print('argv wrong!')
-qsub_path = os.path.abspath(qsub_path)
-###
-logfile = os.path.abspath(os.path.join(qsub_path, 'qsub_results.xu'))
-if os.path.exists(logfile):
-    print('qsub_results.xu exists!')
-    print('A new qsub_results.xu is created!')
-    os.remove(logfile)
-else:
-    print('Start!')
-### qsub_dirs must be abspath.
-def get_qsub_dirs(path):
-    global qsub_dirs
-    path = os.path.abspath(path)
-    work_dirs = ['bulk', 'suf', 'ts', 'fs', 'ab']
-    vaspfiles = ['INCAR','POSCAR','POTCAR','KPOINTS','vasp.script']
-    #print('cur dir:%s' % os.path.abspath(path))
-    if os.path.basename(path) in work_dirs:
-        if set(vaspfiles) & set(os.listdir(path)) == set(vaspfiles):
-            if 'print-out' in os.listdir(path):
-                os.system(r'echo %s Already qsub vasp.script! >> %s' %(path, logfile))
-            else:
-                qsub_dirs.append(path)
+def check_argv():
+    reaction_types = ['bulk', 'suf', 'ts', 'fs', 'ab']
+    if len(sys.argv) == 3 and os.path.isdir(sys.argv[1]) and \
+            sys.argv[2] in reaction_types:
+        qsub_path = sys.argv[1]
+        reaction_type = sys.argv[2]
+        logfile = os.path.abspath(os.path.join(qsub_path, 'qsub_results.xu'))
+        if os.path.exists(logfile):
+            print('qsub_results.xu exists!')
+            print('A new qsub_results.xu is created!')
+            os.remove(logfile)
         else:
-            lackfile = set(vaspfiles) - set(os.listdir(path))
-            lackfile = [str(i) for i in lackfile]
-            os.system(r'echo %s Lack %s! >> %s' %(path, lackfile, logfile))
-
+            print('Start!')
+        return qsub_path, reaction_type, logfile
+    else:
+        print('multiQsub.py [qsub_path] [reaction_type]')
+        print('Please check the argvs.')
+        return 0
     ###
-    for filename in os.listdir(path):
-        deeper_dir = os.path.join(path, filename)
-        if os.path.isdir(deeper_dir):
-            get_qsub_dirs(deeper_dir)
+### qsub_dirs must be abspath.
+def get_qsub_dirs(qsub_path, reaction_type):
+    qsub_dirs = []
+    qsub_path = os.path.abspath(qsub_path)
+    vaspfiles = ['INCAR','POSCAR','POTCAR','KPOINTS','vasp.script']
+    ###
+    for root, dirs, files in os.walk(qsub_path):
+        if os.path.basename(root) == reaction_type:
+            if set(vaspfiles) & set(os.listdir(root)) == set(vaspfiles):
+                qsub_dirs.append(root)
+            else:
+                if 'print-out' in os.listdir(root):
+                    os.system(r'echo %s Already qsub vasp.script! >> %s' %(root, logfile))
+                else:
+                    lackfile = set(vaspfiles) - set(os.listdir(root))
+                    lackfile = [str(i) for i in lackfile]
+                    os.system(r'echo %s Lack %s! >> %s' %(root, lackfile, logfile))
+    return qsub_dirs
 ###
 def qsub_script(path, queue):
     os.chdir(path)
@@ -76,6 +71,12 @@ def qsub_all(number):
         elif int(number/2) < qsub_dirs.index(qsub_dir) <= number:
             set_VASPsp(vasp_script, '#PBS -q', 'normal', 1)
             qsub_script(qsub_dir, 'normal')
-
-get_qsub_dirs(qsub_path)
-qsub_all(16)
+###
+def main():
+    if not check_argv() == 0:
+        qsub_path, reaction_type, logfile =  check_argv()
+        get_qsub_dirs(qsub_path, reaction_type)
+        qsub_all(16)
+###
+if __name__ == '__main__':
+    main()

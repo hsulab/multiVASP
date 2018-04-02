@@ -44,39 +44,33 @@ def get_qsub_dirs(qsub_path, reaction_type):
             if set(vaspfiles) & set(os.listdir(root)) == set(vaspfiles):
                 qsub_dirs.append(root)
             else:
-                if 'print-out' in os.listdir(root):
-                    os.system(r'echo %s Already qsub vasp.script! >> %s' %(root, logfile))
-                else:
-                    lackfile = set(vaspfiles) - set(os.listdir(root))
-                    lackfile = [str(i) for i in lackfile]
-                    os.system(r'echo %s Lack %s! >> %s' %(root, lackfile, logfile))
+                lackfile = set(vaspfiles) - set(os.listdir(root))
+                lackfile = [str(i) for i in lackfile]
+                print(r'%s Lack %s!' %(root, lackfile))
     return qsub_dirs
 ###
-def qsub_script(path, queue):
+def qsub_script(path, queue= 'bigmem'):
     os.chdir(path)
-    os.system(r'echo -e "%s in %s    \c" >> %s' %(path, queue, logfile))
-    os.system(r'qsub vasp.script >> %s' %(logfile))
-    os.chdir(qsub_path)
+    set_VASPsp('vasp.script', '#PBS -q', queue, 1)
+    qsub_file = os.popen(r'qsub vasp.script')
+    qsub_result = qsub_file.readlines()
+    qsub_result = queue + ': ' + path + ' ' + ''.join(qsub_result)
+    return qsub_result
+    
 ###
-def qsub_all(number):
-    for qsub_dir in qsub_dirs:
-        vasp_script = os.path.join(qsub_dir, 'vasp.script')
-        ### set default
-        set_VASPsp(vasp_script, '#PBS -q', 'bigmem', 1)
-        ###
-        with open(vasp_script, 'r') as f:
-            queue = f.readlines()[6]
-        if qsub_dirs.index(qsub_dir) < int(number/2):
-            qsub_script(qsub_dir, 'bigmem')
-        elif int(number/2) < qsub_dirs.index(qsub_dir) <= number:
-            set_VASPsp(vasp_script, '#PBS -q', 'normal', 1)
-            qsub_script(qsub_dir, 'normal')
+def qsub_all(qsub_dirs, number, logfile):
+    with open(logfile, 'w+') as f:
+        for qsub_dir in qsub_dirs:
+            if qsub_dirs.index(qsub_dir) < int(number/2):
+                f.write(qsub_script(qsub_dir, 'bigmem'))
+            elif int(number/2) < qsub_dirs.index(qsub_dir) <= number:
+                f.write(qsub_script(qsub_dir, 'normal'))
 ###
 def main():
     if not check_argv() == 0:
         qsub_path, reaction_type, logfile =  check_argv()
-        get_qsub_dirs(qsub_path, reaction_type)
-        qsub_all(16)
+        qsub_dirs = get_qsub_dirs(qsub_path, reaction_type)
+        qsub_all(qsub_dirs, 16, logfile)
 ###
 if __name__ == '__main__':
     main()

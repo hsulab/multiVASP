@@ -1,20 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #########################################################################
-# File Name: autoSet.py
+# File Name: multiSet.py
 # Author: jyxu
 # mail: ahcigar@foxmail.com
 # Created Time: 日  3/18 19:45:53 2018
 #########################################################################
 import re
 import sys
-###
-if len(sys.argv) == 1:
-    INCARfile = r'./dopIrO2/dopIrO2_1_IrIrRu/ts/INCAR'
-elif len(sys.argv) == 2:
-    INCARfile = sys.argv[1]
-else:
-    print('INCAR file is wrong!')
 ###
 ### IBRION= 2
 def set_INCAR(INCAR, para, value, noecho=0):
@@ -50,4 +43,15 @@ def set_VASPsp(VASPsp, para, value, noecho=0):
             print('Set %s: %s %s' %(VASPsp, para, value))
         else:
             print('Something wrong with %s: %s.' %(VASPsp, para))
+###
+def main():
+    if len(sys.argv) == 1:
+        INCARfile = r'./dopIrO2/dopIrO2_1_IrIrRu/ts/INCAR'
+    elif len(sys.argv) == 2:
+        INCARfile = sys.argv[1]
+    else:
+        print('INCAR file is wrong!')
+###
+if __name__ == '__main__':
+    main()
 

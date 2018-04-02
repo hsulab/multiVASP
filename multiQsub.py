@@ -8,7 +8,7 @@
 #d########################################################################
 #qsub: Maximum number of jobs already in queue for user MSG=total number of current user's jobs exceeds the queue limit: user jyxu@master.cluster, queue bigmem
 ###
-from autoSet import set_VASPsp
+import multiSet as mS
 ##
 import os
 import sys
@@ -51,7 +51,7 @@ def get_qsub_dirs(qsub_path, reaction_type):
 ###
 def qsub_script(path, queue= 'bigmem'):
     os.chdir(path)
-    set_VASPsp('vasp.script', '#PBS -q', queue, 1)
+    mS.set_VASPsp('vasp.script', '#PBS -q', queue, 1)
     qsub_file = os.popen(r'qsub vasp.script')
     qsub_result = qsub_file.readlines()
     qsub_result = queue + ': ' + path + ' ' + ''.join(qsub_result)

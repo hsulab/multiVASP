@@ -10,22 +10,31 @@ import os
 import datetime
 import re
 ###
+global multiVASP_path
+###
 def find_multiVASP():
     user_home = os.path.expanduser('~')
     multiVASP_pattern = re.compile('.*multiVASP')
     for root, dirs, files in os.walk(user_home):
         if multiVASP_pattern.match(root):
             if os.path.isdir(root):
+                print(r'multiVASP in %s' %(root))
                 return root
                 break
             else:
                 print(r'No multiVASP in HOME.')
                 break
 ###
+
+###
 def init_logdir(multiVASP_dir):
     logdir = os.path.join(multiVASP_dir, '.multiResult')
     if not os.path.exists(logdir):
         os.mkdir(logdir)
+    print('logdir init.')
+###
+def printout_file():
+    print()
 
 ###
 def main():

@@ -7,5 +7,5 @@
 # Created Time: 三  3/14 22:00:05 2018
 #########################################################################
 import os 
-f = os.popen('grep sadasdasdadas OUTCAR')
-print(f.readlines())
+print(''.join(['a','b']))
+print(''.join(['a','b']))

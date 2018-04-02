@@ -10,6 +10,10 @@ import numpy as np
 import os
 import re
 import shutil
+import sys
+###
+import multiCAR as mC
+import multiWalk as mW
 ###
 def cell_information(CONTCAR):
     abc = []
@@ -49,19 +53,6 @@ def cell_information(CONTCAR):
     ####
     return abc, xyz, dop_s1_xyz, dop_s2_xyz, dop_s3_xyz, ab_O_b_xyz
 ###
-def create_VASPsp(dir, suf_dir, Hab_dir):
-    suf_VASPsp = os.path.join(suf_dir, 'vasp.script')
-    Hab_VASPsp = os.path.join(Hab_dir, 'vasp.script')
-    shutil.copyfile(suf_VASPsp, Hab_VASPsp)
-    set_VASPsp(Hab_VASPsp, '#PBS -N', os.path.basename(dir) + '_Hab', 1)
-###
-def create_INCAR(dir, suf_dir, Hab_dir):
-    suf_INCAR = os.path.join(suf_dir, 'INCAR')
-    Hab_INCAR = os.path.join(Hab_dir, 'INCAR')
-    shutil.copyfile(suf_INCAR, Hab_INCAR)
-    set_INCAR(Hab_INCAR, 'SYSTEM', os.path.basename(dir) + '_Hab', 1)
-    set_INCAR(Hab_INCAR, 'IBRION', '2', 1)
-###
 def cal_H_xyz(CONTCAR, theta= 109.5/2, distance = 1.0):
     abc, xyz, s1, s2, s3, abO = cell_information(CONTCAR)
     ###
@@ -100,46 +91,51 @@ def create_POSCAR(dir, suf_dir, Hab_dir):
         new_content += line
     with open(os.path.join(Hab_dir, 'POSCAR'), 'w') as f:
         f.write(new_content)
+###
+def prepare_ab(work_dir, finished_dirs):
+    result_path = os.path.join(work_dir, 'prepare_ab.xu')
+    if not os.path.exists(result_path):
+        print('Start!')
+    else:
+        print('%s exists!' %(result_path))
+        os.system(r'rm %s' %(result_path))
+        print('%s is removed!' %(result_path))
+    ###
+    for dir in finished_dirs:
+        suf_dir = os.path.join(dir, 'suf')
+        ab_dir = os.path.join(dir, 'Hab')
+        if os.path.exists(ab_dir):
+            if not os.path.exists(os.path.join(ab_dir, 'print-out')):
+                shutil.rmtree(ab_dir)
+                os.system(r'echo %s rming and making ab >> %s' %(ab_dir, result_path))
+                os.mkdir(ab_dir)
+                mC.create_VASPsp(dir, suf_dir, ab_dir)
+                mC.create_INCAR(dir, suf_dir, ab_dir, '1')
+                shutil.copyfile(os.path.join(suf_dir, 'KPOINTS'), os.path.join(ab_dir, 'KPOINTS'))
+                create_POSCAR(dir, suf_dir, ab_dir)
+                mC.create_POTCAR(ab_dir, './data/potpaw_PBE.54')
+        else:
+            os.system(r'echo %s making ab >> %s' %(ab_dir, result_path))
+            os.mkdir(ab_dir)
+            mC.create_INCAR(dir, suf_dir, ab_dir, '1')
+            shutil.copyfile(os.path.join(suf_dir, 'KPOINTS'), os.path.join(ab_dir, 'KPOINTS'))
+            create_POSCAR(dir, suf_dir, ab_dir)
+            mC.create_POTCAR(ab_dir, './data/potpaw_PBE.54')
 
 ###
-def create_POTCAR(Hab_dir, potdir= '/data/pot/vasp/potpaw_PBE.54'):
-    POTCAR = ''
-    element_pot_list = []
-    with open(os.path.join(Hab_dir, 'POSCAR'), 'r') as f:
-        elements = f.readlines()[5]
-    elements = elements.strip('\n').split(' ')
-    elements = [i for i in elements if not i == '']
-    for element in elements:
-        element_pot_new = '%s/%s_new/POTCAR' %(potdir, element)
-        element_pot = '%s/%s/POTCAR' %(potdir, element)
-        if os.path.exists(element_pot_new):
-            element_pot_list.append(element_pot_new)
-        elif os.path.exists(element_pot):
-            element_pot_list.append(element_pot)
-        else:
-            print('Something wrong in %s: POTCAR.' %(Hab_dir))
-            print('%s\n%s' %(element_pot_new, element_pot))
-    for pot in element_pot_list:
-        with open(pot, 'r') as f:
-            pot_content = f.readlines()
-        for line in pot_content:
-            POTCAR += line
-    with open(os.path.join(Hab_dir, 'POTCAR'), 'w') as f:
-        f.write(POTCAR)
+##
 ###
 def main():
+    work_dir = []
+    if len(sys.argv) == 1:
+        work_dir = r'./data/dopIrO2_2'
+    elif len(sys.argv) == 2:
+        work_dir = sys.argv[1]
+        if not os.path.isdir(work_dir):
+            sys.exit()
     ###
-    dop_dir = './dopIrO2_2/dopIrO2_1_IrIrRu'
-    suf_dir = os.path.join(dop_dir, 'suf')
-    Hab_dir = os.path.join(dop_dir, 'Hab')
-    os.mkdir(Hab_dir)
-    ###
-    create_POSCAR(dir, suf_dir, Hab_dir)
-    ###
-    element_order = dop_dir.split('_')[-1]
-    element_order = re.findall(r'.{2}', element_order)
-    print(element_order)
-    ###
+    finished_dirs = mW.check_printout(work_dir, 'suf')
+    prepare_ab(work_dir, finished_dirs)       
 ###
 if __name__ == '__main__':
     main()

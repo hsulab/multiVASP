@@ -82,7 +82,7 @@ def multi_check(check_dir = r'./'):
                 finish_list.append(check_ts(outcar_path))
     ###
     content = ''
-    print('{:^5}{:<15}'.format(len(finish_list), '=Total='))
+    print('{:^5}{:<15}\c'.format(len(finish_list), '=Total='))
     for item in set(finish_list):
         content += '{:^5}{:<15}   '.format(finish_list.count(item), item)
     print(content)

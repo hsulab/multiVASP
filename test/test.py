@@ -9,13 +9,15 @@
 import os 
 import re
 ###
-with open('./haha', 'r') as f:
-    finish = f.readlines()
+with open('./CONTCAR', 'r') as f:
+    contcar = f.readlines()
 #
-finish_dirs = []
-#
-for i in range(len(finish)):
-    finish_dir = finish[i].split(' ')[0]
-    if re.match(r'^dop.*', finish_dir):
-        finish_dirs.append(finish_dir)
-print(finish_dirs)
+new_content = ''
+for line in contcar[9:62]:
+    new_line = []
+    line = line.strip('\n').split(' ')
+    for i in line:
+        if i != '':
+            new_line.append(i)
+    new_content += '{:>20}{:>20}{:>20}  T  T  T\n'.format(new_line[0], new_line[1], new_line[2])
+print(new_content)

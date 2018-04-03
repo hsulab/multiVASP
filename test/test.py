@@ -7,5 +7,15 @@
 # Created Time: 三  3/14 22:00:05 2018
 #########################################################################
 import os 
-print(''.join(['a','b']))
-print(''.join(['a','b']))
+import re
+###
+with open('./haha', 'r') as f:
+    finish = f.readlines()
+#
+finish_dirs = []
+#
+for i in range(len(finish)):
+    finish_dir = finish[i].split(' ')[0]
+    if re.match(r'^dop.*', finish_dir):
+        finish_dirs.append(finish_dir)
+print(finish_dirs)

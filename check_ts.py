@@ -10,7 +10,9 @@ import os
 import re
 import sys
 ###
-def check_ts(OUTCAR, echo_option = 1):
+import multiLog as mL
+###
+def check_ts(OUTCAR):
     ###
     forces = []
     distance_inputs = []
@@ -54,38 +56,56 @@ def check_ts(OUTCAR, echo_option = 1):
             else:
                 finish_flag = '=Unconverged='
         #
-        content = ''
-        for step in steps:
-            if step-1 >= 0:
-                content += '{:<25}{:^15}Step:{:<10}Input:{:<15}Force:{:<15}Opt:{:<15}\n'\
-                        .format(name, finish_flag, step, \
-                        distance_inputs[step-1], forces[step-1], distance_opts[step-1])
-            else:
-                content = '{:<25}{:^15}\n'.format(name, '=Waiting=')
+        step = steps[-1]
+        content = '{:<25}{:^15}Step:{:<10}Input:{:<15}Force:{:<15}Opt:{:<15}\n'\
+                .format(name, finish_flag, step, \
+                distance_inputs[step-1], forces[step-1], distance_opts[step-1])
     else:
         finish_flag = '=Waiting='
         content = '{:<25}{:^15}\n'.format(name, finish_flag)
         #
-    if echo_option == 1:
-        print(content.split('\n')[-2])
-    else:
-        print(content)
     ###
-    return finish_flag 
+    return finish_flag, content 
 ###
 def multi_check(check_dir = r'./'):
-    finish_list = []
+    ###
+    multiVASP = mL.find_multiVASP()
+    log_path = os.path.join(multiVASP, '.multiLog')
+    if not os.path.exists(log_path):
+        os.mkdir(log_path)
+    finished_path = os.path.join(log_path, 'finished_ts')
+    with open(finished_path, 'w+') as f:
+        finish = f.readlines()
+    finish_dirs = []
+    for i in range(len(finish)):
+        finish_dir = finish[i].split(' ')[0]
+        if re.match(r'^dop.*', finish_dir):
+            finish_dirs.append(finish_dir)
+    ###
+    check_list = []
+    finish_content = ''
+    sum_content = ''
     for root,dirs,files in os.walk(check_dir):
         if re.match(r'.*ts', root):
             outcar_path = os.path.abspath(os.path.join(root, 'OUTCAR'))
             if os.path.exists(outcar_path):
-                finish_list.append(check_ts(outcar_path))
+                file_name = outcar_path.split('/')
+                name = file_name[-3] + '/' + file_name[-2]
+                if name not in finish_dirs:
+                    check_result, check_content = check_ts(outcar_path)
+                    if check_result == '=Finished=':
+                        finish_content += check_content
+                    else:
+                        check_list.append(check_result)
+                        sum_content += check_content
     ###
-    content = ''
-    print('{:^5}{:<15}\c'.format(len(finish_list), '=Total='))
-    for item in set(finish_list):
-        content += '{:^5}{:<15}   '.format(finish_list.count(item), item)
-    print(content)
+    with open(finished_path, 'w+') as f:
+        f.write(finish_content)
+    ###
+    sum_content += '{:^5}{:<15}   '.format(len(check_list), '=Total=')
+    for item in set(check_list):
+        sum_content += '{:^5}{:<15}   '.format(check_list.count(item), item)
+    print(sum_content)
 ###
 def main():
     if len(sys.argv) == 1:

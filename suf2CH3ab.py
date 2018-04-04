@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #########################################################################
-# File Name: suf2ab.py
+# File Name: sufH2ab.py
 # Author: jyxu
 # mail: ahcigar@foxmail.com
 # Created Time: 四  3/29 16:41:51 2018
@@ -53,22 +53,20 @@ def cell_information(CONTCAR):
     ####
     return abc, xyz, dop_s1_xyz, dop_s2_xyz, dop_s3_xyz, ab_O_b_xyz
 ###
-def cal_H_xyz(CONTCAR, theta= 109.5/2, distance = 1.0):
+def cal_CH3_xyz(CONTCAR, distance = 1.0):
     abc, xyz, s1, s2, s3, abO = cell_information(CONTCAR)
     ###
-    s2_abO = (abc.T*abO).T - (abc.T*s2).T 
-    s3_abO = (abc.T*abO).T - (abc.T*s3).T
-    abO_s1 = (abc.T*s1).T - (abc.T*abO).T 
-    e1 = (s2_abO + s3_abO) / np.linalg.norm(s2_abO + s3_abO)
-    e2 = abO_s1 / np.linalg.norm(abO_s1)
-    e1dote2 = np.dot(e1.sum(0), e2.sum(0).T)
-    ##
-    cos_theta = np.cos(theta/180*np.pi)
-    y_e2 = np.sqrt(distance**2*(1-cos_theta**2)/(1-e1dote2**2))
-    x_e1 = distance*cos_theta - y_e2*e1dote2
-    abO_H = x_e1*e1 + y_e2*e2
-    H_XYZ = ((abc.T*abO).T + abO_H).sum(0)
-    H_xyz = np.dot(H_XYZ.T, np.linalg.inv(abc.T)).T
+    C_xyz = xyz[3]
+    H_set_xyz = xyz[0:3]
+    ###
+    O_xyz = xyz[0:32]
+    O_xyz_sortbyz = O_xyz[O_xyz[:,2].argsort()]
+    OuM_xyz_set = O_xyz_sortbyz[-10:-8] # O under M
+    OuM_xyz_set_sortbyx = OuM_xyz_set[OuM_xyz_set[:,0].argsort()]
+    #
+    OuM_xyz = OuM_xyz_set_sortbyx[1]
+    ###
+    OuM_M = (abc.T*s1).T - (abc.T*OuM_xyz).T 
     return H_xyz
 
 ###
@@ -92,7 +90,7 @@ def create_POSCAR(dir, suf_dir, Hab_dir):
     with open(os.path.join(Hab_dir, 'POSCAR'), 'w') as f:
         f.write(new_content)
 ###
-def prepare_ab(work_dir, finished_dirs):
+def prepare_CH3ab(work_dir, finished_dirs):
     result_path = os.path.join(work_dir, 'prepare_ab.xu')
     if not os.path.exists(result_path):
         print('Start!')

@@ -10,8 +10,6 @@ import os
 import re
 import sys
 ###
-import multiLog as mL
-###
 def check_ts(OUTCAR):
     ###
     forces = []
@@ -68,20 +66,6 @@ def check_ts(OUTCAR):
     return finish_flag, content 
 ###
 def multi_check(check_dir = r'./'):
-    ###
-    multiVASP = mL.find_multiVASP()
-    log_path = os.path.join(multiVASP, '.multiLog')
-    if not os.path.exists(log_path):
-        os.mkdir(log_path)
-    finished_path = os.path.join(log_path, 'finished_ts')
-    with open(finished_path, 'w+') as f:
-        finish = f.readlines()
-    finish_dirs = []
-    for i in range(len(finish)):
-        finish_dir = finish[i].split(' ')[0]
-        if re.match(r'^dop.*', finish_dir):
-            finish_dirs.append(finish_dir)
-    ###
     check_list = []
     finish_content = ''
     sum_content = ''
@@ -89,18 +73,9 @@ def multi_check(check_dir = r'./'):
         if re.match(r'.*ts', root):
             outcar_path = os.path.abspath(os.path.join(root, 'OUTCAR'))
             if os.path.exists(outcar_path):
-                file_name = outcar_path.split('/')
-                name = file_name[-3] + '/' + file_name[-2]
-                if name not in finish_dirs:
-                    check_result, check_content = check_ts(outcar_path)
-                    if check_result == '=Finished=':
-                        finish_content += check_content
-                    else:
-                        check_list.append(check_result)
-                        sum_content += check_content
-    ###
-    with open(finished_path, 'w+') as f:
-        f.write(finish_content)
+                check_result, check_content = check_ts(outcar_path)
+                check_list.append(check_result)
+                sum_content += check_content
     ###
     sum_content += '{:^5}{:<15}   '.format(len(check_list), '=Total=')
     for item in set(check_list):

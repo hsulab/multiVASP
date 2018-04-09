@@ -45,11 +45,11 @@ def get_qsub_dirs(qsub_path, reaction_type):
                 if 'print-out' not in os.listdir(root):
                     print(os.listdir(root))
                     qsub_dirs.append(root)
-                else:
-                    lackfile = set(vaspfiles) - set(os.listdir(root))
-                    lackfile = [str(i) for i in lackfile]
-                    if lackfile != []:
-                        print(r'%s Lack %s!' %(root, lackfile))
+            else:
+                lackfile = set(vaspfiles) - set(os.listdir(root))
+                lackfile = [str(i) for i in lackfile]
+                if lackfile != []:
+                    print(r'%s Lack %s!' %(root, lackfile))
     return qsub_dirs
 ###
 def qsub_script(path, queue= 'bigmem'):

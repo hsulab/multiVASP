@@ -15,7 +15,7 @@ import sys
 import re
 ###
 def check_argv():
-    reaction_types = ['bulk', 'suf', 'ts', 'fs', 'Hab', 'CH3ab']
+    reaction_types = ['bulk', 'suf', 'ts', 'fs', 'Hab_sp2', 'Hab_sp3', 'CH3ab', 'tsfreq']
     if len(sys.argv) == 3 and os.path.isdir(sys.argv[1]) and \
             sys.argv[2] in reaction_types:
         qsub_path = sys.argv[1]
@@ -45,11 +45,11 @@ def get_qsub_dirs(qsub_path, reaction_type):
                 if 'print-out' not in os.listdir(root):
                     print(os.listdir(root))
                     qsub_dirs.append(root)
-                else:
-                    lackfile = set(vaspfiles) - set(os.listdir(root))
-                    lackfile = [str(i) for i in lackfile]
-                    if lackfile != []:
-                        print(r'%s Lack %s!' %(root, lackfile))
+            else:
+                lackfile = set(vaspfiles) - set(os.listdir(root))
+                lackfile = [str(i) for i in lackfile]
+                if lackfile != []:
+                    print(r'%s Lack %s!' %(root, lackfile))
     return qsub_dirs
 ###
 def qsub_script(path, queue= 'bigmem'):

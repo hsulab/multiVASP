@@ -37,8 +37,8 @@ def multi_Ea(work_dir):
             Ea_dir.append(root)
     ###
     Ea_content = ''
-    Ea_content = '{:<20}{:>20}{:^5}{:>20}{:^5}{:>20}\n'\
-            .format('dir_name', 'ts', ' ', 'suf+CH4',' ', 'Ea')
+    Ea_content = '{:<20}{:>20}{:>20}{:>20}'\
+            .format('dir_name', 'ts', 'suf+CH4', 'Ea')
     CH4_TOTEN = '-24.07015819'
     for vasp_dir in Ea_dir:
         suf = os.path.join(vasp_dir, 'suf')
@@ -53,10 +53,10 @@ def multi_Ea(work_dir):
                         suf_TOTEN = get_TOTEN(suf_outcar)
                         sufCH4_TOTEN = float(suf_TOTEN) + float(CH4_TOTEN)
                         ts_TOTEN = get_TOTEN(ts_outcar)
-                        Ea = '{:<20}{:>20}{:^5}{:>20}{:^5}{:>20}\n'\
+                        Ea = '\n{:<20}{:>20}{:>20}{:>20}'\
                                 .format(os.path.basename(vasp_dir), \
-                                ts_TOTEN, '-', sufCH4_TOTEN, \
-                                '=', float(ts_TOTEN)-float(sufCH4_TOTEN))
+                                ts_TOTEN, sufCH4_TOTEN, \
+                                float(ts_TOTEN)-float(sufCH4_TOTEN))
                         Ea_content += Ea
     print(Ea_content)
 
@@ -68,7 +68,7 @@ def main():
         print('Get Ea in current dir.')
         multi_Ea(r'.')
     elif len(sys.argv) == 2:
-        if os.path.isdir(work_dir):
+        if os.path.isdir(sys.argv[1]):
             multi_Ea(sys.argv[1])
     else:
         print('Wrong argv.')

@@ -66,6 +66,7 @@ def prepare_ts(work_dir, finished_dirs):
         else:
             os.system(r'echo %s making ts >> %s' %(ts_dir, result_path))
             os.mkdir(ts_dir)
+            mC.create_VASPsp(dir, suf_dir, ts_dir)
             mC.create_INCAR(dir, suf_dir, ts_dir, '1')
             shutil.copyfile(os.path.join(suf_dir, 'KPOINTS'), os.path.join(ts_dir, 'KPOINTS'))
             create_POSCAR(dir, suf_dir, ts_dir)

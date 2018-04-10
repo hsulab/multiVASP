@@ -34,6 +34,13 @@ def cell_information(CONTCAR):
             xyz.append(a_xyz)
     xyz = np.array(xyz)
     abc = np.array(abc)
+    ### make xyz between 0 and 1
+    for i in range(len(xyz)):
+        for j in range(len(xyz[i])):
+            if xyz[i][j] >= float(0.9):
+                xyz[i][j] -= 1
+            elif xyz[i][j] < float(0):
+                xyz[i][j] += 1
     ###
     M_xyz = xyz[37:53]
     M_xyz_sortbyz = M_xyz[M_xyz[:,2].argsort()]
@@ -56,8 +63,6 @@ def cell_information(CONTCAR):
 def cal_CM_distance(CONTCAR):
     abc, xyz, s1, s2, s3, O = cell_information(CONTCAR)
     C_xyz = xyz[4]
-    print(C_xyz)
-    print(s1)
     CM = s1 - C_xyz
     CM_distance = np.linalg.norm((abc.T*CM).T)
     return CM_distance

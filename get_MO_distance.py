@@ -34,6 +34,13 @@ def cell_information(CONTCAR):
             xyz.append(a_xyz)
     xyz = np.array(xyz)
     abc = np.array(abc)
+    ### make xyz between 0 and 1
+    for i in range(len(xyz)):
+        for j in range(len(xyz[i])):
+            if xyz[i][j] >= float(0.9):
+                xyz[i][j] -= 1
+            elif xyz[i][j] < float(0):
+                xyz[i][j] += 1
     ###
     M_xyz = xyz[32:48]
     M_xyz_sortbyz = M_xyz[M_xyz[:,2].argsort()]
@@ -60,12 +67,14 @@ def cal_MO_distance(CONTCAR):
     return MO_distance
 ###
 def prepare_MO(finished_dirs):
+    content = ''
     for finished_dir in finished_dirs:
-        dir_name = finished_dir.split('/')[-1]
+        dir_name = os.path.basename(finished_dir)
         suf_dir = os.path.join(finished_dir, 'suf')
         contcar = os.path.join(suf_dir, 'CONTCAR')
         MO_distance = cal_MO_distance(contcar)
-        print(dir_name, MO_distance)
+        content += '{:<20}{:<20}\n'.format(dir_name, MO_distance)
+    print(content)
     
 ###
 def main():

@@ -64,7 +64,8 @@ def qsub_script(path, queue= 'bigmem'):
 def qsub_all(qsub_dirs, number, logfile):
     with open(logfile, 'w+') as f:
         for qsub_dir in qsub_dirs:
-            f.write(qsub_script(qsub_dir, 'normal'))
+            if qsub_dirs.index(qsub_dir)<number
+                f.write(qsub_script(qsub_dir, 'normal'))
 
 ###
 def main():

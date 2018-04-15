@@ -53,7 +53,7 @@ def create_POSCAR(root_dir, old_dir, new_dir):
         f.write(new_content)
 ###
 def prepare_freq(work_dir, finished_dirs):
-    result_path = os.path.join(work_dir, 'prepare_freq.xu')
+    result_path = os.path.join(work_dir, 'prepare_tsfreq.xu')
     if not os.path.exists(result_path):
         print('Start!')
     else:
@@ -63,11 +63,11 @@ def prepare_freq(work_dir, finished_dirs):
     ###
     for dir in finished_dirs:
         ts_dir = os.path.join(dir, 'ts')
-        freq_dir = os.path.join(dir, 'ts_freq')
+        freq_dir = os.path.join(dir, 'tsfreq')
         if os.path.exists(freq_dir):
             if not os.path.exists(os.path.join(freq_dir, 'print-out')):
                 shutil.rmtree(freq_dir)
-                os.system(r'echo %s rming and making freq >> %s' %(freq_dir, result_path))
+                os.system(r'echo %s rming and making tsfreq >> %s' %(freq_dir, result_path))
                 os.mkdir(freq_dir)
                 mC.create_VASPsp(dir, ts_dir, freq_dir)
                 create_INCAR(dir, ts_dir, freq_dir)

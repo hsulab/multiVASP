@@ -15,11 +15,7 @@ import sys
 import re
 ###
 def check_argv():
-<<<<<<< HEAD
-    reaction_types = ['bulk', 'suf', 'ts', 'fs', 'Hab_sp2', 'Hab_sp3', 'CH3ab']
-=======
     reaction_types = ['bulk', 'suf', 'ts', 'fs', 'Hab_sp2', 'Hab_sp3', 'CH3ab', 'tsfreq']
->>>>>>> master
     if len(sys.argv) == 3 and os.path.isdir(sys.argv[1]) and \
             sys.argv[2] in reaction_types:
         qsub_path = sys.argv[1]
@@ -47,6 +43,7 @@ def get_qsub_dirs(qsub_path, reaction_type):
         if os.path.basename(root) == reaction_type:
             if set(vaspfiles) & set(os.listdir(root)) == set(vaspfiles):
                 if 'print-out' not in os.listdir(root):
+                    print(os.listdir(root))
                     qsub_dirs.append(root)
             else:
                 lackfile = set(vaspfiles) - set(os.listdir(root))
@@ -66,18 +63,16 @@ def qsub_script(path, queue= 'bigmem'):
 ###
 def qsub_all(qsub_dirs, number, logfile):
     with open(logfile, 'w+') as f:
-        for qsub_dir in qsub_dirs[:10]:
-            print(qsub_dir)
-            if qsub_dirs.index(qsub_dir) < int(number/2):
-                f.write(qsub_script(qsub_dir, 'bigmem'))
-            elif int(number/2) < qsub_dirs.index(qsub_dir) <= number:
+        for qsub_dir in qsub_dirs:
+            if qsub_dirs.index(qsub_dir)<number:
                 f.write(qsub_script(qsub_dir, 'normal'))
+
 ###
 def main():
     if not check_argv() == 0:
         qsub_path, reaction_type, logfile =  check_argv()
         qsub_dirs = get_qsub_dirs(qsub_path, reaction_type)
-        qsub_all(qsub_dirs, 10, logfile)
+        qsub_all(qsub_dirs, 8, logfile)
 ###
 if __name__ == '__main__':
     main()

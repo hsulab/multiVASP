@@ -63,8 +63,7 @@ def change_POSCAR(POSCAR, base_element, dop_element):
     for i in range(9, 57):
         if i != s1_index+9:
             new_content += content[i]
-        else:
-            new_content += '    {:<18}{:<18}{:<18} T   T   T\n'.format(s1_xyz[0], s1_xyz[1], s1_xyz[2])
+    new_content += '    {:<18}{:<18}{:<18} T   T   T\n'.format(s1_xyz[0], s1_xyz[1], s1_xyz[2])
     with open(POSCAR, 'w') as f:
         f.write(new_content)
 ###

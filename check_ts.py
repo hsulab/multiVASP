@@ -70,7 +70,7 @@ def multi_check(check_dir = r'./'):
     finish_content = ''
     sum_content = ''
     for root,dirs,files in os.walk(check_dir):
-        if re.match(r'.*ts', root):
+        if re.match(r'ts$', root):
             outcar_path = os.path.abspath(os.path.join(root, 'OUTCAR'))
             if os.path.exists(outcar_path):
                 check_result, check_content = check_ts(outcar_path)

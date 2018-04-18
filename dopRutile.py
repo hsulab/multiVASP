@@ -40,7 +40,7 @@ def cell_information(CONTCAR):
     top_M_xyz = M_xyz_sortbyz[-4:]
     #
     top_M_xyz_sortbyx = top_M_xyz[top_M_xyz[:,0].argsort()]
-    top_s1_xyz = top_M_xyz_sortbyx[2]
+    top_s1_xyz = top_M_xyz_sortbyx[1]
     for i in range(len(xyz)):
         if list(top_s1_xyz) == list(xyz[i]):
             top_s1_index = i

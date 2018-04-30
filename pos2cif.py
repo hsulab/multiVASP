@@ -10,9 +10,9 @@ import os
 import sys
 import numpy as np
 ###
-def pos2cif(CONTCAR):
+def get_cell(CONTCAR):
     abc = []
-    xyz = []
+    xyzs = []
     elements = []
     numbers = []
     with open(CONTCAR, 'r') as f:
@@ -34,13 +34,16 @@ def pos2cif(CONTCAR):
                 numbers.append(int(number))
         # get xyzs
         for i in range(9, 9+sum(numbers)):
-            a_xyz = [] 
+            xyz = [] 
             for cor in content[i].strip('\n').split(' '):
                 if cor not in ['','T','F']: 
-                    a_xyz.append(float(cor)) ###
-            xyz.append(a_xyz)
-    xyz = np.array(xyz)
+                    xyz.append(float(cor)) ###
+            xyzs.append(xyz)
+    xyzs = np.array(xyzs)
     abc = np.array(abc)
+    return abc, elements, numbers, xyzs 
+###
+def  write_cif(cif_name, abc, elements, numbers, xyzs):
     ### write cif
     content = ''
     #
@@ -51,9 +54,9 @@ def pos2cif(CONTCAR):
     content += firstline
     #
     content += '{:<30}{:<20}\n'.format('_audit_creation_method', '\'pos2cif.py\'')
-    content += '{:<30}{:<20}\n'.format('_cell_length_a', round(np.linalg.norm(abc[0]), 8))
-    content += '{:<30}{:<20}\n'.format('_cell_length_b', round(np.linalg.norm(abc[1]), 8))
-    content += '{:<30}{:<20}\n'.format('_cell_length_c', round(np.linalg.norm(abc[2]), 8))
+    content += '{:<30}{:<20}\n'.format('_cell_length_a', np.linalg.norm(abc[0]))
+    content += '{:<30}{:<20}\n'.format('_cell_length_b', np.linalg.norm(abc[1]))
+    content += '{:<30}{:<20}\n'.format('_cell_length_c', np.linalg.norm(abc[2]))
     content += '{:<30}{:<20}\n'.format('_cell_angle_alpha', \
             180/np.pi*np.arccos(np.dot(abc[1], abc[2].T)/np.linalg.norm(abc[1])/np.linalg.norm(abc[2])))
     content += '{:<30}{:<20}\n'.format('_cell_angle_beta' , \
@@ -78,27 +81,30 @@ def pos2cif(CONTCAR):
     atom_sum = 0
     for i in range(len(elements)):
         for j in range(atom_sum, atom_sum + numbers[i]):
-            content += '{:<5}{:<5}{:<8}{:<10}{:<10}{:<10}{:<8}\n'.format\
+            content += '{:<5}{:<5}{:<8}{:<20}{:<20}{:<20}{:<8}\n'.format\
                     (elements[i] + str(j+1), elements[i], str(1.0000),\
-                    round(xyz[j][0], 5), round(xyz[j][1], 5), round(xyz[j][2], 5), str(0.0000))
+                    xyzs[j][0], xyzs[j][1], xyzs[j][2], str(0.0000))
         atom_sum += numbers[i]
                     ###
-    cif_name = os.path.basename(CONTCAR) + '.cif'
     with open(cif_name, 'w') as f:
         f.write(content)
 ###
 def main():
     if len(sys.argv) == 1:
         if os.path.exists('./POSCAR'):
-            pos2cif('./POSCAR')
+            abc, elements, numbers, xyzs = get_cell('./POSCAR')
+            write_cif('POSCAR.cif', abc, elements, numbers, xyzs)
             print('POSCAR to POSCAR.cif !')
         elif os.path.exists('./CONTCAR'):
-            pos2cif('./CONTCAR')
+            abc, elements, numbers, xyzs = get_cell('./CONTCAR')
+            write_cif('CONTCAR.cif', abc, elements, numbers, xyzs)
             print('CONTCAR to CONTCAR.cif !')
         else:
             print('There is no POSCAR or CONTCAR.')
     elif len(sys.argv) == 2:
-        pos2cif(sys.argv[1])
+        abc, elements, numbers, xyzs = get_cell(sys.argv[1])
+        cif_name = os.path.basename(sys.argv[1])+'.cif'
+        write_cif(cif_name, abc, elements, numbers, xyzs)
         print('%s to %s.cif' %(sys.argv[1], sys.argv[1]))
     else:
         print('Wrong argvs.')

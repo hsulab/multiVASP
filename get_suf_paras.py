@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #########################################################################
-# File Name: get_ts_paras.py
+# File Name: get_suf_paras.py
 # Author: jyxu
 # mail: ahcigar@foxmail.com
 # Created Time: 五  4/27 11:02:57 2018
@@ -42,16 +42,10 @@ def std_cons(CONTCAR):
     ###
     metals = ['Ti', 'V', 'Ge', 'Mo', 'Ru', 'Rh', 'Os', 'Ir'] 
     ### first layer
-    H_dict={}
-    C_dict={}
     O_dict={}
     M_dict={}
     for element_name in element_dict.keys():
-        if element_name.strip(string.digits) == 'H':
-            H_dict[element_name] = element_dict[element_name]
-        elif element_name.strip(string.digits) == 'C':
-            C_dict[element_name] = element_dict[element_name]
-        elif element_name.strip(string.digits) == 'O':
+        if element_name.strip(string.digits) == 'O':
             O_dict[element_name] = element_dict[element_name]
         elif element_name.strip(string.digits) in metals:
             M_dict[element_name] = element_dict[element_name]
@@ -130,25 +124,6 @@ def std_cons(CONTCAR):
         M_dict.pop(M4_tuple[0])
         return O_dict, M_dict, layer
     ###
-    def get_CH4(H_dict, C_dict):
-        CH4_dict = {}
-        #
-        H_dict_y = sorted(H_dict.items(), key=lambda e:e[1][1], reverse=True)
-        H1_tuple = H_dict_y[3]
-        H2_tuple = H_dict_y[0]
-        H34_dict = tuple2dict(H_dict_y[1:3])
-        H34_dict_x = sorted(H34_dict.items(), key=lambda e:e[1][0], reverse=True)
-        H3_tuple = H34_dict_x[0]
-        H4_tuple = H34_dict_x[1]
-        #
-        C_dict_x = sorted(C_dict.items(), key=lambda e:e[1][0], reverse=True)
-        #
-        CH4_dict['C'] = list(C_dict_x[0])
-        CH4_dict['H1'] = list(H1_tuple)
-        CH4_dict['H2'] = list(H2_tuple)
-        CH4_dict['H3'] = list(H3_tuple)
-        CH4_dict['H4'] = list(H4_tuple)
-        return CH4_dict
     ### adjust atom location
     def mv_xyz(xyz, d, s):
         if d == 'x':
@@ -161,7 +136,6 @@ def std_cons(CONTCAR):
     ##
     O2_dict, M2_dict, l1 = get_layer(O_dict, M_dict)
     O3_dict, M3_dict, l2 = get_layer(O2_dict, M2_dict)
-    CH4_dict = get_CH4(H_dict, C_dict)
     ##  C   D
     ##    A   B
     ##      C   D
@@ -235,9 +209,9 @@ def std_cons(CONTCAR):
     ###
     cif_name = os.path.basename(CONTCAR) + '.cif'
     p2c.write_cif(CONTCAR+'.cif', abc, elements, numbers, xyzs)
-    return abc, l1, l2, CH4_dict, cif_name
+    return abc, l1, l2, cif_name
 ###
-def get_ts_paras(abc, l1, l2, CH4, cif_name):
+def get_suf_paras(abc, l1, l2, cif_name):
     ### XYZ must be absolute coordinates [X, Y, Z]
     def get_distance(abc, XYZ1, XYZ2):
         XYZ1 = (abc.T*XYZ1).T.sum(0)
@@ -264,67 +238,53 @@ def get_ts_paras(abc, l1, l2, CH4, cif_name):
     if 'pure' in cif_name:
         name = cif_name.split('_')[0] + '_' + cif_name.split('_')[1]
         cell = cif_name.split('_')[0].strip('pure')
-        dop = 'pure'
     else:
-        name = cif_name.split('_')[0] + '_' + cif_name.split('_')[1] + '_ts'
+        name = cif_name.split('_')[0] + '_' + cif_name.split('_')[1] + '_suf'
         cell = cif_name.split('_')[0].strip('dop')
-        dop = cif_name.split('_')[1]
     ### get geometry paras
-    ## d_O2_H1
-    dH1_O2 = get_distance(abc, CH4['H1'][1], l1['O2'][1])
-    dH1_C = get_distance(abc, CH4['H1'][1], CH4['C'][1])
     dO2_M4 = get_distance(abc, l1['O2'][1], l1['M4'][1])
-    dC_M4 = get_distance(abc, CH4['C'][1], l1['M4'][1])
     dM4_l2O2 = get_distance(abc, l1['M4'][1], l2['O2'][1])
     ## angle
-    aH1_O2_M4 = get_angle(abc, CH4['H1'][1], l1['O2'][1], l1['M4'][1]) 
-    aC_M4_O2 = get_angle(abc, CH4['C'][1], l1['M4'][1], l1['O2'][1]) 
-    aO8_O2_H1 = get_angle(abc, l1['O8'][1], l1['O2'][1], CH4['H1'][1]) 
-    aC_M4_l2O2 = get_angle(abc, CH4['C'][1], l1['M4'][1], l2['O2'][1])
-    aH1_C_H2 = get_angle(abc, CH4['H1'][1], CH4['C'][1], CH4['H2'][1])
-    ##
-    ts_paras = [cell, dop, name, dH1_O2, dH1_C, dO2_M4, dC_M4, dM4_l2O2, \
-            aH1_O2_M4, aC_M4_O2, aO8_O2_H1, aC_M4_l2O2, aH1_C_H2]
-    return ts_paras
-    
-    
+    ## size
+    suf_paras = [cell, name, dO2_M4, dM4_l2O2]
+    return suf_paras
 ###
 def main():
-    cons_dir = './data/ts_data/ts_cons'
-    cifs_dir = './data/ts_data/ts_cifs'
+    cons_dir = './data/suf_data/suf_cons'
+    cifs_dir = './data/suf_data/suf_cifs'
     ###
     MS_dir = os.path.join(os.path.expanduser('~'), 'Documents/USRP/DopRutile_Files/Documents')
-    MS_ts_cifs_dir = os.path.join(MS_dir, 'ts_cifs')
+    MS_suf_cifs_dir = os.path.join(MS_dir, 'suf_cifs')
     ###
-    ts_csv_name = 'ts_data_' + time.strftime("%Y%m%d", time.localtime()) + '.csv'
-    ts_csv = os.path.join(os.path.expanduser('~'), 'Desktop/' + ts_csv_name)
+    suf_csv_name = 'suf_data_' + time.strftime("%Y%m%d", time.localtime()) + '.csv'
+    suf_csv = os.path.join(os.path.expanduser('~'), 'Desktop/' + suf_csv_name)
     ### pd.DataFrame
-    ts_df = pd.DataFrame(columns=('cell', 'dop', 'name', 'dH1_O2', 'dH1_C', \
-            'dO2_M4', 'dC_M4', 'dM4_l2O2', 'aH1_O2_M4', 'aC_M4_O2', 'aO8_O2_H1', \
-            'aC_M4_l2O2', 'aH1_C_H2'))
+    suf_df = pd.DataFrame(columns=('cell', 'name', 'dO2_M4', 'dM4_l2O2'))
     row_index = 1
     ###
     for con_name in os.listdir(cons_dir):
+        ### print contcar name
         print(con_name)
-        con = os.path.join(cons_dir, con_name)
-        ms_xsd = os.path.join(MS_ts_cifs_dir, os.path.basename(con)+'.xsd')
         ###
-        abc, l1, l2, CH4, cif_name = std_cons(con)
-        ts_paras = get_ts_paras(abc, l1, l2, CH4, cif_name)
-        ts_df.loc[row_index] = ts_paras         
+        con = os.path.join(cons_dir, con_name)
+        ms_xsd = os.path.join(MS_suf_cifs_dir, os.path.basename(con)+'.xsd')
+        ### get paras
+        abc, l1, l2, cif_name = std_cons(con)
+        suf_paras = get_suf_paras(abc, l1, l2, cif_name) 
+        suf_df.loc[row_index] = suf_paras
         row_index += 1
-        ##
+        ###
         cif = os.path.join(cifs_dir, cif_name)
         if not os.path.exists(ms_xsd):
-            ms_cif = os.path.join(MS_ts_cifs_dir, cif_name)
+            ms_cif = os.path.join(MS_suf_cifs_dir, cif_name)
             shutil.copy(con+'.cif', cif)
             shutil.move(con+'.cif', ms_cif)
         else:
             os.remove(con+'.cif')
     ###
-    ts_df = ts_df.sort_values(by=['cell', 'dop', 'name'], ascending=True)
-    ts_df = ts_df.reset_index(drop=True)
-    ts_df.to_csv(ts_csv)
+    suf_df = suf_df.sort_values(by=['cell', 'name'], ascending=True)
+    suf_df = suf_df.reset_index(drop=True)
+    suf_df.to_csv(suf_csv)
 ###
 if __name__ == '__main__':
     main()

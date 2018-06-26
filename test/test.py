@@ -8,16 +8,7 @@
 #########################################################################
 import os 
 import re
-###
-with open('./CONTCAR', 'r') as f:
-    contcar = f.readlines()
-#
-new_content = ''
-for line in contcar[9:62]:
-    new_line = []
-    line = line.strip('\n').split(' ')
-    for i in line:
-        if i != '':
-            new_line.append(i)
-    new_content += '{:>20}{:>20}{:>20}  T  T  T\n'.format(new_line[0], new_line[1], new_line[2])
-print(new_content)
+jiba = [-1,-1]
+print(jiba)
+jiba[1:1]=[1,2,3]
+print(jiba)

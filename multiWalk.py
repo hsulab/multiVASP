@@ -12,7 +12,7 @@ import re
 def check_printout(check_dir, reaction_type):
     check_list = []
     for root,dirs,files in os.walk(check_dir):
-        if re.match(r'.*' + reaction_type, root):
+        if re.match(r'.*(' + reaction_type + r')$', root):
             if os.path.exists(os.path.join(root, 'print-out')):
                 check_list.append(root)
    ###

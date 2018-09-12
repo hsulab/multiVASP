@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 #########################################################################
 # File Name: pos2cif.py
 # Author: jyxu
@@ -43,7 +42,7 @@ def get_cell(CONTCAR):
     abc = np.array(abc)
     return abc, elements, numbers, xyzs 
 ###
-def  write_cif(cif_name, abc, elements, numbers, xyzs):
+def write_cif(cif_name, abc, elements, numbers, xyzs):
     ### write cif
     content = ''
     #

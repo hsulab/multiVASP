@@ -15,7 +15,8 @@ import sys
 import re
 ###
 def check_argv():
-    reaction_types = ['bulk', 'suf', 'ts', 'fs', 'Hab_sp2', 'Hab_sp3', 'CH3ab', 'tsfreq']
+    reaction_types = ['bulk', 'suf', 'ts', 'fs', 'fs_ra',\
+            'Hab_sp2', 'Hab_sp3', 'CH3ab', 'ts', 'ts_f']
     elements = ['Ti','V', 'Ge', 'Mo', 'Ru', 'Rh', 'Os', 'Ir', 'Pb']
     if len(sys.argv) == 4 and os.path.isdir(sys.argv[1]) and \
             sys.argv[2] in reaction_types and sys.argv[3] in elements:

@@ -7,6 +7,7 @@
 # Created Time: 日  3/18 18:36:16 2018
 #########################################################################
 import os
+import re
 import shutil
 import sys
 ###
@@ -66,6 +67,7 @@ def prepare_freq(work_dir, finished_dirs):
         freq_dir = os.path.join(dir, 'ts_f')
         if os.path.exists(freq_dir):
             if not os.path.exists(os.path.join(freq_dir, 'print-out')):
+                print(freq_dir)
                 shutil.rmtree(freq_dir)
                 os.system(r'echo %s rming and making tsfreq >> %s' %(freq_dir, result_path))
                 os.mkdir(freq_dir)
@@ -75,6 +77,7 @@ def prepare_freq(work_dir, finished_dirs):
                 create_POSCAR(dir, ts_dir, freq_dir)
                 mC.create_POTCAR(freq_dir, './data/potpaw_PBE.54')
         else:
+            print(freq_dir)
             os.system(r'echo %s making freq >> %s' %(freq_dir, result_path))
             os.mkdir(freq_dir)
             mC.create_VASPsp(dir, ts_dir, freq_dir)
@@ -89,11 +92,11 @@ def main():
         work_dir = r'./data/dopRutile'
         finished_dirs = mW.check_printout(work_dir, 'ts')
         print(finished_dirs)
-        prepare_ts(work_dir, finished_dirs)       
+        prepare_freq(work_dir, finished_dirs)       
     elif len(sys.argv) == 2:
         work_dir = sys.argv[1] 
         finished_dirs = mW.check_printout(work_dir, 'ts')
-        prepare_ts(work_dir, finished_dirs)       
+        prepare_freq(work_dir, finished_dirs)       
     elif len(sys.argv) == 3:
         work_dir = sys.argv[1]
         element = sys.argv[2]
@@ -102,7 +105,7 @@ def main():
         for vasp_dir in converg_dirs:
             if re.match(r'.*' + element + r'O2_.*', vasp_dir):
                 finished_dirs.append(vasp_dir)
-        prepare_ts(work_dir, finished_dirs)       
+        prepare_freq(work_dir, finished_dirs)       
     else:
         print('Wrong argvs!')
         sys.exit()

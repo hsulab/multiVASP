@@ -99,7 +99,7 @@ def E2rE(csv_file):
     new_df.to_csv(rE_csv, columns=['cell', 'dop', 'name', 'E_Hab2', 'E_Hab3', 'E_CH3ab', 'E_ts', 'E_tsra', 'E_fs', 'E_fsra'])
 ###
 def main():
-    csv_file = os.path.join(os.path.expanduser('~'), 'Desktop/E_data_20180910.csv')
+    csv_file = os.path.join(os.path.expanduser('~'), 'Desktop/E_data_20180912.csv')
     E2rE(csv_file)
 ###
 if __name__ == '__main__':

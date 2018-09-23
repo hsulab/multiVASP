@@ -86,19 +86,19 @@ def calc_dihedral(abc, XYZ1, XYZ2, XYZ3, XYZ4, unit='rad'):
     else:
         return round(theta_rad/np.pi*180, 4)
 ###
-def get_lattice_paras(cif_name, group):
+def get_lattice_paras(cif_name):
     if 'pure' in cif_name:
-        name = cif_name.split('_')[0] + '_' + cif_name.split('_')[1]
+        name = cif_name.split('_')[0]
         cell = cif_name.split('_')[0].strip('pure')
         dop = 'pure'
     else:
-        name = cif_name.split('_')[0] + '_' + cif_name.split('_')[1] + '_' + group
+        name = cif_name.split('_')[0] + '_' + cif_name.split('_')[1]
         cell = cif_name.split('_')[0].strip('dop')
         dop = cif_name.split('_')[1]
     lattice_paras = {'name':name, 'cell':cell, 'dop':dop}
     return lattice_paras
 ###
-def get_distance(abc, elements):
+def get_distance(abc, elements, group):
     elements_list = list(elements.keys())
     ### distance
     d_para = {}
@@ -106,14 +106,14 @@ def get_distance(abc, elements):
         for j in range(i+1,len(elements.keys())):
             para_name = []
             para_name = 'd_' + elements_list[i] \
-                    + '-' + elements_list[j]
+                    + '-' + elements_list[j] + '_' + group
             para_value = calc_distance(abc, \
                     elements[elements_list[i]][1], \
                     elements[elements_list[j]][1])
             d_para[para_name] = para_value
     return d_para
 ###
-def get_angle(abc, elements):
+def get_angle(abc, elements, group):
     elements_list = list(elements.keys())
     ### angle
     a_para = {}
@@ -125,7 +125,8 @@ def get_angle(abc, elements):
                         elements_list[i] == elements_list[k]):
                     para_name = 'a_' + elements_list[i] + \
                             '-' + elements_list[j] + \
-                            '-' + elements_list[k]
+                            '-' + elements_list[k] + \
+                            '_' + group
                     para_value = calc_angle(abc, \
                             elements[elements_list[i]][1], \
                             elements[elements_list[j]][1], \
@@ -133,7 +134,7 @@ def get_angle(abc, elements):
                     a_para[para_name] = para_value
     return a_para
 ###
-def get_dihedral(abc, elements):
+def get_dihedral(abc, elements, group):
     elements_list = list(elements.keys())
     numbers = len(elements.keys())
     ###
@@ -158,7 +159,8 @@ def get_dihedral(abc, elements):
                             para_name = 'h_' + elements[elements_list[i]][0] + '-' \
                                     + elements[elements_list[j]][0] + '-' \
                                     + elements[elements_list[k]][0] + '-' \
-                                    + elements[elements_list[l]][0]
+                                    + elements[elements_list[l]][0] + '_' \
+                                    + group
                             para_value = calc_dihedral(abc, \
                                     elements[elements_list[i]][1], \
                                     elements[elements_list[j]][1], \
@@ -170,19 +172,19 @@ def get_dihedral(abc, elements):
 def get_paras(abc, l1, l2, group, group_dict, cif_name, para_type):
     total_paras = {}
     ###
-    lattice_paras = get_lattice_paras(cif_name, group)
+    lattice_paras = get_lattice_paras(cif_name)
     total_paras = dict(lattice_paras)
     ###
     elements = dict(group_dict, **l1)
     ###
     if 'd' in para_type:
-        d_para = get_distance(abc, elements)
+        d_para = get_distance(abc, elements, group)
         total_paras = dict(total_paras, **d_para)
     if 'a' in para_type:
-        a_para = get_angle(abc, elements)
+        a_para = get_angle(abc, elements, group)
         total_paras = dict(total_paras, **a_para)
     if 'h' in para_type:
-        h_para = get_dihedral(abc, elements)
+        h_para = get_dihedral(abc, elements, group)
         total_paras = dict(total_paras, **h_para)
     ###
     return total_paras

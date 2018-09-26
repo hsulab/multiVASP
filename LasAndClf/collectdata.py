@@ -56,10 +56,7 @@ class GeoData():
 ###
 class EneData(GeoData):
     'Energy Data'
-    def allE(self, feas):
-        return self.df().loc[:, tuple(['name']+feas)]
-
-    def mech(self):
+    def allE(self):
         df = self.df()
         mtype = [] # mechanism type
         mE = []
@@ -74,30 +71,33 @@ class EneData(GeoData):
                 mtype.append('ts')
                 mE.append(df.loc[i, 'E_ts'])
             elif df.loc[i, 'E_ts'] > df.loc[i, 'E_tsra']:
-                mtype.append('ts')
+                mtype.append('tsra')
                 mE.append(df.loc[i, 'E_tsra'])
             else:
-                mtype.append('tsra')
+                mtype.append('ts')
                 mE.append(df.loc[i, 'E_ts'])
         df.loc[:, 'mtype'] = mtype
         df.loc[:, 'mE'] = mE
-        return df.loc[:, ['name', 'mtype', 'mE']]
+        return df
 
 ###
 def get_data(geocomps):
     ### Geometry and Energy
+    hab2 = GeoData('Hab2').df()
+    hab3 = GeoData('Hab3').df()
     ch3ab = GeoData('CH3ab').df()
-    E_data = EneData('rE')
-    rE = E_data.allE(['E_CH3ab']) # reaction Energy
-    mtype = E_data.mech()
+    allgeo = ch3ab
+    geo = allgeo.iloc[:,range(1+geocomps)]
     ###
-    di = pd.merge(rE, ch3ab, on='name')
-    di = pd.merge(mtype, di, on='name')
+    E_feas = ['name','mtype','mE','E_Hab2','E_Hab3','E_CH3ab']
+    rE = EneData('rE').allE().loc[:,E_feas] # reaction Energy
+    e_numbers = rE.shape[1]
     ###
-    new_di = di.loc[di.loc[:,'mtype']!='np.nan', :]
-    new_di = new_di.iloc[:, range(3+geocomps)]
-    new_di.iloc[:, range(2,3+geocomps)] = new_di.iloc[:, range(2,3+geocomps)].astype(float)
-    return new_di # [name, mtype, mE, geo ... feas]
+    di = pd.merge(rE, geo, on='name')
+    di = di.loc[di.loc[:,'mtype']!='np.nan', :]
+    ###
+    di.iloc[:, range(2,e_numbers+geocomps)] = di.iloc[:, range(2,e_numbers+geocomps)].astype(float)
+    return di # [name, mtype, mE, geo ... feas]
 ###
 if __name__ == '__main__':
     print(get_data(3))

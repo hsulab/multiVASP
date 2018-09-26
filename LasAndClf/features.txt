@@ -1,1 +1,23 @@
-[0.9990000000000003, 0]
+2018-09-26 23:09:01
+Cpu Time            0.08391714096069336  s
+Model Parameters: 
+alpha           --> 0.01                     copy_X          --> True           
+fit_intercept   --> True                     max_iter        --> 1000           
+normalize       --> False                    positive        --> False          
+precompute      --> False                    random_state    --> None           
+selection       --> cyclic                   tol             --> 0.0001         
+warm_start      --> False                    
+Features and Coefficients: 
+E_Hab2                         --> 0.48111736978800607 
+E_Hab3                         --> 0.0                 
+E_CH3ab                        --> 0.31808426586836613 
+d_C-H1_CH3ab                   --> 0.0                 
+d_C-H3_CH3ab                   --> -0.0                
+d_C-H4_CH3ab                   --> 0.0                 
+d_C-O1_CH3ab                   --> -0.22847436180332484
+d_C-O2_CH3ab                   --> 0.0                 
+d_C-O3_CH3ab                   --> 0.0                 
+d_C-O4_CH3ab                   --> -0.0                
+d_C-O5_CH3ab                   --> 0.0                 
+d_C-O6_CH3ab                   --> 0.0                 
+d_C-O7_CH3ab                   --> 0.0                 

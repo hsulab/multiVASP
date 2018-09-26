@@ -137,17 +137,6 @@ def get_angle(abc, elements, group):
 def get_dihedral(abc, elements, group):
     elements_list = list(elements.keys())
     numbers = len(elements.keys())
-    ###
-    '''
-    pairs = []
-    for i in range(numbers):
-        for j in range(i+1,numbers):
-            for k in range(numbers):
-                if (k != i and k != j):
-                    for l in range(k+1, numbers):
-                        if (l!=i and l!=j):
-                            pairs.append([i,j,k,l])
-    '''
     ### dihedral
     h_para = {}
     for i in range(numbers):

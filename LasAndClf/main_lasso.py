@@ -14,16 +14,24 @@ import matplotlib.pyplot as plt
 ### scilibs
 import numpy as np
 import pandas as pd
+'sklearn'
+from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import Lasso,LassoCV,LassoLarsCV
 ### mylibs
 import collectdata as cd
 ###
-def prepro(feas):
-    df = cd.get_data(feas)
-    #df.loc[:, 'test'] = 100
-    #df.loc[df.loc[:, 'mE'] > 0.1, 'test'] = np.nan
-    yx_indexs = df.iloc[:,range(2)]
-    yx_vals = df.iloc[:,range(2,len(df.columns))]
+def pre_yx(n_geofeas):
+    df = cd.get_data(n_geofeas)
+    df.loc[:, 'test'] = 10
+    df.loc[df.loc[:, 'mE'] > 0.1, 'test'] = np.nan
+    yx_indexs = df.iloc[:,range(2)] # 'name' and 'mtype'
+    yx_vals = df.iloc[:,range(2,len(df.columns))] # E and Geo
+    ' StandardScaler for Data'
+    scaler = StandardScaler()
+    scaler.fit(yx_vals)
+    print(scaler.mean_)
+    print(scaler.var_)
+    print(scaler.n_samples_seen_)
     return yx_indexs, yx_vals
     #print(df)
     #print(np.where(np.isnan(yx_df)))
@@ -48,7 +56,7 @@ def daya_lasso(nums, outs=1):
         cof = list(model.coef_)[i]
         feas[yx_vals.columns[i+1]] = cof
     ##
-    with open('./features.txt', 'w+') as f:
+    with open('./features.txt', 'a+') as f:
         f.write(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())+'\n')
         f.write('{:<20}{:<20} s\n'.format('Cpu Time',take_time))
         f.write('Model Parameters: \n')
@@ -66,7 +74,6 @@ def daya_lasso(nums, outs=1):
             content = '{:<30}{:^5}{:<20}\n'.format(str(fea),'-->',str(cof))
             f.write(content)
     ###
-    print('Finished.')
     if outs == 1:
         with open('./features.txt', 'r') as f:
             content = f.readlines()
@@ -74,4 +81,4 @@ def daya_lasso(nums, outs=1):
                 print(content[i], end='')
 ###
 if __name__ == '__main__':
-    daya_lasso(10)
+    pre_yx(0)

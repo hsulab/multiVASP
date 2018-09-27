@@ -83,21 +83,28 @@ class EneData(GeoData):
 ###
 def get_data(geocomps):
     ### Geometry and Energy
+    suf = GeoData('suf').df()
     hab2 = GeoData('Hab2').df()
     hab3 = GeoData('Hab3').df()
     ch3ab = GeoData('CH3ab').df()
-    allgeo = ch3ab
-    geo = allgeo.iloc[:,range(1+geocomps)]
-    ###
-    E_feas = ['name','mtype','mE','E_Hab2','E_Hab3','E_CH3ab']
-    rE = EneData('rE').allE().loc[:,E_feas] # reaction Energy
-    e_numbers = rE.shape[1]
-    ###
-    di = pd.merge(rE, geo, on='name')
-    di = di.loc[di.loc[:,'mtype']!='np.nan', :]
-    ###
-    di.iloc[:, range(2,e_numbers+geocomps)] = di.iloc[:, range(2,e_numbers+geocomps)].astype(float)
-    return di # [name, mtype, mE, geo ... feas]
+    allgeo = pd.merge(suf, ch3ab, on='name')
+    allgeo = pd.merge(allgeo, hab2, on='name')
+    allgeo = pd.merge(allgeo, hab3, on='name')
+    print(allgeo.shape)
+    if geocomps <= allgeo.shape[1]-1:
+        geo = allgeo.iloc[:,range(1+geocomps)]
+        ###
+        E_feas = ['name','mtype','mE','E_Hab2','E_Hab3','E_CH3ab']
+        rE = EneData('rE').allE().loc[:,E_feas] # reaction Energy
+        e_numbers = rE.shape[1]
+        ###
+        di = pd.merge(rE, geo, on='name')
+        di = di.loc[di.loc[:,'mtype']!='np.nan', :]
+        ###
+        di.iloc[:, range(2,e_numbers+geocomps)] = di.iloc[:, range(2,e_numbers+geocomps)].astype(float)
+        return di # [name, mtype, mE, geo ... feas]
+    else:
+        print('Too many features!')
 ###
 if __name__ == '__main__':
-    print(get_data(3))
+    get_data(7068)

@@ -22,26 +22,25 @@ import collectdata as cd
 ###
 def pre_yx(n_geofeas):
     df = cd.get_data(n_geofeas)
-    df.loc[:, 'test'] = 10
-    df.loc[df.loc[:, 'mE'] > 0.1, 'test'] = np.nan
+    #df.loc[:, 'test'] = 10
+    #df.loc[df.loc[:, 'mE'] > 0.1, 'test'] = np.nan
     yx_indexs = df.iloc[:,range(2)] # 'name' and 'mtype'
     yx_vals = df.iloc[:,range(2,len(df.columns))] # E and Geo
     ' StandardScaler for Data'
     scaler = StandardScaler()
     scaler.fit(yx_vals)
-    print(scaler.mean_)
-    print(scaler.var_)
-    print(scaler.n_samples_seen_)
-    return yx_indexs, yx_vals
+    yx_vals_std = scaler.transform(yx_vals)
+    return yx_indexs, yx_vals, yx_vals_std
     #print(df)
     #print(np.where(np.isnan(yx_df)))
     #print(df.index[np.where(np.isnan(yx_df))[0]])
 ###
 def daya_lasso(nums, outs=1):
     ### X and y
-    yx_indexs, yx_vals = prepro(nums)
-    y = yx_vals.iloc[:,range(1)]
-    X = yx_vals.iloc[:,range(1,len(yx_vals.columns))]
+    yx_indexs, yx_vals, yx_vals_std = pre_yx(nums)
+    yx = yx_vals_std # std
+    y = yx[:,range(1)]
+    X = yx[:,range(1,len(yx_vals.columns))]
     # ========Lasso回归========
     start_time = time.time()
     ''
@@ -56,7 +55,7 @@ def daya_lasso(nums, outs=1):
         cof = list(model.coef_)[i]
         feas[yx_vals.columns[i+1]] = cof
     ##
-    with open('./features.txt', 'a+') as f:
+    with open('./features.txt', 'w+') as f:
         f.write(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())+'\n')
         f.write('{:<20}{:<20} s\n'.format('Cpu Time',take_time))
         f.write('Model Parameters: \n')
@@ -70,15 +69,18 @@ def daya_lasso(nums, outs=1):
                 f.write(' '*10)
             count += 1
         f.write('\nFeatures and Coefficients: \n')
+        ###
         for fea, cof in feas.items():
-            content = '{:<30}{:^5}{:<20}\n'.format(str(fea),'-->',str(cof))
-            f.write(content)
+            if abs(cof) > 0:
+                content = '{:<30}{:^5}{:<20}\n'.format(str(fea),'-->',str(cof))
+                f.write(content)
     ###
     if outs == 1:
+        print('./features.txt')
         with open('./features.txt', 'r') as f:
             content = f.readlines()
             for i in range(len(content)):
                 print(content[i], end='')
 ###
 if __name__ == '__main__':
-    pre_yx(0)
+    daya_lasso(7068)

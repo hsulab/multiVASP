@@ -16,71 +16,65 @@ import numpy as np
 import pandas as pd
 'sklearn'
 from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import Lasso,LassoCV,LassoLarsCV
+from sklearn.linear_model import Lasso,LassoLars,LassoCV,LassoLarsCV
+from sklearn.model_selection import KFold
 ### mylibs
 import collectdata as cd
+import decorates as deco
 ###
 def pre_yx(n_geofeas):
+    'Get Data and Index'
     df = cd.get_data(n_geofeas)
-    #df.loc[:, 'test'] = 10
-    #df.loc[df.loc[:, 'mE'] > 0.1, 'test'] = np.nan
     yx_indexs = df.iloc[:,range(2)] # 'name' and 'mtype'
     yx_vals = df.iloc[:,range(2,len(df.columns))] # E and Geo
-    ' StandardScaler for Data'
-    scaler = StandardScaler()
-    scaler.fit(yx_vals)
-    yx_vals_std = scaler.transform(yx_vals)
-    return yx_indexs, yx_vals, yx_vals_std
-    #print(df)
-    #print(np.where(np.isnan(yx_df)))
-    #print(df.index[np.where(np.isnan(yx_df))[0]])
+    'Get DataSet'
+    DataSet = {}
+    DataSet['target'] = yx_vals.iloc[:,range(1)].values
+    DataSet['features'] = yx_vals.iloc[:,range(1,len(yx_vals.columns))].values
+    DataSet['fea_names'] = yx_vals.columns[1:]
+    return DataSet
 ###
-def daya_lasso(nums, outs=1):
-    ### X and y
-    yx_indexs, yx_vals, yx_vals_std = pre_yx(nums)
-    yx = yx_vals_std # std
-    y = yx[:,range(1)]
-    X = yx[:,range(1,len(yx_vals.columns))]
-    # ========Lasso回归========
-    start_time = time.time()
-    ''
-    model = Lasso(alpha=0.01)  # 调节alpha可以实现对拟合的程度
-    model.fit(X, y)   # 线性回归建模
-    end_time = time.time()
-    take_time = end_time - start_time
-    ''
-    ###
-    feas = {}
-    for i in range(len(list(model.coef_))):
-        cof = list(model.coef_)[i]
-        feas[yx_vals.columns[i+1]] = cof
-    ##
-    with open('./features.txt', 'w+') as f:
-        f.write(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())+'\n')
-        f.write('{:<20}{:<20} s\n'.format('Cpu Time',take_time))
-        f.write('Model Parameters: \n')
-        count = 1
-        for param, value in model.get_params().items():
-            content = '{:<15}{:^5}{:<15}'.format(str(param),'-->',str(value))
-            f.write(content)
-            if count % 2 == 0:
-                f.write('\n')
-            else:
-                f.write(' '*10)
-            count += 1
-        f.write('\nFeatures and Coefficients: \n')
-        ###
-        for fea, cof in feas.items():
-            if abs(cof) > 0:
-                content = '{:<30}{:^5}{:<20}\n'.format(str(fea),'-->',str(cof))
-                f.write(content)
-    ###
-    if outs == 1:
-        print('./features.txt')
-        with open('./features.txt', 'r') as f:
-            content = f.readlines()
-            for i in range(len(content)):
-                print(content[i], end='')
+def std_yx(n_geofeas):
+    'Pre Data'
+    DS = pre_yx(n_geofeas)
+    y = DS['target']
+    X = DS['features']
+    'StandardScaler Data'
+    scaler_y = StandardScaler().fit(y)
+    y_ = scaler_y.transform(y)
+    scaler_X = StandardScaler()
+    X_ = scaler_X.fit_transform(X)
+    DS['target'] = y_.ravel()
+    DS['features'] = X_
+    return DS
+###
+def cv_yx(yx):
+    kf = KFold(n_splits=3)
+    for train, test in kf.split(yx):
+        print("%s %s" % (train, test))
+###
+@deco.printer(r'./Logs/haha2.test', 'out')
+def data_lasso(n_geofeas):
+    'Pre and Scaler Data'
+    DS = std_yx(n_geofeas)
+    y = DS['target']
+    X = DS['features']
+    'Lasso Regression'
+    model = LassoCV(cv=5, max_iter=10000)
+    model.fit(X, y)
+    'Model Settings'
+    model_params = model.get_params()
+    model_params['Alpha'] = round(model.alpha_, 8)
+    model_params['Iters'] = model.n_iter_
+    model_params['Score'] = round(model.score(X,y), 8)
+    'Coef and Feas'
+    fea_coef = {}
+    feas = DS['fea_names']
+    coefs = model.coef_
+    for fea, coef in zip(feas, coefs):
+        fea_coef[fea] = round(coef, 8)
+    return model_params, fea_coef
 ###
 if __name__ == '__main__':
-    daya_lasso(7068)
+    'total feastures 8454'
+    data_lasso(8454)

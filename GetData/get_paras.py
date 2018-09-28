@@ -172,7 +172,10 @@ def get_paras(abc, l1, l2, group, group_dict, cif_name, para_type):
     lattice_paras = get_lattice_paras(cif_name)
     total_paras = dict(lattice_paras)
     ###
-    elements = dict(group_dict, **l1)
+    if group_dict == {}:
+        elements = l1
+    else:
+        elements = dict(group_dict, **l1)
     ###
     if 'd' in para_type:
         d_para = get_distance(abc, elements, group)

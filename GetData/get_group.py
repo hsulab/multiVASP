@@ -64,6 +64,8 @@ def get_group(H_dict, C_dict, group):
         group_dict = get_CH3(H_dict, C_dict)
     elif group == 'ts' or group == 'fs':
         group_dict = get_CH4(H_dict, C_dict)
+    else:
+        group_dict = {}
     ###
     return group_dict
 ###

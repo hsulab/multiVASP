@@ -44,17 +44,21 @@ def printer(file_name, outs):
                         f.write(' '*10)
                     count += 1
                 f.write('\nFeatures and Coefficients: \n')
-                'Write Feas adn Coefs'
+                'Write Feas and Coefs'
                 count = 1
                 fea_counts={'suf':0, 'CH3ab':0, 'Hab2':0, 'Hab3':0}
+                geo_counts={'E':0, 'd':0, 'a':0, 'h':0}
                 fc_sorted = {}
                 fc = sorted(fea_coef.items(), key=lambda d: abs(d[1]), reverse=True)
                 for t in fc:
                     fc_sorted[t[0]] = t[1]
+                'Write Feas'
                 for fea, coef in fc_sorted.items():
                     if abs(coef) > 0:
                         fea_belong = fea.split('_')[-1]
+                        geo_belong = fea.split('_')[0]
                         fea_counts[fea_belong] = fea_counts[fea_belong] + 1
+                        geo_counts[geo_belong] = geo_counts[geo_belong] + 1
                         content = '{:<25}{:^5}{:<20}'.format(str(fea),'-->',str(round(coef, 8)))
                         f.write(content)
                         if count % 2 == 0:
@@ -63,6 +67,7 @@ def printer(file_name, outs):
                             f.write(''*10)
                         count += 1
                 f.write('\n'+str(fea_counts))
+                f.write('\n'+str(geo_counts))
             ###
             if outs == 'out':
                 print(file_name)

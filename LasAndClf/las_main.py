@@ -19,7 +19,6 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import Lasso,LassoLars,LassoCV,LassoLarsCV
 from sklearn.model_selection import KFold
 ### mylibs
-import collectdata as cd
 import decorates as deco
 ###
 def pre_yx(n_geofeas):
@@ -53,7 +52,8 @@ def cv_yx(yx):
     for train, test in kf.split(yx):
         print("%s %s" % (train, test))
 ###
-@deco.printer(r'./Logs/haha3.test', 'out')
+logtime = time.strftime("%Y%m%d")
+@deco.printer(r'./Logs/las_'+logtime+'.txt', 'out')
 def data_lasso(n_geofeas):
     'Pre and Scaler Data'
     DS = std_yx(n_geofeas)

@@ -36,7 +36,7 @@ def printer(file_name, outs):
                 'Write Model Params'
                 count = 1
                 for param, value in model_params.items():
-                    content = '{:<15}{:^5}{:<15}'.format(str(param),'-->',str(value))
+                    content = '{:<25}{:^5}{:<15}'.format(str(param),'-->',str(value))
                     f.write(content)
                     if count % 2 == 0:
                         f.write('\n')
@@ -64,8 +64,9 @@ def printer(file_name, outs):
                         if count % 2 == 0:
                             f.write('\n')
                         else:
-                            f.write(''*10)
+                            f.write(' '*5+'|'+' '*5)
                         count += 1
+                f.write('\nSummary: \n')
                 f.write('\n'+str(fea_counts))
                 f.write('\n'+str(geo_counts))
             ###

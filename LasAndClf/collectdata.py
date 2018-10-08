@@ -23,14 +23,12 @@ class GeoData():
     'Geometry Features Data'
     def __init__(self, name):
         self.name = name
-
     'Path Settings'
     __dirpath = os.path.join(os.path.expanduser('~'), 'Desktop')
     def get_path(self):
         self.__dirpath
     def set_path(self, path):
         self.__dirpath = path
-
     'Get Csv Name'
     def __csvname(self):
         ###
@@ -38,7 +36,6 @@ class GeoData():
             if re.match(self.name, file_name):
                 csv_name = file_name
         return csv_name
-
     'Get df col=[name, feas]'
     def df(self, numbers=-1):
         csv = os.path.join(self.__dirpath, self.__csvname())
@@ -87,24 +84,27 @@ def get_data(geocomps):
     hab2 = GeoData('Hab2').df()
     hab3 = GeoData('Hab3').df()
     ch3ab = GeoData('CH3ab').df()
+    'Merge geofeas'
     allgeo = pd.merge(suf, ch3ab, on='name')
     allgeo = pd.merge(allgeo, hab2, on='name')
     allgeo = pd.merge(allgeo, hab3, on='name')
-    print(allgeo.shape)
+    'Get numbers of geofeas'
     if geocomps <= allgeo.shape[1]-1:
         geo = allgeo.iloc[:,range(1+geocomps)]
         ###
-        E_feas = ['name','mtype','mE','E_Hab2','E_Hab3','E_CH3ab']
+        E_feas = ['name','mtype','mE', 'E_ts', 'E_tsra', 'E_Hab2','E_Hab3','E_CH3ab']
         rE = EneData('rE').allE().loc[:,E_feas] # reaction Energy
         e_numbers = rE.shape[1]
         ###
         di = pd.merge(rE, geo, on='name')
         di = di.loc[di.loc[:,'mtype']!='np.nan', :]
         ###
-        di.iloc[:, range(2,e_numbers+geocomps)] = di.iloc[:, range(2,e_numbers+geocomps)].astype(float)
+        #di.iloc[:, range(2,e_numbers+geocomps)] = di.iloc[:, range(2,e_numbers+geocomps)].astype(float)
+        di.to_csv('./CH4_DataSet.csv')
         return di # [name, mtype, mE, geo ... feas]
     else:
         print('Too many features!')
 ###
 if __name__ == '__main__':
-    get_data(7068)
+    'geoFeatures Total 8454'
+    get_data(8454)

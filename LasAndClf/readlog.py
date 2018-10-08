@@ -33,7 +33,7 @@ def read_las(las, n_top):
                 else:
                     print('Wrong in %d!' %nl)
         'Get Top N'
-        if n_top <= len(feas_dict.keys()):
+        if 0 < n_top <= len(feas_dict.keys()):
             count = 0
             top_feas = {}
             for key, value in feas_dict.items():
@@ -43,9 +43,12 @@ def read_las(las, n_top):
                 else:
                     break
             return top_feas
+        elif n_top > len(feas_dict.keys()):
+            return feas_dict
         else:
-            return 0 
+            print('Wrong number!')
+            return 0
 ###
 if __name__ == '__main__':
-    las = './Logs/las_20181006.txt'
-    print(read_las(las, 20))
+    las = './Logs/las_20181008.txt'
+    print(read_las(las, 30))

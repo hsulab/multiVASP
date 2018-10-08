@@ -92,7 +92,7 @@ def get_data(geocomps):
     if geocomps <= allgeo.shape[1]-1:
         geo = allgeo.iloc[:,range(1+geocomps)]
         ###
-        E_feas = ['name','mtype','mE', 'E_ts', 'E_tsra', 'E_Hab2','E_Hab3','E_CH3ab']
+        E_feas = ['name','mtype', 'E_ts', 'E_tsra', 'mE', 'E_Hab2','E_Hab3','E_CH3ab']
         rE = EneData('rE').allE().loc[:,E_feas] # reaction Energy
         e_numbers = rE.shape[1]
         ###

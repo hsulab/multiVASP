@@ -128,6 +128,44 @@ def plt_yx(note, y, y_p):
     ax.set_title('Ea v.s. E_('+note+')')
     plt.savefig('./Logs/reg/'+note+'.png', bbox='tight')
 ###
+def best_reg():
+    def pre_yx():
+        'Get Total DataSet and Top Features'
+        cvreg_log = './Logs/cvreg/cv_20181008.txt'
+        df = pd.read_csv('./CH4_DataSet.csv', index_col = 0)
+        with open(cvreg_log, 'r') as f:
+            content = f.readlines()
+            feas_col = eval(content[-1])
+        'Get index and values'
+        yx_indexs = df.iloc[:,range(4)] # 'name', 'mtype', 'E_ts', 'E_tsra'
+        yx_vals = df.loc[:, feas_col] # E and Geo
+        'Get DataSet'
+        DS = {}
+        DS['name'] = yx_indexs.iloc[:,range(1)].values
+        DS['mtype'] = yx_indexs.iloc[:,range(1,2)].values
+        DS['target'] = df.loc[:, 'mE'].values # mE
+        DS['features'] = yx_vals.values
+        DS['fea_names'] = feas_col 
+        return DS
+    def std_yx(y, X):
+        'StandardScaler Data'
+        scaler_y = StandardScaler().fit(y)
+        y_ = scaler_y.transform(y).ravel()
+        scaler_X = StandardScaler()
+        X_ = scaler_X.fit_transform(X)
+        return y_, X_, scaler_y, scaler_X
+    DS = pre_yx()
+    y = DS['target']; X  = DS['features']
+    y, X, sy, sX = std_yx(y.reshape(-1,1), X)
+    model = LinearRegression()
+    model.fit(X, y)
+    y_p = model.predict(X)
+    content = 'MSE:' + str(metrics.mean_squared_error(y, y_p)) + '\n'
+    content += "_R2:" + str(metrics.explained_variance_score(y, y_p))
+    print(content)
+    plt_yx('best', sy.inverse_transform(y), sy.inverse_transform(y_p))
+    
+###
 if __name__ == '__main__':
     'total feastures 8454'
-    reg_yx()
+    best_reg()

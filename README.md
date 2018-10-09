@@ -1,1 +1,1 @@
-### multiVASP ###
+### Scripts for VASP ###

@@ -22,7 +22,7 @@ def create_INCAR(root_dir, old_dir, new_dir):
     mS.set_INCAR(new_INCAR, 'SYSTEM', os.path.basename(root_dir) + '_' + \
             os.path.basename(new_dir), 1)
     mS.set_INCAR(new_INCAR, 'IBRION', '5', 1)
-    mS.set_INCAR(new_INCAR, 'POTIM', '0.001', 1)
+    mS.set_INCAR(new_INCAR, 'POTIM', '0.015', 1)
 
 ###
 def create_POSCAR(root_dir, old_dir, new_dir):

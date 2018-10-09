@@ -11,8 +11,17 @@ def tuple2dict(t):
     for name, xyz in t:
         d[name] = xyz
     return d
+def sortbyaxis(d, a, r, m='T'): # d-dict a-axis r-rank m-method
+    axis = {'x':0,'y':1,'z':2}
+    msort = {'T':True, 'F':False}
+    ret = sorted(d, key=lambda e:e[1][axis[a]], reverse=msort[m])
+    return tuple2dict(ret[:r])
 ### get_layer
 def get_layer(O_dict, M_dict):
+        #Os = O_dict
+        #Ms = M_dict
+        #O1_new = sortbyaxis(sortbyaxis(Os, 'z', 2), 'x', 2)[1]
+        #O2_new = sortbyaxis(sortbyaxis(Os, 'z', 2), 'x', 2)[0]
         ## 
         O_dict_z = sorted(O_dict.items(), key=lambda e:e[1][2], reverse=True)
         # get O1 O2

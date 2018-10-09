@@ -22,8 +22,8 @@ def std_contcars(CONTCAR, group):
     ### Special edition
     if 'IrO2' in CONTCAR:
         for xyz in xyzs:
-            xyz[0] = -xyz[0]
-            xyz[1] = -xyz[1]
+            if xyz[1] > 0.75:
+                xyz[1] = xyz[1] -1
     ## round xyz by 8
     for xyz in xyzs:
         for i in range(len(xyz)):

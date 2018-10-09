@@ -32,7 +32,7 @@ def get_csv(group, para_type):
     MS_cifs_dir = os.path.join(MS_dir, group+'_cifs')
     ### csv file
     csv_name = group + '_data_' + time.strftime("%Y%m%d", time.localtime()) + '.csv'
-    csv_path = os.path.join(os.path.expanduser('~'), 'Desktop/' + csv_name)
+    csv_path = os.path.join(os.path.expanduser('~'), 'Desktop/CH4_DS/' + csv_name)
     ### pd.DataFrame
     row_index = 1
     group_df = pd.DataFrame()

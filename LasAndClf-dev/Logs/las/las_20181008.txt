@@ -1,0 +1,26 @@
+2018-10-08 13:40:54
+Cpu Time: 0.45919895
+Model Parameters: 
+alpha                     --> 0.01                     copy_X                    --> True           
+eps                       --> 1e-06                    fit_intercept             --> True           
+fit_path                  --> True                     max_iter                  --> 10000          
+normalize                 --> True                     positive                  --> False          
+precompute                --> auto                     verbose                   --> False          
+Score__R2                 --> 1.0                      
+Features and Coefficients: 
+a_O4-O5-M4_Hab2           --> 0.3115446                |     E_CH3ab                   --> 0.21979307          
+E_Hab2                    --> 0.14281663               |     a_O5-O4-M4_CH3ab          --> 0.11782855          
+a_O1-O3-M4_CH3ab          --> -0.10941758              |     d_O4-O5_Hab3              --> -0.10536607         
+a_O5-O1-O7_Hab3           --> 0.10279415               |     a_O3-O1-O6_CH3ab          --> 0.09018591          
+a_O5-M1-M2_CH3ab          --> 0.06045043               |     a_H1-O6-M3_Hab2           --> 0.05956792          
+a_O4-O7-O5_Hab3           --> -0.04883668              |     a_O4-H1-O6_Hab3           --> 0.03988385          
+a_O1-O6-M4_Hab3           --> 0.0288318                |     a_H1-O6-O8_CH3ab          --> -0.02870674         
+a_M1-H1-M4_Hab2           --> -0.02438543              |     a_O8-O4-M2_CH3ab          --> 0.00498884          
+a_O5-O3-O8_Hab3           --> 0.00232625               |     a_O6-O1-O3_CH3ab          --> 1.383e-05           
+a_M2-M1-O5_CH3ab          --> 2.54e-06                 |     a_M4-O4-O5_CH3ab          --> 2.31e-06            
+a_M4-H1-M1_Hab2           --> -1.45e-06                |     a_M3-O6-H1_Hab2           --> 1.01e-06            
+
+Summary: 
+
+{'suf': 0, 'CH3ab': 10, 'Hab2': 6, 'Hab3': 6}
+{'E': 2, 'd': 1, 'a': 19, 'h': 0}

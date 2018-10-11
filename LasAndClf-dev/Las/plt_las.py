@@ -13,10 +13,10 @@ import time
 import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt  
-### scilibs
+'sklearn'
 import numpy as np
 import pandas as pd
-'sklearn'
+#'sklearn'
 from sklearn import metrics
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import GridSearchCV
@@ -26,14 +26,20 @@ import pickle
 ### mylibs
 import decorates as deco
 ###
-def plt_las():
+def load_GsLas():
     'Load Pickle'
     print('Loading Pickle...')
-    with open('./Log/cvlas.pk', 'rb') as f:
-        gs_las = pickle.load(f)
-    results = gs_las.cv_results_
-    scoring = gs_las.scorer_
+    with open('./Log/GsLas.pk', 'rb') as f:
+        GsLas = pickle.load(f)
 
+    'Prepare Results'
+    Gs_results = GsLas.cv_results_
+    Gs_results['scorers'] = GsLas.scorer_
+    return Gs_results
+
+def plt_GsLas():
+    'Get Results'
+    results = load_GsLas()
     'Plt Learning Curve'
     print('Plotting Learning Curve...')
     plt.figure(figsize=(4, 4)) # figsize in inch, 1inch=2.54cm
@@ -47,7 +53,7 @@ def plt_las():
     # Get the regular numpy array from the MaskedArray
     X_axis = np.array(results['param_alpha'].data, dtype=float)
     ''
-    for scorer, color in zip(sorted(scoring), ['g', 'k']): # scorer
+    for scorer, color in zip(sorted(results['scorers']), ['g', 'k']): # scorer
         for sample, style in (('train', '--'), ('test', '-')): # sample
             sample_score_mean = results['mean_%s_%s' % (sample, scorer)] # score mean
             sample_score_std = results['std_%s_%s' % (sample, scorer)] # score std
@@ -74,4 +80,4 @@ def plt_las():
     plt.savefig('./Log/LearnCurve.png', tight='bbox')
 
 if __name__ == '__main__':
-    plt_las()
+    plt_GsLas()

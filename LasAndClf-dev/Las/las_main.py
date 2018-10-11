@@ -74,7 +74,7 @@ def las_yx():
 
     'Model Save'
     print('Saving Model...')
-    with open(r'./Log/cvlas.pk', 'wb') as f:
+    with open(r'./Log/GsLas.pk', 'wb') as f:
         pickle.dump(gs_las, f)
 ###
 if __name__ == '__main__':

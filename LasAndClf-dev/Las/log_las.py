@@ -74,7 +74,7 @@ def load_las():
     'Dump Pickle'
     print('Dumping LassoPickle...')
     laspk = (params, fc_dict)
-    with open('./Log/las.pk', 'wb') as f:
+    with open('./Log/BestLas.pk', 'wb') as f:
         pickle.dump(laspk, f)
 ###
 if __name__ == '__main__':

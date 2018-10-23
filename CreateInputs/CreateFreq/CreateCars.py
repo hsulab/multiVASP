@@ -24,9 +24,9 @@ def create_INCAR(root_dir, old_dir, new_dir, ibrion_num):
     old_INCAR = os.path.join(old_dir, 'INCAR')
     new_INCAR = os.path.join(new_dir, 'INCAR')
     shutil.copyfile(old_INCAR, new_INCAR)
-    mS.set_param(new_INCAR, 'SYSTEM', os.path.basename(root_dir) + '_' + \
-            os.path.basename(new_dir), 1)
-    mS.set_param(new_INCAR, 'IBRION', ibrion_num, 1)
+    mS.set_param(new_INCAR, 'SYSTEM', 'SYSTEM=' + os.path.basename(root_dir) + \
+            '_' + os.path.basename(new_dir))
+    mS.set_param(new_INCAR, 'IBRION', 'IBRION='+str(ibrion_num))
 ###
 def create_POSCAR(root_dir, old_dir, new_dir):
     content = []

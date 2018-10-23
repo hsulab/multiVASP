@@ -14,7 +14,7 @@ def timer(func):
          start = time.time()
          ret = func(*args, **kwargs)
          end = time.time()
-         print(end-start)
+         print('TakeTime: ', round(end-start, 8), 's')
          return ret #2
      return inner
 ###
@@ -80,8 +80,9 @@ def printer(file_name, outs):
         return writer
     return logger
 ###
+@timer
 def main():
-    print()
+    print('test')
 ###
 if __name__ == '__main__':
     main()

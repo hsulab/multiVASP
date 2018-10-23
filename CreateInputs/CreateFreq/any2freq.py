@@ -75,6 +75,8 @@ def prepare_freq(finished_dirs, reaction):
         if os.path.exists(target):
             if os.path.exists(printout):
                 content += '--> print-out exists.\n'
+                print(content)
+                return 0
             else:
                 'Remove existed and uncalculated dir'
                 content += '--> remove old files and create new.\n'

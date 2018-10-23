@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #########################################################################
-# File Name: main_lasso.py
+# File Name: las_main.py
 # Author: jyxu
 # mail: ahcigar@foxmail.com
 # Created Time: 六  9/22 22:34:17 2018

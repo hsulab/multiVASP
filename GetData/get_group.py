@@ -60,7 +60,7 @@ def get_group(H_dict, C_dict, group):
     ###
     if group == 'Hab2' or group == 'Hab3':
         group_dict = get_Hab(H_dict)
-    elif group == 'CH3ab':
+    elif group == 'CH3ab' or group == 'CH3ab2':
         group_dict = get_CH3(H_dict, C_dict)
     elif group == 'ts' or group == 'fs' or group == 'tsra':
         group_dict = get_CH4(H_dict, C_dict)

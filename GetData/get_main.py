@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #########################################################################
-# File Name: get_CH3ab_paras.py
+# File Name: get_main.py
 # Author: jyxu
 # mail: ahcigar@foxmail.com
 # Created Time: 9/10-2018

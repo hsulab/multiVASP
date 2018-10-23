@@ -7,6 +7,7 @@
 # Created Time: 二  5/ 8 09:19:05 2018
 #########################################################################
 import os
+import sys
 import time
 import numpy as np
 import pandas as pd
@@ -44,6 +45,7 @@ def E2rE(csv_file):
     E_Hab2 = []
     E_Hab3 = []
     E_CH3ab = []
+    E_CH3ab2 = []
     E_ts = []
     E_tsra = []
     E_fs = []
@@ -53,11 +55,13 @@ def E2rE(csv_file):
     Hab2_E = np.array(df['Hab2_E'])
     Hab3_E = np.array(df['Hab3_E'])
     CH3ab_E = np.array(df['CH3ab_E'])
+    CH3ab2_E = np.array(df['CH3ab2_E'])
     ts_E = np.array(df['ts_E'])
     tsra_E = np.array(df['tsra_E'])
     fs_E = np.array(df['fs_E'])
     fsra_E = np.array(df['fsra_E'])
     for i in df.index:
+        'Hab'
         if Hab2_E[i] != 'np.nan':
             E_Hab2.append(float(round(float(Hab2_E[i])-float(suf_E[i])-E_H, 8)))
         else:
@@ -66,10 +70,16 @@ def E2rE(csv_file):
             E_Hab3.append(float(round(float(Hab3_E[i])-float(suf_E[i])-E_H, 8)))
         else:
             E_Hab3.append('np.nan')
+        'CH3ab'
         if CH3ab_E[i] != 'np.nan':
             E_CH3ab.append(float(round(float(CH3ab_E[i])-float(suf_E[i])-E_CH3, 8)))
         else:
             E_CH3ab.append('np.nan')
+        if CH3ab2_E[i] != 'np.nan':
+            E_CH3ab2.append(float(round(float(CH3ab2_E[i])-float(suf_E[i])-E_CH3, 8)))
+        else:
+            E_CH3ab2.append('np.nan')
+        'ts'
         if ts_E[i] != 'np.nan':
             E_ts.append(float(round(float(ts_E[i])-float(suf_E[i])-E_CH4, 8)))
         else:
@@ -78,6 +88,7 @@ def E2rE(csv_file):
             E_tsra.append(float(round(float(tsra_E[i])-float(suf_E[i])-E_CH4, 8)))
         else:
             E_tsra.append('np.nan')
+        'fs'
         if fs_E[i] != 'np.nan':
             E_fs.append(float(round(float(fs_E[i])-float(suf_E[i])-E_CH4, 8)))
         else:
@@ -88,19 +99,23 @@ def E2rE(csv_file):
             E_fsra.append('np.nan') 
     ###
     new_df = pd.DataFrame({'name': names, 'cell': cells, 'dop': dops, \
-            'E_Hab2': E_Hab2, 'E_Hab3': E_Hab3, 'E_CH3ab': E_CH3ab, 'E_ts': E_ts, 'E_tsra': E_tsra, 'E_fs': E_fs, 'E_fsra': E_fsra})
+            'E_Hab2': E_Hab2, 'E_Hab3': E_Hab3, 'E_CH3ab': E_CH3ab, 'E_CH3ab2': E_CH3ab2, \
+            'E_ts': E_ts, 'E_tsra': E_tsra, 'E_fs': E_fs, 'E_fsra': E_fsra})
     new_df = new_df.sort_values(by=['name', 'cell', 'dop'], ascending=True)
     new_df = new_df.reset_index(drop=True)
-    ###
-
     ###
     rE_csv_name = 'rE_data_' + time.strftime("%Y%m%d", time.localtime()) + '.csv'
     rE_csv = os.path.join(os.path.expanduser('~'), 'Desktop/'+rE_csv_name)
     new_df.to_csv(rE_csv, columns=['name', 'cell', 'dop', 'E_Hab2', 'E_Hab3', 'E_CH3ab', 'E_ts', 'E_tsra', 'E_fs', 'E_fsra'])
 ###
 def main():
-    csv_file = os.path.join(os.path.expanduser('~'), 'Desktop/CH4_DS/E_data_20180924.csv')
-    E2rE(csv_file)
+    if len(sys.argv) == 2:
+        E_date = sys.argv[1]
+        csv_file = os.path.join(os.path.expanduser('~'), 'Desktop/CH4_DS/E_data_2018'+E_date+'.csv')
+        E2rE(csv_file)
+    else:
+        print('E2rE.py [Date of EnergyFile]')
+
 ###
 if __name__ == '__main__':
     main()

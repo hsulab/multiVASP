@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #########################################################################
-# File Name: plt_las.py
+# File Name: LearningCurve.py
 # Author: jyxu
 # mail: ahcigar@foxmail.com
 # Created Time: 四 10/11 14:09:19 2018
 #########################################################################
-import  sys
-sys.path.append('..')
+import sys
 import time
 ### plot
 import matplotlib
@@ -16,14 +15,10 @@ import matplotlib.pyplot as plt
 'sklearn'
 import numpy as np
 import pandas as pd
-#'sklearn'
-from sklearn import metrics
-from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import GridSearchCV
-from sklearn.linear_model import Lasso,LassoLars,LassoCV,LassoLarsCV
 ''
 import pickle
 ### mylibs
+sys.path.append('../..')
 import decorates as deco
 ###
 def load_GsLas():

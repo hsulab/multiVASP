@@ -1,0 +1,12 @@
+Reg Type: ts1Sample Points: 43
+mE = 0.3724 x CH3+H_2 + 2.0
+_R2:0.6462     MSE:0.0745
+Reg Type: ts2Sample Points: 43
+mE = 0.3689 x CH3+H_3 + 2.0
+_R2:0.633     MSE:0.0773
+Reg Type: tsra1Sample Points: 25
+mE = 0.3853 x H_2 + 3.0
+_R2:0.4325     MSE:0.1133
+Reg Type: tsra2Sample Points: 25
+mE = 0.3706 x H_3 + 3.0
+_R2:0.416     MSE:0.1166

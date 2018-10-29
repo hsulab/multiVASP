@@ -6,9 +6,9 @@ DataOperators.py
 
 LinearMethods.py
     Create LeasrSqure, Lasso, Ridge Models with GridSearch.
-    --> Dump the LSR.pk, GsLas.pk, GsRid.pk, which is the GS process.
+    --> Dump the lsr.pk, las.pk, rid.pk, which is the GS process.
 
-DumpPKs.py
+PreSelection.py
     Pickle the LinearMethods results.
     --> Dump the BestLas.pk, BestRid.pk
 
@@ -19,7 +19,7 @@ FeaSelection.py
 LearningCurve.py
     Plot the learning curve of LinearMethods.
 
-BarChart.py
+Charts.py
     Plot the Bar Chart of the features of the best combination.
 
 !Log...

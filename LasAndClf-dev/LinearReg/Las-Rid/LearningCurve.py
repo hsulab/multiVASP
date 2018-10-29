@@ -35,6 +35,7 @@ def load_GsLas():
 def plt_GsLas():
     'Get Results'
     results = load_GsLas()
+
     'Plt Learning Curve'
     print('Plotting Learning Curve...')
     plt.figure(figsize=(4, 4)) # figsize in inch, 1inch=2.54cm

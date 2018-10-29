@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #########################################################################
-# File Name: las_main.py
+# File Name: LinearMethods.py
 # Author: jyxu
 # mail: ahcigar@foxmail.com
 # Created Time: 六  9/22 22:34:17 2018
@@ -46,11 +46,19 @@ def std_yx(y, X):
 
 logtime = time.strftime("%Y%m%d")
 @deco.timer
-def LinearMethod(method):
+def LinearMethod(method, dstype):
     'Pre Data'
     print('Preprocessing Data...')
-    DS = GetDS()
+    DS = GetDS(dstype)
     y = DS['target']; X = DS['features']
+    print('Here are ', len(y), ' samples.')
+    ts=0; tsra=0
+    for m in DS['Etype']:
+        if m == 'ts':
+            ts += 1
+        elif m == 'tsra':
+            tsra += 1
+    print('TS: ', ts, ' TSra: ', tsra)
 
     'Scaler Data'
     print('StandScalering Data...')
@@ -63,15 +71,8 @@ def LinearMethod(method):
         lsr = LinearRegression(fit_intercept=True, normalize=False, n_jobs=-1)
         # run model
         lsr.fit(X, y)
-
-        'Pre Check'
-        for coef in lsr.coef_:
-            if coef > 0:
-                print(coef)
-
-        'Model Save'
-        print('Saving LeastSqure Model...')
-        pkdump('LSR.pk', lsr)
+        
+        return lsr
 
     'Lasso Regression GridSearch'
     def LassoReg(y, X):
@@ -87,18 +88,7 @@ def LinearMethod(method):
                 n_jobs=-1, return_train_score=True)
         gs_las.fit(X, y)
 
-        'Pre Check'
-        coefs = gs_las.best_estimator_.coef_ 
-        coef_max = max(coefs)
-        coef_min = min(coefs)
-        print(coef_max)
-        print(math.ceil(coef_max))
-        print(coef_min)
-        print(int(coef_min))
-
-        'Model Save'
-        print('Saving Lasso Model...')
-        pkdump('GsLas.pk', gs_las)
+        return gs_las
 
     'Ridge Regression GridSearch'
     def RidgeReg(y, X):
@@ -114,25 +104,25 @@ def LinearMethod(method):
                 n_jobs=-1, return_train_score=True)
         gs_rid.fit(X, y)
 
-        'Pre Check'
-        for coef in gs_rid.best_estimator_.coef_:
-            if coef > 0:
-                print(coef)
-
-        'Model Save'
-        print('Saving Ridge Model...')
-        pkdump('GsRid.pk', gs_rid)
+        return gs_rid
 
     if method == 'lsr':
-        LeastSqure(y, X)
+        ret = LeastSqure(y, X)
     elif method == 'las':
-        LassoReg(y, X)
+        ret = LassoReg(y, X)
     elif method == 'rid':
-        RidgeReg(y, X)
+        ret = RidgeReg(y, X)
     else:
         print('Wrong Case.')
+        return 0
 
-###
-if __name__ == '__main__':
+    'Model Save'
+    print('Saving '+method+' Model...')
+    pkdump(method+'_'+dstype+'.pk', ret)
+
+def main():
     'total feastures 8454'
-    LinearMethod('las')
+    LinearMethod('las', 'Ea')
+
+if __name__ == '__main__':
+    main()

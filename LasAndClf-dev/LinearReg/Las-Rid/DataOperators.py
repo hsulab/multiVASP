@@ -6,24 +6,46 @@
 # mail: ahcigar@foxmail.com
 # Created Time: 六 10/27 21:07:14 2018
 #########################################################################
+import matplotlib
+matplotlib.use('TkAgg')
+import matplotlib.pyplot as plt
+
 import pandas as pd
 import pickle
 
-def GetDS():
+def GetDS(dstype, n_feas='all'):
     'Get Data and Index'
     df = pd.read_csv('../../CH4_DataSet.csv', index_col=0)
-    # 'name', 'mtype', 'E_ts', 'E_tsra'
-    indexs_cols = df.iloc[:,range(4)]
-    # Ea: min(E_ts, E_tsra), E_Hab2, E_Hab3, E_CH3ab, E_CH3ab2(wait), Geos
-    vals_cols = df.iloc[:,range(4,len(df.columns))]
+    if dstype == 'Ea':
+        df = df
+        En = 4
+    elif dstype == 'Ets':
+        df = df.loc[df.loc[:,'E_ts']!='np.nan', :]
+        En = 2
+    elif dstype == 'Etsra':
+        df = df.loc[df.loc[:,'E_tsra']!='np.nan', :]
+        En = 3
+
+    ''
+    # 'name', 'mtype', 'E_ts', 'E_tsra', Ea: min(E_ts, E_tsra)
+    indexs_cols = df.iloc[:,range(5)]
+    # E_Hab3, E_CH3ab, Geos
+    if n_feas == 'all':
+        vals_cols = df.iloc[:,range(5,len(df.columns))]
+    else:
+        vals_cols = df.loc[:, n_feas]
 
     'Get DataSet'
     DS = {}
-    DS['target'] = vals_cols.iloc[:,range(1)].values
-    DS['features'] = vals_cols.iloc[:,range(1,len(vals_cols.columns))].values
-    DS['fea_names'] = vals_cols.columns[1:].values
+    DS['Etype'] = indexs_cols.loc[:, 'mtype'].values
+    DS['target'] = indexs_cols.iloc[:, En].values.reshape(-1,1)
+    DS['features'] = vals_cols.values
+    DS['fea_names'] = vals_cols.columns.values
+
     return DS
 
+def pltsave(figname):
+    plt.savefig('./Pics/'+figname, tight='bbox')
 
 def pkload(pk):
     'Load Pickle'

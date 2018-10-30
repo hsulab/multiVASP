@@ -23,12 +23,14 @@ class GeoData():
     'Geometry Features Data'
     def __init__(self, name):
         self.name = name
+
     'Path Settings'
     __dirpath = os.path.join(os.path.expanduser('~'), 'Desktop/CH4_DS')
     def get_path(self):
         self.__dirpath
     def set_path(self, path):
         self.__dirpath = path
+
     'Get Csv Name'
     def __csvname(self):
         ###
@@ -77,34 +79,42 @@ class EneData(GeoData):
         df.loc[:, 'mE'] = mE
         return df
 
-###
 def get_data(geocomps):
     'Get Geo DataFrame'
-    suf = GeoData('suf').df()
-    hab2 = GeoData('Hab2').df()
-    hab3 = GeoData('Hab3').df()
-    ch3ab = GeoData('CH3ab').df()
+    print('Load Data...')
+    suf = GeoData('suf').df() # d 66 a 1320
+    hab3 = GeoData('Hab3').df() # d 78 a 1716
+    ch3ab = GeoData('CH3ab').df() # d 120 a 3360
+
     'Merge geofeas'
     allgeo = pd.merge(suf, ch3ab, on='name')
-    allgeo = pd.merge(allgeo, hab2, on='name')
     allgeo = pd.merge(allgeo, hab3, on='name')
+    print('This set has ', allgeo.shape[0], 'samples.')
+    print('This set has ', allgeo.shape[1]-1, 'features.')
+
     'Get numbers of geofeas'
     if geocomps <= allgeo.shape[1]-1:
+        'Merge Data.'
+        print('Merge Data...')
         geo = allgeo.iloc[:,range(1+geocomps)]
         ###
-        E_feas = ['name','mtype', 'E_ts', 'E_tsra', 'mE', 'E_Hab2','E_Hab3','E_CH3ab']
-        rE = EneData('rE').allE().loc[:,E_feas] # reaction Energy
-        e_numbers = rE.shape[1]
+        E_feas = ['name', 'mtype', 'E_ts', 'E_tsra', 'mE', 'E_Hab3', 'E_CH3ab']
+        fE = EneData('fE').allE().loc[:, E_feas] # reaction Energy
+        e_numbers = fE.shape[1]
         ###
-        di = pd.merge(rE, geo, on='name')
-        di = di.loc[di.loc[:,'mtype']!='np.nan', :]
-        ###
-        #di.iloc[:, range(2,e_numbers+geocomps)] = di.iloc[:, range(2,e_numbers+geocomps)].astype(float)
-        di.to_csv('./CH4_DataSet.csv')
+        di = pd.merge(fE, geo, on='name')
+        new_di = di.loc[di.loc[:,'mtype']!='np.nan', :]
+        new_di = new_di.loc[di.loc[:,'name']!='pureMoO2', :] # CH3ab wrong
+        print('Mix set has ', new_di.shape[0], 'samples.')
+        print('Mix set has ', new_di.shape[1]-5, 'features.')
+
+        'Save data -> ./CH4_DataSet.csv'
+        print('Save data -> ./CH4_DataSet.csv')
+        new_di.to_csv('./CH4_DataSet.csv')
         return di # [name, mtype, mE, geo ... feas]
     else:
         print('Too many features!')
-###
+
 if __name__ == '__main__':
-    'geoFeatures Total 8454'
-    get_data(8454)
+    'geoFeatures Total 6660'
+    get_data(6660)

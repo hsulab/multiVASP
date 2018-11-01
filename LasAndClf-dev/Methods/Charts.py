@@ -145,8 +145,7 @@ def plt_curve(pkfile):
     print('Success...')
 
 def main():
-    #plt_curve('Best_las_Ea.pk')
-    plt_bep()
+    plt_curve('Best_las_Ea.pk')
 
 if __name__ == '__main__':
     main()

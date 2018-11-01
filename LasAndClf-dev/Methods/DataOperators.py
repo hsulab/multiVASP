@@ -10,6 +10,7 @@ import matplotlib
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 
+import numpy as np
 import pandas as pd
 import pickle
 
@@ -38,8 +39,8 @@ def GetDS(dstype, n_feas='all'):
     'Get DataSet'
     DS = {}
     DS['Etype'] = indexs_cols.loc[:, 'mtype'].values
-    DS['target'] = indexs_cols.iloc[:, En].values.reshape(-1,1)
-    DS['features'] = vals_cols.values
+    DS['target'] = indexs_cols.iloc[:, En].values.reshape(-1,1).astype(np.float64)
+    DS['features'] = vals_cols.values.astype(np.float64)
     DS['fea_names'] = vals_cols.columns.values
 
     return DS

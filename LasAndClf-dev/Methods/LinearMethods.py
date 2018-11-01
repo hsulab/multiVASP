@@ -8,7 +8,7 @@
 #########################################################################
 'System'
 import  sys
-sys.path.append('../..')
+sys.path.append('..')
 import time
 
 'Plot'
@@ -46,7 +46,8 @@ def std_yx(y, X):
 
 logtime = time.strftime("%Y%m%d")
 @deco.timer
-def LinearMethod(method, dstype):
+def LinearMethod(method, dstype, cvtest=3, ran=None):
+    print('-'*20)
     'Pre Data'
     print('Preprocessing Data...')
     DS = GetDS(dstype)
@@ -64,7 +65,7 @@ def LinearMethod(method, dstype):
     print('StandScalering Data...')
     y, X, sy, sX = std_yx(y, X)
 
-    def LeastSqure(y, X):
+    def LeastSqure(y, X):# {{{
         'LeastSqure Regression'
         print('Running LeastSqure Regression...')
         # set params
@@ -72,20 +73,20 @@ def LinearMethod(method, dstype):
         # run model
         lsr.fit(X, y)
         
-        return lsr
+        return lsr# }}}
 
     'Lasso Regression GridSearch'
     def LassoReg(y, X):
         print('Running Lasso Regression GridSearch...')
         # set gridsearch parameters
-        las = Lasso(fit_intercept=True, normalize=False, max_iter=1000)
+        las = Lasso(fit_intercept=True, normalize=False, \
+                max_iter=1000, random_state=ran, selection='random')
         param_grid = {'alpha':np.linspace(0.01,1,100)}
-        scoring = {'R^2':'explained_variance', \
-                'MSE':metrics.make_scorer(metrics.mean_squared_error)}
+        scoring = {'R2':'r2', 'MSE':'neg_mean_squared_error'}
         # run gs
         gs_las = GridSearchCV(las, param_grid=param_grid, \
-                scoring=scoring, cv=3, refit='R^2', \
-                n_jobs=-1, return_train_score=True)
+                scoring=scoring, cv=cvtest, refit='MSE', \
+                n_jobs=-1, iid=False, return_train_score=True)
         gs_las.fit(X, y)
 
         return gs_las
@@ -100,7 +101,7 @@ def LinearMethod(method, dstype):
                 'MSE':metrics.make_scorer(metrics.mean_squared_error)}
         # run gs
         gs_rid = GridSearchCV(rid, param_grid=param_grid, \
-                scoring=scoring, cv=3, refit='R^2', \
+                scoring=scoring, cv=cvtest, refit='R^2', \
                 n_jobs=-1, return_train_score=True)
         gs_rid.fit(X, y)
 
@@ -117,8 +118,9 @@ def LinearMethod(method, dstype):
         return 0
 
     'Model Save'
-    print('Saving '+method+' Model...')
+    print('Saving '+method+' Model... --> %s' %(method+'_'+dstype+'.pk'))
     pkdump(method+'_'+dstype+'.pk', ret)
+    print('-'*20)
 
 def main():
     'total feastures 8454'

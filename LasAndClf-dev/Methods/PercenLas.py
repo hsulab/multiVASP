@@ -253,7 +253,7 @@ if __name__ == '__main__':
     Etype = 'Etsra'
 
     'PercenLas-Params'
-    cv_splits = 5; cv_repeats = 5
+    cv_splits = 5; cv_repeats = 1
     test_alphas = np.linspace(0.01, 0.1, 10)
     print('<- Percentile-LASSO Setting ->')
     print('K-Folds Setting --> splits: %d repeats: %d' %(cv_splits, cv_repeats))
@@ -263,6 +263,7 @@ if __name__ == '__main__':
     best_alphas = PercenLas(Etype, cv_splits, cv_repeats, \
             test_alphas)
 
+def sds():
     'ThetaSelection-Params'
     cv_splits = 5; cv_repeats = 1
     test_thetas = np.linspace(0.50, 1, 11)

@@ -19,13 +19,13 @@ def GetDS(dstype, n_feas='all'):
     df = pd.read_csv('../Data/CH4_DataSet.csv', index_col=0)
     if dstype == 'Ea':
         df = df
-        En = 'Ea'
+        En = 4
     elif dstype == 'Ets':
         df = df.loc[df.loc[:,'E_ts']!='np.nan', :]
-        En = 'E_ts'
+        En = 2
     elif dstype == 'Etsra':
         df = df.loc[df.loc[:,'E_tsra']!='np.nan', :]
-        En = 'E_tsra'
+        En = 3
 
     ''
     # 'name', 'mtype', 'E_ts', 'E_tsra', Ea: min(E_ts, E_tsra)
@@ -39,7 +39,7 @@ def GetDS(dstype, n_feas='all'):
     'Get DataSet'
     DS = {}
     DS['Etype'] = indexs_cols.loc[:, 'mtype'].values
-    DS['target'] = indexs_cols.loc[:, En].values.reshape(-1,1).astype(np.float64)
+    DS['target'] = indexs_cols.iloc[:, En].values.reshape(-1,1).astype(np.float64)
     DS['features'] = vals_cols.values.astype(np.float64)
     DS['fea_names'] = vals_cols.columns.values
 

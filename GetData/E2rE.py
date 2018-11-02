@@ -38,28 +38,19 @@ def E2rE(csv_file):
     ###
     names = np.array(df['name'])
     ###
-    E_CH4 = -24.07015819
-    E_H = -1.11501367
-    E_CH3 = -18.21859244
+    E_CH4 = -24.07015819;
+    E_H = -1.11501367; E_CH3 = -18.21859244
     ###
-    E_Hab2 = []
-    E_Hab3 = []
-    E_CH3ab = []
-    E_CH3ab2 = []
-    E_ts = []
-    E_tsra = []
-    E_fs = []
-    E_fsra = []
+    E_Hab2 = []; E_Hab3 = []
+    E_CH3ab = []; E_CH3ab2 = []
+    E_ts = []; E_tsra = []
+    E_fs = []; E_fsra = []
     ##
-    suf_E = np.array(df['suf_E'])
-    Hab2_E = np.array(df['Hab2_E'])
-    Hab3_E = np.array(df['Hab3_E'])
-    CH3ab_E = np.array(df['CH3ab_E'])
-    CH3ab2_E = np.array(df['CH3ab2_E'])
-    ts_E = np.array(df['ts_E'])
-    tsra_E = np.array(df['tsra_E'])
-    fs_E = np.array(df['fs_E'])
-    fsra_E = np.array(df['fsra_E'])
+    suf_E = np.array(df['suf_E']);
+    Hab2_E = np.array(df['Hab2_E']); Hab3_E = np.array(df['Hab3_E'])
+    CH3ab_E = np.array(df['CH3ab_E']); CH3ab2_E = np.array(df['CH3ab2_E'])
+    ts_E = np.array(df['ts_E']); tsra_E = np.array(df['tsra_E'])
+    fs_E = np.array(df['fs_E']); fsra_E = np.array(df['fsra_E'])
     for i in df.index:
         'Hab'
         if Hab2_E[i] != 'np.nan':
@@ -105,8 +96,9 @@ def E2rE(csv_file):
     new_df = new_df.reset_index(drop=True)
     ###
     rE_csv_name = 'rE_data_' + time.strftime("%Y%m%d", time.localtime()) + '.csv'
-    rE_csv = os.path.join(os.path.expanduser('~'), 'Desktop/'+rE_csv_name)
-    new_df.to_csv(rE_csv, columns=['name', 'cell', 'dop', 'E_Hab2', 'E_Hab3', 'E_CH3ab', 'E_ts', 'E_tsra', 'E_fs', 'E_fsra'])
+    rE_csv = os.path.join(os.path.expanduser('~'), 'Desktop/CH4_DS/'+rE_csv_name)
+    new_df.to_csv(rE_csv, columns=['name', 'cell', 'dop', 'E_Hab2', 'E_Hab3', 'E_CH3ab', 'E_CH3ab2', \
+            'E_ts', 'E_tsra', 'E_fs', 'E_fsra'])
 ###
 def main():
     if len(sys.argv) == 2:
@@ -115,7 +107,6 @@ def main():
         E2rE(csv_file)
     else:
         print('E2rE.py [Date of EnergyFile]')
-
 ###
 if __name__ == '__main__':
     main()

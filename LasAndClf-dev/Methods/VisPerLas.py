@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #########################################################################
-# File Name: PostPerLas.py
+# File Name: VisPerLas.py
 # Author: jyxu
 # mail: ahcigar@foxmail.com
 # Created Time: 四 11/ 1 23:01:45 2018
@@ -10,7 +10,7 @@
 import os
 
 import numpy as np
-from scipy.interpolate import spline
+from scipy import interpolate
 
 'Plot'
 import matplotlib
@@ -58,20 +58,21 @@ def GetAN(out):
     x = np.array(x)
     y = np.array(y)
 
-    x_new = np.linspace(x.min(), x.max(), 500)
-    y_smooth = spline(x, y, x_new)
+    x_new = np.linspace(x.min(), x.max(), 200)
+    smooth = interpolate.interp1d(x, y, kind = 3)
+    y_smooth = smooth(x_new)
 
     return BestAlpha, BestN, alphas, Ns, x, y, x_new, y_smooth
 
-def PltCurve():
-    a, n, alphas, Ns, x, y, x_s, y_s = GetAN('Etsra_printout')
+def PltCurve(outs):
+    a, n, alphas, Ns, x, y, x_s, y_s = GetAN(outs)
 
     plt.figure(figsize=(16,6))
     plt.tight_layout(pad=2.0, w_pad=2.0, h_pad=2.0)
     plt.subplots_adjust(left=None, bottom=None, right=None, top=None, \
             wspace=None, hspace=0.4)
 
-    plt.suptitle('LASSO for Radical Pathway', fontsize=16)
+    plt.suptitle('LASSO for Surface Pathway', fontsize=16)
 
     'Learning Curve'
     ax1 = plt.subplot(121)
@@ -84,7 +85,7 @@ def PltCurve():
     ax1.plot(x_s, y_s)
 
     ax1.plot([a,]*2, [0, n], linestyle='-.', color='b', marker='x')
-    ax1.annotate('alpha=%0.3f, n=%d' %(a, n), (a+0.01, n-1))
+    ax1.text(0.10,70, 'alpha=%0.3f, n=%d' %(a, n))
 
     'alphas'
     ax2 = plt.subplot(222)
@@ -100,9 +101,7 @@ def PltCurve():
     ax3.set_ylabel('Frequency', fontsize=10)
     ax3.hist(Ns)
 
-    pltsave('PerLas_Etsra.png')
-
-
+    pltsave('PerLas_'+outs+'.png')
 
 if __name__ == '__main__':
-    PltCurve()
+    PltCurve('Ets1pppp')

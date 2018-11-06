@@ -1,6 +1,18 @@
 --------------------
-Fold <4>
-LasCV --> BestAlpha: 0.03
+Fold <3>
+LasCV --> BestAlpha: 0.05
 OneShot --> BestR2Score: 0.99
 OneShot --> N_PosCoefs: 12
+--------------------
+--------------------
+Fold <4>
+LasCV --> BestAlpha: 0.02
+OneShot --> BestR2Score: 0.99
+OneShot --> N_PosCoefs: 13
+--------------------
+--------------------
+Fold <5>
+LasCV --> BestAlpha: 0.02
+OneShot --> BestR2Score: 0.99
+OneShot --> N_PosCoefs: 13
 --------------------

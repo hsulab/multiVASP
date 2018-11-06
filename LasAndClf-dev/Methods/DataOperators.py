@@ -16,10 +16,10 @@ import pickle
 
 def GetDS(dstype, n_feas='all'):
     'Get Data and Index'
-    df = pd.read_csv('../Data/CH4_DataSet.csv', index_col=0)
+    df = pd.read_csv('../Data/CH4_DataSet_dah.csv', index_col=0)
     if dstype == 'Ea':
         df = df
-        En = 'Ea'
+        En = 'mE'
     elif dstype == 'Ets':
         df = df.loc[df.loc[:,'E_ts']!='np.nan', :]
         En = 'E_ts'
@@ -39,7 +39,7 @@ def GetDS(dstype, n_feas='all'):
     'Get DataSet'
     DS = {}
     DS['Etype'] = indexs_cols.loc[:, 'mtype'].values
-    DS['target'] = indexs_cols.loc[:, En].values.reshape(-1,1).astype(np.float64)
+    DS['target'] = indexs_cols.loc[:,En].values.reshape(-1,1).astype(np.float64)
     DS['features'] = vals_cols.values.astype(np.float64)
     DS['fea_names'] = vals_cols.columns.values
 
@@ -60,4 +60,4 @@ def pkdump(pk, ret):
         pickle.dump(ret, f)
 
 if __name__ == '__main__':
-    GetDS()
+    GetDS('Ea')

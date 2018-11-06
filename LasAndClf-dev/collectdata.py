@@ -82,9 +82,9 @@ class EneData(GeoData):
 def get_data(geocomps):
     'Get Geo DataFrame'
     print('Load Data...')
-    suf = GeoData('suf').df() # d 66 a 1320
-    hab3 = GeoData('Hab3').df() # d 78 a 1716
-    ch3ab = GeoData('CH3ab').df() # d 120 a 3360
+    suf = GeoData('suf').df() # d 66 a 660
+    hab3 = GeoData('Hab3').df() # d 78 a 858 all
+    ch3ab = GeoData('CH3ab').df() # d 120 a 1680 all 1800
 
     'Merge geofeas'
     allgeo = pd.merge(suf, ch3ab, on='name')
@@ -117,4 +117,4 @@ def get_data(geocomps):
 
 if __name__ == '__main__':
     'geoFeatures Total 6660'
-    get_data(6660)
+    get_data(21642)

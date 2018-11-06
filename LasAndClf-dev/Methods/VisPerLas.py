@@ -44,8 +44,6 @@ def GetAN(out):
     a_n = {}
     for a, N in zip(alphas, Ns):
         a_n[a] = N
-    
-    BestN = a_n[BestAlpha]
 
     a_n_tuple = sorted(a_n.items(), key= lambda d:d[0])
 
@@ -61,6 +59,8 @@ def GetAN(out):
     x_new = np.linspace(x.min(), x.max(), 200)
     smooth = interpolate.interp1d(x, y, kind = 3)
     y_smooth = smooth(x_new)
+
+    BestN = int(smooth(BestAlpha))
 
     return BestAlpha, BestN, alphas, Ns, x, y, x_new, y_smooth
 
@@ -82,10 +82,10 @@ def PltCurve(outs):
     ax1.set_xlim(0, max(alphas)+0.01)
     ax1.set_ylim(0, max(Ns)+1)
     ax1.scatter(x, y, edgecolor=(0,0,0))
-    ax1.plot(x_s, y_s)
+    ax1.plot(x, y) ###
 
     ax1.plot([a,]*2, [0, n], linestyle='-.', color='b', marker='x')
-    ax1.text(0.10,70, 'alpha=%0.3f, n=%d' %(a, n))
+    ax1.text(0.12,10, 'alpha=%0.3f, n=%d' %(a, n))
 
     'alphas'
     ax2 = plt.subplot(222)
@@ -104,4 +104,4 @@ def PltCurve(outs):
     pltsave('PerLas_'+outs+'.png')
 
 if __name__ == '__main__':
-    PltCurve('Ets1pppp')
+    PltCurve('Ets1')

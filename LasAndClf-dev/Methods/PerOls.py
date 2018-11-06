@@ -87,7 +87,7 @@ def LinearMethod(Etype, a):
 
 def main():
     'total feastures 8454'
-    LinearMethod('Ets', 0.038)
+    LinearMethod('Etsra', 0.037)
 
 if __name__ == '__main__':
     main()

@@ -23,7 +23,10 @@ from DataOperators import pltsave
 def plt_bep():
     print('Plotting...')
     fig, ((ax1, ax2, ax5), (ax3, ax4, ax6)) = plt.subplots(nrows=2, ncols=3, figsize=(12,8))
+    plt.suptitle('BEP for Methane Activation')
     plt.tight_layout(pad=2.0, w_pad=2.0, h_pad=2.0)
+    plt.subplots_adjust(left=None, bottom=None, right=None, top=0.9, \
+            wspace=None, hspace=0.2)
 
     y, y_p, r2, mse = pkload('ts_Hab2_CH3ab.pk')
     ax1.set_title('(a) $E_{H^{{sp}^2}} + E_{{{CH}_3}^v}$')
@@ -32,19 +35,19 @@ def plt_bep():
     ax1.text(-0.5,1, 'R2=%0.2f, MSE=%0.2f' %(r2, mse))
     
     y, y_p, r2, mse = pkload('ts_Hab2_CH3ab2.pk')
-    ax2.set_title('(b) $E_{H^{{sp}^2}} + E_{{{CH}_3}^v}$')
+    ax2.set_title('(b) $E_{H^{{sp}^2}} + E_{{{CH}_3}^p}$')
     ax2.scatter(y, y_p, edgecolors=(0, 0, 0))
     ax2.plot([y.min(), y.max()], [y.min(), y.max()], 'k--', lw=4)
     ax2.text(-0.5,1, 'R2=%0.2f, MSE=%0.2f' %(r2, mse))
     
     y, y_p, r2, mse = pkload('ts_Hab3_CH3ab.pk')
-    ax3.set_title('(c) $E_{H^{{sp}^2}} + E_{{{CH}_3}^v}$')
+    ax3.set_title('(c) $E_{H^{{sp}^3}} + E_{{{CH}_3}^v}$')
     ax3.scatter(y, y_p, edgecolors=(0, 0, 0))
     ax3.plot([y.min(), y.max()], [y.min(), y.max()], 'k--', lw=4)
     ax3.text(-0.5,1, 'R2=%0.2f, MSE=%0.2f' %(r2, mse))
     
     y, y_p, r2, mse = pkload('ts_Hab3_CH3ab2.pk')
-    ax4.set_title('(d) $E_{H^{{sp}^2}} + E_{{{CH}_3}^v}$')
+    ax4.set_title('(d) $E_{H^{{sp}^3}} + E_{{{CH}_3}^p}$')
     ax4.scatter(y, y_p, edgecolors=(0, 0, 0))
     ax4.plot([y.min(), y.max()], [y.min(), y.max()], 'k--', lw=4)
     ax4.text(-0.5,1, 'R2=%0.2f, MSE=%0.2f' %(r2, mse))
@@ -55,7 +58,7 @@ def plt_bep():
     ax5.plot([y.min(), y.max()], [y.min(), y.max()], 'k--', lw=4)
     ax5.text(0.4,1.4, 'R2=%0.2f, MSE=%0.2f' %(r2, mse))
 
-    y, y_p, r2, mse = pkload('tsra_Hab2.pk')
+    y, y_p, r2, mse = pkload('tsra_Hab3.pk')
     ax6.set_title('(f) $E_{H^{{sp}^3}}$')
     ax6.scatter(y, y_p, edgecolors=(0, 0, 0))
     ax6.plot([y.min(), y.max()], [y.min(), y.max()], 'k--', lw=4)
@@ -145,7 +148,8 @@ def plt_curve(pkfile):
     print('Success...')
 
 def main():
-    plt_curve('Best_las_Ea.pk')
+    #plt_curve('Best_las_Ea.pk')
+    plt_bep()
 
 if __name__ == '__main__':
     main()

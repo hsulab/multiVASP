@@ -6,6 +6,9 @@
 # mail: ahcigar@foxmail.com
 # Created Time: 四 11/ 1 15:22:25 2018
 #########################################################################
+''
+import os
+
 'SciLibs'
 import numpy as np
 import pandas as pd
@@ -15,13 +18,13 @@ from sklearn import metrics
 from sklearn.linear_model import Lasso, LinearRegression
 
 'MyLibs'
-from DataOperators import GetDS
-from DataOperators import pkload
-from DataOperators import pkdump
+from DataOps import GetDS
 
-from Decorates import timer
-
-from PosSelection import PosSelection
+from DataOps import timer
+from DataOps import StdScaler
+from DataOps import RanFolds
+from DataOps import PosSelection
+from DataOps import CheckDuplicates
 
 def GetPosCoef(Etype, a):
     'Get Full Data'
@@ -68,17 +71,31 @@ def OlsCV(y, X, cv_splits, cv_repeats):
 
     return ols_MeanMSEs
 
+def GetBestAlphas():
+    slots = 2
+    outs = ''
+    if os.path.exists('./outs'):
+        os.remove('./outs')
+
+    for i in range(slots):
+        with open('./slot'+str(i)+'_outs', 'r') as f_out:
+            out = f_out.readlines()
+        with open('./outs', 'a') as f_outs:
+            for line in out:
+                f_outs.write(line)
+
+    ''
+    BestAlphas = []
+    f = os.popen('grep \'BestAlpha\' outs')
+    for line in f.readlines():
+        line = line.strip('\n')
+        BestAlphas.append(float(line.split(' ')[3]))
+
+    return BestAlphas
+
 @timer
-def ThetaSelection(Etype='Etsra', cv_splits=5, cv_repeats=1, \
+def ThetaSelection(Etype='Ets', cv_splits=5, cv_repeats=1, \
         best_alphas=[0.1], test_thetas=np.linspace(0.50, 1, 11)):
-    '''
-    Important Params
-    --> test_thetas
-    Etype = 'Etsra'
-    test_thetas = np.linspace(0.50, 1, 11)
-    cv_splits = 5; cv_repeats = 1
-    best_alphas = PercenLas(Etype)
-    '''
 
     'Theta Selection'
     print('<- Theta Selection START ->')
@@ -87,7 +104,7 @@ def ThetaSelection(Etype='Etsra', cv_splits=5, cv_repeats=1, \
         print('Theta <%0.2f>' %theta)
         'Get Alpha'
         alpha_by_theta = round(np.percentile(best_alphas, theta*100), 3)
-        name_coef = GetPosCoef('Etsra', alpha_by_theta)
+        name_coef = GetPosCoef(Etype, alpha_by_theta)
 
         'OLS'
         reduced_DS = GetDS(Etype, name_coef.keys())
@@ -106,13 +123,16 @@ def ThetaSelection(Etype='Etsra', cv_splits=5, cv_repeats=1, \
     alpha_by_theta = round(np.percentile(best_alphas, best_theta*100), 3)
     print('Selected Alpha --> ', alpha_by_theta)
 
+from Params import Etype
+from Params import tcv_splits
+from Params import tcv_repeats
+from Params import test_thetas
 if __name__ == '__main__':
     'ThetaSelection-Params'
-    cv_splits = 5; cv_repeats = 1
-    test_thetas = np.linspace(0.50, 1, 11)
+    best_alphas = GetBestAlphas()
     print('<- Theta-Selection Setting ->')
-    print('K-Folds Setting --> splits: %d repeats: %d' %(cv_splits, cv_repeats))
+    print('K-Folds Setting --> splits: %d repeats: %d' %(tcv_splits, tcv_repeats))
     print('TestThetas --> From %f to %f Total %d' \
             %(test_thetas[0], test_thetas[-1], len(test_thetas)))
 
-    ThetaSelection(Etype, cv_splits, cv_repeats, best_alphas, test_thetas)
+    ThetaSelection(Etype, tcv_splits, tcv_repeats, best_alphas, test_thetas)

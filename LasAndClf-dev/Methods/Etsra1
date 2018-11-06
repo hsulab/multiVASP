@@ -1,0 +1,742 @@
+<- Percentile-LASSO Setting ->
+K-Folds Setting --> splits: 5 repeats: 100
+TestAlphs --> From 0.001000 to 0.200000 Total 200
+<- Preparing Data for Percentile-LASSO ->
+<- Generating 100 [5-Fold]s ->
+********************
+<- Percentile-LASSO START -> ...
+--------------------
+Fold <1>
+LasCV --> BestAlpha:  0.118
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  342.8505 s
+--------------------
+--------------------
+Fold <2>
+LasCV --> BestAlpha:  0.078
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  10
+LasCV TakeTime:  353.4734 s
+--------------------
+--------------------
+Fold <3>
+LasCV --> BestAlpha:  0.145
+OneShot --> BestR2Score:  0.96
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  359.8845 s
+--------------------
+--------------------
+Fold <4>
+LasCV --> BestAlpha:  0.115
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  355.1272 s
+--------------------
+--------------------
+Fold <5>
+LasCV --> BestAlpha:  0.074
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  11
+LasCV TakeTime:  347.7875 s
+--------------------
+--------------------
+Fold <6>
+LasCV --> BestAlpha:  0.077
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  9
+LasCV TakeTime:  289.6662 s
+--------------------
+--------------------
+Fold <7>
+LasCV --> BestAlpha:  0.061
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  12
+LasCV TakeTime:  301.0648 s
+--------------------
+--------------------
+Fold <8>
+LasCV --> BestAlpha:  0.074
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  11
+LasCV TakeTime:  294.3127 s
+--------------------
+--------------------
+Fold <9>
+LasCV --> BestAlpha:  0.149
+OneShot --> BestR2Score:  0.96
+OneShot --> N_PosCoefs:  4
+LasCV TakeTime:  289.4616 s
+--------------------
+--------------------
+Fold <10>
+LasCV --> BestAlpha:  0.128
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  6
+LasCV TakeTime:  274.7471 s
+--------------------
+--------------------
+Fold <11>
+LasCV --> BestAlpha:  0.125
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  292.5054 s
+--------------------
+--------------------
+Fold <12>
+LasCV --> BestAlpha:  0.096
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  284.7691 s
+--------------------
+--------------------
+Fold <13>
+LasCV --> BestAlpha:  0.063
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  12
+LasCV TakeTime:  298.5861 s
+--------------------
+--------------------
+Fold <14>
+LasCV --> BestAlpha:  0.11
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  308.6631 s
+--------------------
+--------------------
+Fold <15>
+LasCV --> BestAlpha:  0.145
+OneShot --> BestR2Score:  0.96
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  281.1919 s
+--------------------
+--------------------
+Fold <16>
+LasCV --> BestAlpha:  0.116
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  291.2991 s
+--------------------
+--------------------
+Fold <17>
+LasCV --> BestAlpha:  0.095
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  280.6779 s
+--------------------
+--------------------
+Fold <18>
+LasCV --> BestAlpha:  0.13
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  268.9035 s
+--------------------
+--------------------
+Fold <19>
+LasCV --> BestAlpha:  0.089
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  259.9291 s
+--------------------
+--------------------
+Fold <20>
+LasCV --> BestAlpha:  0.129
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  6
+LasCV TakeTime:  268.7854 s
+--------------------
+--------------------
+Fold <21>
+LasCV --> BestAlpha:  0.097
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  278.6503 s
+--------------------
+--------------------
+Fold <22>
+LasCV --> BestAlpha:  0.098
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  264.0611 s
+--------------------
+--------------------
+Fold <23>
+LasCV --> BestAlpha:  0.129
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  277.8386 s
+--------------------
+--------------------
+Fold <24>
+LasCV --> BestAlpha:  0.048
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  13
+LasCV TakeTime:  285.6552 s
+--------------------
+--------------------
+Fold <25>
+LasCV --> BestAlpha:  0.053
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  13
+LasCV TakeTime:  274.0002 s
+--------------------
+--------------------
+Fold <26>
+LasCV --> BestAlpha:  0.133
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  285.8048 s
+--------------------
+--------------------
+Fold <27>
+LasCV --> BestAlpha:  0.139
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  270.6445 s
+--------------------
+--------------------
+Fold <28>
+LasCV --> BestAlpha:  0.069
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  11
+LasCV TakeTime:  275.4108 s
+--------------------
+--------------------
+Fold <29>
+LasCV --> BestAlpha:  0.107
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  8
+LasCV TakeTime:  254.1979 s
+--------------------
+--------------------
+Fold <30>
+LasCV --> BestAlpha:  0.109
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  306.7609 s
+--------------------
+--------------------
+Fold <31>
+LasCV --> BestAlpha:  0.029
+OneShot --> BestR2Score:  1.0
+OneShot --> N_PosCoefs:  14
+LasCV TakeTime:  267.1695 s
+--------------------
+--------------------
+Fold <32>
+LasCV --> BestAlpha:  0.074
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  10
+LasCV TakeTime:  273.8732 s
+--------------------
+--------------------
+Fold <33>
+LasCV --> BestAlpha:  0.138
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  360.0927 s
+--------------------
+--------------------
+Fold <34>
+LasCV --> BestAlpha:  0.088
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  304.5353 s
+--------------------
+--------------------
+Fold <35>
+LasCV --> BestAlpha:  0.101
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  8
+LasCV TakeTime:  284.3427 s
+--------------------
+--------------------
+Fold <36>
+LasCV --> BestAlpha:  0.067
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  11
+LasCV TakeTime:  271.4729 s
+--------------------
+--------------------
+Fold <37>
+LasCV --> BestAlpha:  0.111
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  268.9526 s
+--------------------
+--------------------
+Fold <38>
+LasCV --> BestAlpha:  0.125
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  6
+LasCV TakeTime:  281.4822 s
+--------------------
+--------------------
+Fold <39>
+LasCV --> BestAlpha:  0.131
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  280.9074 s
+--------------------
+--------------------
+Fold <40>
+LasCV --> BestAlpha:  0.089
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  294.4496 s
+--------------------
+--------------------
+Fold <41>
+LasCV --> BestAlpha:  0.087
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  318.5147 s
+--------------------
+--------------------
+Fold <42>
+LasCV --> BestAlpha:  0.141
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  254.1459 s
+--------------------
+--------------------
+Fold <43>
+LasCV --> BestAlpha:  0.094
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  8
+LasCV TakeTime:  285.0402 s
+--------------------
+--------------------
+Fold <44>
+LasCV --> BestAlpha:  0.056
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  12
+LasCV TakeTime:  292.0919 s
+--------------------
+--------------------
+Fold <45>
+LasCV --> BestAlpha:  0.093
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  290.0744 s
+--------------------
+--------------------
+Fold <46>
+LasCV --> BestAlpha:  0.074
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  10
+LasCV TakeTime:  304.5364 s
+--------------------
+--------------------
+Fold <47>
+LasCV --> BestAlpha:  0.066
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  11
+LasCV TakeTime:  267.0344 s
+--------------------
+--------------------
+Fold <48>
+LasCV --> BestAlpha:  0.127
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  6
+LasCV TakeTime:  262.0326 s
+--------------------
+--------------------
+Fold <49>
+LasCV --> BestAlpha:  0.055
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  12
+LasCV TakeTime:  249.7755 s
+--------------------
+--------------------
+Fold <50>
+LasCV --> BestAlpha:  0.077
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  11
+LasCV TakeTime:  281.1576 s
+--------------------
+--------------------
+Fold <51>
+LasCV --> BestAlpha:  0.138
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  249.8714 s
+--------------------
+--------------------
+Fold <52>
+LasCV --> BestAlpha:  0.122
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  6
+LasCV TakeTime:  284.3108 s
+--------------------
+--------------------
+Fold <53>
+LasCV --> BestAlpha:  0.128
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  6
+LasCV TakeTime:  258.6743 s
+--------------------
+--------------------
+Fold <54>
+LasCV --> BestAlpha:  0.078
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  10
+LasCV TakeTime:  299.3076 s
+--------------------
+--------------------
+Fold <55>
+LasCV --> BestAlpha:  0.121
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  6
+LasCV TakeTime:  280.5568 s
+--------------------
+--------------------
+Fold <56>
+LasCV --> BestAlpha:  0.042
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  13
+LasCV TakeTime:  276.2832 s
+--------------------
+--------------------
+Fold <57>
+LasCV --> BestAlpha:  0.132
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  293.2409 s
+--------------------
+--------------------
+Fold <58>
+LasCV --> BestAlpha:  0.034
+OneShot --> BestR2Score:  1.0
+OneShot --> N_PosCoefs:  14
+LasCV TakeTime:  269.689 s
+--------------------
+--------------------
+Fold <59>
+LasCV --> BestAlpha:  0.09
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  8
+LasCV TakeTime:  271.1546 s
+--------------------
+--------------------
+Fold <60>
+LasCV --> BestAlpha:  0.111
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  249.5841 s
+--------------------
+--------------------
+Fold <61>
+LasCV --> BestAlpha:  0.116
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  290.0694 s
+--------------------
+--------------------
+Fold <62>
+LasCV --> BestAlpha:  0.115
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  266.4474 s
+--------------------
+--------------------
+Fold <63>
+LasCV --> BestAlpha:  0.118
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  273.0924 s
+--------------------
+--------------------
+Fold <64>
+LasCV --> BestAlpha:  0.104
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  293.4836 s
+--------------------
+--------------------
+Fold <65>
+LasCV --> BestAlpha:  0.132
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  294.1016 s
+--------------------
+--------------------
+Fold <66>
+LasCV --> BestAlpha:  0.194
+OneShot --> BestR2Score:  0.95
+OneShot --> N_PosCoefs:  4
+LasCV TakeTime:  279.0392 s
+--------------------
+--------------------
+Fold <67>
+LasCV --> BestAlpha:  0.098
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  8
+LasCV TakeTime:  283.7945 s
+--------------------
+--------------------
+Fold <68>
+LasCV --> BestAlpha:  0.122
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  249.7152 s
+--------------------
+--------------------
+Fold <69>
+LasCV --> BestAlpha:  0.124
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  297.192 s
+--------------------
+--------------------
+Fold <70>
+LasCV --> BestAlpha:  0.136
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  271.5818 s
+--------------------
+--------------------
+Fold <71>
+LasCV --> BestAlpha:  0.077
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  9
+LasCV TakeTime:  273.6341 s
+--------------------
+--------------------
+Fold <72>
+LasCV --> BestAlpha:  0.041
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  13
+LasCV TakeTime:  259.2819 s
+--------------------
+--------------------
+Fold <73>
+LasCV --> BestAlpha:  0.134
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  283.6486 s
+--------------------
+--------------------
+Fold <74>
+LasCV --> BestAlpha:  0.132
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  255.8742 s
+--------------------
+--------------------
+Fold <75>
+LasCV --> BestAlpha:  0.045
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  13
+LasCV TakeTime:  266.9216 s
+--------------------
+--------------------
+Fold <76>
+LasCV --> BestAlpha:  0.099
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  8
+LasCV TakeTime:  293.3588 s
+--------------------
+--------------------
+Fold <77>
+LasCV --> BestAlpha:  0.107
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  270.5494 s
+--------------------
+--------------------
+Fold <78>
+LasCV --> BestAlpha:  0.021
+OneShot --> BestR2Score:  1.0
+OneShot --> N_PosCoefs:  16
+LasCV TakeTime:  256.5637 s
+--------------------
+--------------------
+Fold <79>
+LasCV --> BestAlpha:  0.115
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  298.7567 s
+--------------------
+--------------------
+Fold <80>
+LasCV --> BestAlpha:  0.128
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  6
+LasCV TakeTime:  283.7404 s
+--------------------
+--------------------
+Fold <81>
+LasCV --> BestAlpha:  0.128
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  276.9421 s
+--------------------
+--------------------
+Fold <82>
+LasCV --> BestAlpha:  0.118
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  285.5718 s
+--------------------
+--------------------
+Fold <83>
+LasCV --> BestAlpha:  0.09
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  277.4465 s
+--------------------
+--------------------
+Fold <84>
+LasCV --> BestAlpha:  0.121
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  6
+LasCV TakeTime:  271.2169 s
+--------------------
+--------------------
+Fold <85>
+LasCV --> BestAlpha:  0.116
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  272.3381 s
+--------------------
+--------------------
+Fold <86>
+LasCV --> BestAlpha:  0.109
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  293.0247 s
+--------------------
+--------------------
+Fold <87>
+LasCV --> BestAlpha:  0.117
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  295.0546 s
+--------------------
+--------------------
+Fold <88>
+LasCV --> BestAlpha:  0.075
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  11
+LasCV TakeTime:  287.1826 s
+--------------------
+--------------------
+Fold <89>
+LasCV --> BestAlpha:  0.151
+OneShot --> BestR2Score:  0.96
+OneShot --> N_PosCoefs:  4
+LasCV TakeTime:  267.0405 s
+--------------------
+--------------------
+Fold <90>
+LasCV --> BestAlpha:  0.062
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  12
+LasCV TakeTime:  289.4804 s
+--------------------
+--------------------
+Fold <91>
+LasCV --> BestAlpha:  0.121
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  6
+LasCV TakeTime:  269.8226 s
+--------------------
+--------------------
+Fold <92>
+LasCV --> BestAlpha:  0.12
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  6
+LasCV TakeTime:  302.6176 s
+--------------------
+--------------------
+Fold <93>
+LasCV --> BestAlpha:  0.142
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  279.3054 s
+--------------------
+--------------------
+Fold <94>
+LasCV --> BestAlpha:  0.127
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  291.0321 s
+--------------------
+--------------------
+Fold <95>
+LasCV --> BestAlpha:  0.102
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  8
+LasCV TakeTime:  255.4223 s
+--------------------
+--------------------
+Fold <96>
+LasCV --> BestAlpha:  0.068
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  11
+LasCV TakeTime:  293.4393 s
+--------------------
+--------------------
+Fold <97>
+LasCV --> BestAlpha:  0.111
+OneShot --> BestR2Score:  0.98
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  283.6004 s
+--------------------
+--------------------
+Fold <98>
+LasCV --> BestAlpha:  0.061
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  12
+LasCV TakeTime:  263.4275 s
+--------------------
+--------------------
+Fold <99>
+LasCV --> BestAlpha:  0.062
+OneShot --> BestR2Score:  0.99
+OneShot --> N_PosCoefs:  12
+LasCV TakeTime:  280.1105 s
+--------------------
+--------------------
+Fold <100>
+LasCV --> BestAlpha:  0.129
+OneShot --> BestR2Score:  0.97
+OneShot --> N_PosCoefs:  7
+LasCV TakeTime:  292.4287 s
+--------------------
+********************
+<- Percentile-LASSO DONE -> ...
+PercenLas TakeTime:  28410.0914 s
+<- Theta-Selection Setting ->
+K-Folds Setting --> splits: 5 repeats: 1
+TestThetas --> From 0.500000 to 1.000000 Total 11
+<- Theta Selection START ->
+Theta <0.50>
+OlsCV TakeTime:  0.007 s
+Theta <0.55>
+OlsCV TakeTime:  0.008 s
+Theta <0.60>
+OlsCV TakeTime:  0.0081 s
+Theta <0.65>
+OlsCV TakeTime:  0.0073 s
+Theta <0.70>
+OlsCV TakeTime:  0.007 s
+Theta <0.75>
+OlsCV TakeTime:  0.0077 s
+Theta <0.80>
+OlsCV TakeTime:  0.0078 s
+Theta <0.85>
+OlsCV TakeTime:  0.0086 s
+Theta <0.90>
+OlsCV TakeTime:  0.0085 s
+Theta <0.95>
+OlsCV TakeTime:  0.0075 s
+Theta <1.00>
+OlsCV TakeTime:  0.0075 s
+Warning -- Have Duplicates !!!
+[0.042743325316441066, 0.042743325316441066, 0.042743325316441066, 0.042743325316441066, 0.025937319222881543, 0.025937319222881543, 0.025937319222881543, 0.025937319222881543, 0.024480782641035679, 0.025937319222881526, 0.028567435397353031]
+<- Theta Selection DONE ->
+Best Theta -->  0.9
+Selected Alpha -->  0.136
+ThetaSelection TakeTime:  37.6838 s

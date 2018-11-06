@@ -17,7 +17,6 @@ from sklearn.linear_model import Lasso
 
 'MPI'
 from mpi4py import MPI
-import pickle
 
 'MyLibs'
 from DataOps import timer
@@ -101,27 +100,20 @@ def LasCV(y, X, kfold, alphas):
 
     return best_alpha, outs
 
+from Params import Etype
+from Params import cv_splits
+from Params import cv_repeats
+from Params import test_alphas
 @timer
 def PercenLas():
     'Init MPI'
     comm = MPI.COMM_WORLD
     comm_rank = comm.Get_rank()
     comm_size = comm.Get_size()
-
-    '''
-    total feastures 6662
-    Important Parameters:
-    --> splits, repeats, test_alphas
-    cv_splits = 5; cv_repeats = 5
-    test_alphas = np.linspace(0.01, 0.1, 10)
-    '''
-    #print('<- Preparing Data for Percentile-LASSO ->')
-    Etype = 'Etsra'
+    
+    'Get DS'
     DS = GetDS(Etype)
     y = DS['target']; X = DS['features']
-
-    cv_splits = 5; cv_repeats = 4
-    test_alphas = np.linspace(0.01, 0.05, 5)
 
     'Print Initial Setting and Scatter Folds'
     if comm_rank == 0:
@@ -139,12 +131,18 @@ def PercenLas():
         folds_list = []
         for number, fold in folds.items():
             folds_list.append([number, fold])
+        print(folds_list)
 
         folds_scatter = []
-        n = int(len(folds.keys())/comm_size)
-        for i in range(0, len(folds_list), n):
-            start, end = i, i+n
-            folds_scatter.append(folds_list[start:end])
+        folds_num = len(folds.keys())
+        n = int(folds_num/comm_size)
+        for i in range(comm_size):
+            if i*n+n < n*comm_size:
+                start, end = i*n, i*n+n
+                folds_scatter.append(folds_list[start:end])
+            else:
+                start = i*n
+                folds_scatter.append(folds_list[start:])
     else:
         folds_scatter = None
 
@@ -166,31 +164,13 @@ def PercenLas():
         outs += '-'*20 + '\n'
         outs += 'Fold <%d>' %(num) + '\n'
         best_alpha, las_outs = LasCV(y, X, fold, test_alphas)
+        print('%d Best_Alpha %f' %(num, best_alpha))
         outs += las_outs
         best_alphas.append(best_alpha)
         outs += '-'*20 + '\n'
         with open('./slot'+str(comm_rank)+'_outs', 'a') as f:
             f.write(outs)
     print('*'*20+'\n<- Slot'+str(comm_rank)+' Percentile-LASSO Done->\n'+'*'*20)
-
-    if comm_rank == 0:
-        # Merge SlotsFile
-        outs = ''
-        for i in range(comm_size):
-            slotfile = './slot'+str(i)+'_outs'
-            with open (slotfile, 'r') as f:
-                for line in f.readlines():
-                    outs += line
-            os.remove(slotfile)
-        with open('./outs', 'w') as f:
-            f.write(outs)
-
-
-    'Gather Data'
-    if comm_rank == 0:
-        gather_best_alphas = comm.gather(best_alphas, root=0)
-        with open('./alphas.pk', 'w') as f:
-            pickle.dump(gather_best_alphas, f)
 
 if __name__ == '__main__':
     PercenLas()

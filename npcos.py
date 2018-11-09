@@ -6,6 +6,7 @@
 # mail: ahcigar@foxmail.com
 # Created Time: 一 10/22 20:01:34 2018
 #########################################################################
+ss
 import numpy as np
 print('cos(pi/6) =', np.cos(30/180*np.pi))
 print('cos(pi/6) =', np.cos(30.0/180.0*np.pi))

@@ -1,0 +1,748 @@
+<- Percentile-LASSO Setting ->
+Processing Data --> Edelta
+K-Folds Setting --> splits: 5 repeats: 100
+TestAlphs --> From 0.010000 to 0.500000 Total 50
+ Generating 100 [5-Fold]s 
+
+
+<- Slot1 Percentile-LASSO Begin->
+--------------------
+Fold <1-51> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-52> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-53> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-54> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-55> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-56> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-57> 
+LasCV --> BestAlpha: 0.12 
+OneShot --> BestR2Score: 0.56 
+OneShot --> N_PosCoefs: 4 
+h_O2-M4-H1-C_CH3ab -> -0.4654
+E_Hab3 -> -0.3898
+E_CH3ab -> 0.2711
+h_O2-H1-M4-C_CH3ab -> -0.0127
+--------------------
+Fold <1-58> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-59> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-60> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-61> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-62> 
+LasCV --> BestAlpha: 0.060000000000000005 
+OneShot --> BestR2Score: 0.72 
+OneShot --> N_PosCoefs: 7 
+E_Hab3 -> -0.5206
+E_CH3ab -> 0.4748
+h_O2-M4-H1-C_CH3ab -> -0.3327
+h_O2-H1-M4-C_CH3ab -> -0.2329
+a_H1-O2-C_CH3ab -> 0.2098
+a_O2-M4-H1_Hab3 -> -0.1661
+d_O2-H1_Hab3 -> 0.0953
+--------------------
+Fold <1-63> 
+LasCV --> BestAlpha: 0.09 
+OneShot --> BestR2Score: 0.64 
+OneShot --> N_PosCoefs: 7 
+E_Hab3 -> -0.4557
+h_O2-M4-H1-C_CH3ab -> -0.4404
+E_CH3ab -> 0.3639
+h_O2-H1-M4-C_CH3ab -> -0.1026
+a_O2-M4-H1_Hab3 -> -0.0793
+a_H1-O2-C_CH3ab -> 0.0664
+d_O2-H1_Hab3 -> 0.0407
+--------------------
+Fold <1-64> 
+LasCV --> BestAlpha: 0.29000000000000004 
+OneShot --> BestR2Score: 0.24 
+OneShot --> N_PosCoefs: 3 
+h_O2-M4-H1-C_CH3ab -> -0.1899
+E_Hab3 -> -0.1139
+d_O2-M4_CH3ab -> -0.0242
+--------------------
+Fold <1-65> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-66> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-67> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-68> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-69> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-70> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-71> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-72> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-73> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-74> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-75> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-76> 
+LasCV --> BestAlpha: 0.09 
+OneShot --> BestR2Score: 0.64 
+OneShot --> N_PosCoefs: 7 
+E_Hab3 -> -0.4556
+h_O2-M4-H1-C_CH3ab -> -0.4392
+E_CH3ab -> 0.3641
+h_O2-H1-M4-C_CH3ab -> -0.1032
+a_O2-M4-H1_Hab3 -> -0.0792
+a_H1-O2-C_CH3ab -> 0.0673
+d_O2-H1_Hab3 -> 0.0408
+--------------------
+Fold <1-77> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-78> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-79> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-80> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-81> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-82> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-83> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-84> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-85> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-86> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-87> 
+LasCV --> BestAlpha: 0.08 
+OneShot --> BestR2Score: 0.67 
+OneShot --> N_PosCoefs: 7 
+E_Hab3 -> -0.4773
+h_O2-M4-H1-C_CH3ab -> -0.4041
+E_CH3ab -> 0.4010
+h_O2-H1-M4-C_CH3ab -> -0.1463
+a_H1-O2-C_CH3ab -> 0.1145
+a_O2-M4-H1_Hab3 -> -0.1083
+d_O2-H1_Hab3 -> 0.0590
+--------------------
+Fold <1-88> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-89> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-90> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-91> 
+LasCV --> BestAlpha: 0.45 
+OneShot --> BestR2Score: 0.04 
+OneShot --> N_PosCoefs: 1 
+h_O2-M4-H1-C_CH3ab -> -0.0387
+--------------------
+Fold <1-92> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-93> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-94> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-95> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-96> 
+LasCV --> BestAlpha: 0.49 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-97> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-98> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-99> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <1-100> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+<- Slot 1 Percentile-LASSO Done->
+
+
+<- Slot0 Percentile-LASSO Begin->
+--------------------
+Fold <0-1> 
+LasCV --> BestAlpha: 0.12 
+OneShot --> BestR2Score: 0.56 
+OneShot --> N_PosCoefs: 4 
+h_O2-M4-H1-C_CH3ab -> -0.4654
+E_Hab3 -> -0.3898
+E_CH3ab -> 0.2711
+h_O2-H1-M4-C_CH3ab -> -0.0127
+--------------------
+Fold <0-2> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.87 
+OneShot --> N_PosCoefs: 11 
+a_O2-M4-H1_Hab3 -> -1.0453
+d_O2-M4_CH3ab -> -0.5002
+E_Hab3 -> -0.4689
+E_CH3ab -> 0.4464
+d_H1-C_CH3ab -> -0.4089
+a_O2-C-H1_CH3ab -> 0.3760
+d_O2-M4_Hab3 -> -0.3747
+h_O2-H1-M4-C_CH3ab -> -0.3623
+h_O2-M4-H1-C_CH3ab -> -0.1273
+d_O2-H1_Hab3 -> 0.0894
+a_O2-H1-C_CH3ab -> -0.0542
+--------------------
+Fold <0-3> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-4> 
+LasCV --> BestAlpha: 0.06999999999999999 
+OneShot --> BestR2Score: 0.69 
+OneShot --> N_PosCoefs: 7 
+E_Hab3 -> -0.4989
+E_CH3ab -> 0.4379
+h_O2-M4-H1-C_CH3ab -> -0.3681
+h_O2-H1-M4-C_CH3ab -> -0.1897
+a_H1-O2-C_CH3ab -> 0.1624
+a_O2-M4-H1_Hab3 -> -0.1372
+d_O2-H1_Hab3 -> 0.0772
+--------------------
+Fold <0-5> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-6> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-7> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-8> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-9> 
+LasCV --> BestAlpha: 0.28 
+OneShot --> BestR2Score: 0.26 
+OneShot --> N_PosCoefs: 3 
+h_O2-M4-H1-C_CH3ab -> -0.1977
+E_Hab3 -> -0.1232
+d_O2-M4_CH3ab -> -0.0289
+--------------------
+Fold <0-10> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-11> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-12> 
+LasCV --> BestAlpha: 0.46 
+OneShot --> BestR2Score: 0.03 
+OneShot --> N_PosCoefs: 1 
+h_O2-M4-H1-C_CH3ab -> -0.0287
+--------------------
+Fold <0-13> 
+LasCV --> BestAlpha: 0.060000000000000005 
+OneShot --> BestR2Score: 0.72 
+OneShot --> N_PosCoefs: 7 
+E_Hab3 -> -0.5206
+E_CH3ab -> 0.4747
+h_O2-M4-H1-C_CH3ab -> -0.3331
+h_O2-H1-M4-C_CH3ab -> -0.2327
+a_H1-O2-C_CH3ab -> 0.2095
+a_O2-M4-H1_Hab3 -> -0.1661
+d_O2-H1_Hab3 -> 0.0953
+--------------------
+Fold <0-14> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.87 
+OneShot --> N_PosCoefs: 11 
+a_O2-M4-H1_Hab3 -> -1.0477
+d_O2-M4_CH3ab -> -0.4988
+E_Hab3 -> -0.4684
+E_CH3ab -> 0.4491
+d_H1-C_CH3ab -> -0.4081
+d_O2-M4_Hab3 -> -0.3790
+h_O2-H1-M4-C_CH3ab -> -0.3618
+a_O2-C-H1_CH3ab -> 0.2636
+a_O2-H1-C_CH3ab -> -0.1715
+h_O2-M4-H1-C_CH3ab -> -0.1224
+d_O2-H1_Hab3 -> 0.0868
+--------------------
+Fold <0-15> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-16> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-17> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-18> 
+LasCV --> BestAlpha: 0.41000000000000003 
+OneShot --> BestR2Score: 0.07 
+OneShot --> N_PosCoefs: 1 
+h_O2-M4-H1-C_CH3ab -> -0.0787
+--------------------
+Fold <0-19> 
+LasCV --> BestAlpha: 0.06999999999999999 
+OneShot --> BestR2Score: 0.69 
+OneShot --> N_PosCoefs: 7 
+E_Hab3 -> -0.4989
+E_CH3ab -> 0.4381
+h_O2-M4-H1-C_CH3ab -> -0.3663
+h_O2-H1-M4-C_CH3ab -> -0.1905
+a_H1-O2-C_CH3ab -> 0.1639
+a_O2-M4-H1_Hab3 -> -0.1371
+d_O2-H1_Hab3 -> 0.0774
+--------------------
+Fold <0-20> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-21> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-22> 
+LasCV --> BestAlpha: 0.14 
+OneShot --> BestR2Score: 0.53 
+OneShot --> N_PosCoefs: 3 
+h_O2-M4-H1-C_CH3ab -> -0.4395
+E_Hab3 -> -0.3529
+E_CH3ab -> 0.2306
+--------------------
+Fold <0-23> 
+LasCV --> BestAlpha: 0.06999999999999999 
+OneShot --> BestR2Score: 0.69 
+OneShot --> N_PosCoefs: 7 
+E_Hab3 -> -0.4990
+E_CH3ab -> 0.4378
+h_O2-M4-H1-C_CH3ab -> -0.3694
+h_O2-H1-M4-C_CH3ab -> -0.1891
+a_H1-O2-C_CH3ab -> 0.1614
+a_O2-M4-H1_Hab3 -> -0.1372
+d_O2-H1_Hab3 -> 0.0770
+--------------------
+Fold <0-24> 
+LasCV --> BestAlpha: 0.32 
+OneShot --> BestR2Score: 0.21 
+OneShot --> N_PosCoefs: 3 
+h_O2-M4-H1-C_CH3ab -> -0.1628
+E_Hab3 -> -0.0839
+d_O2-M4_CH3ab -> -0.0171
+--------------------
+Fold <0-25> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-26> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-27> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-28> 
+LasCV --> BestAlpha: 0.09999999999999999 
+OneShot --> BestR2Score: 0.61 
+OneShot --> N_PosCoefs: 7 
+h_O2-M4-H1-C_CH3ab -> -0.4749
+E_Hab3 -> -0.4340
+E_CH3ab -> 0.3272
+h_O2-H1-M4-C_CH3ab -> -0.0598
+a_O2-M4-H1_Hab3 -> -0.0503
+d_O2-H1_Hab3 -> 0.0226
+a_H1-O2-C_CH3ab -> 0.0198
+--------------------
+Fold <0-29> 
+LasCV --> BestAlpha: 0.060000000000000005 
+OneShot --> BestR2Score: 0.72 
+OneShot --> N_PosCoefs: 7 
+E_Hab3 -> -0.5206
+E_CH3ab -> 0.4748
+h_O2-M4-H1-C_CH3ab -> -0.3326
+h_O2-H1-M4-C_CH3ab -> -0.2329
+a_H1-O2-C_CH3ab -> 0.2099
+a_O2-M4-H1_Hab3 -> -0.1661
+d_O2-H1_Hab3 -> 0.0953
+--------------------
+Fold <0-30> 
+LasCV --> BestAlpha: 0.06999999999999999 
+OneShot --> BestR2Score: 0.69 
+OneShot --> N_PosCoefs: 7 
+E_Hab3 -> -0.4989
+E_CH3ab -> 0.4382
+h_O2-M4-H1-C_CH3ab -> -0.3660
+h_O2-H1-M4-C_CH3ab -> -0.1906
+a_H1-O2-C_CH3ab -> 0.1642
+a_O2-M4-H1_Hab3 -> -0.1370
+d_O2-H1_Hab3 -> 0.0774
+--------------------
+Fold <0-31> 
+LasCV --> BestAlpha: 0.09 
+OneShot --> BestR2Score: 0.64 
+OneShot --> N_PosCoefs: 7 
+E_Hab3 -> -0.4556
+h_O2-M4-H1-C_CH3ab -> -0.4405
+E_CH3ab -> 0.3639
+h_O2-H1-M4-C_CH3ab -> -0.1025
+a_O2-M4-H1_Hab3 -> -0.0793
+a_H1-O2-C_CH3ab -> 0.0663
+d_O2-H1_Hab3 -> 0.0407
+--------------------
+Fold <0-32> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-33> 
+LasCV --> BestAlpha: 0.05 
+OneShot --> BestR2Score: 0.74 
+OneShot --> N_PosCoefs: 10 
+E_Hab3 -> -0.5467
+E_CH3ab -> 0.5129
+h_O2-M4-H1-C_CH3ab -> -0.2900
+h_O2-H1-M4-C_CH3ab -> -0.2816
+a_O2-M4-H1_Hab3 -> -0.2097
+a_H1-O2-C_CH3ab -> 0.2047
+d_O2-H1_Hab3 -> 0.0887
+a_O2-H1-M4_Hab3 -> 0.0395
+a_O2-C-H1_CH3ab -> 0.0373
+a_O2-H1-C_CH3ab -> -0.0172
+--------------------
+Fold <0-34> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-35> 
+LasCV --> BestAlpha: 0.08 
+OneShot --> BestR2Score: 0.67 
+OneShot --> N_PosCoefs: 7 
+E_Hab3 -> -0.4773
+h_O2-M4-H1-C_CH3ab -> -0.4052
+E_CH3ab -> 0.4008
+h_O2-H1-M4-C_CH3ab -> -0.1457
+a_H1-O2-C_CH3ab -> 0.1137
+a_O2-M4-H1_Hab3 -> -0.1083
+d_O2-H1_Hab3 -> 0.0588
+--------------------
+Fold <0-36> 
+LasCV --> BestAlpha: 0.060000000000000005 
+OneShot --> BestR2Score: 0.72 
+OneShot --> N_PosCoefs: 7 
+E_Hab3 -> -0.5206
+E_CH3ab -> 0.4747
+h_O2-M4-H1-C_CH3ab -> -0.3333
+h_O2-H1-M4-C_CH3ab -> -0.2326
+a_H1-O2-C_CH3ab -> 0.2094
+a_O2-M4-H1_Hab3 -> -0.1662
+d_O2-H1_Hab3 -> 0.0952
+--------------------
+Fold <0-37> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-38> 
+LasCV --> BestAlpha: 0.41000000000000003 
+OneShot --> BestR2Score: 0.07 
+OneShot --> N_PosCoefs: 1 
+h_O2-M4-H1-C_CH3ab -> -0.0787
+--------------------
+Fold <0-39> 
+LasCV --> BestAlpha: 0.05 
+OneShot --> BestR2Score: 0.74 
+OneShot --> N_PosCoefs: 9 
+E_Hab3 -> -0.5467
+E_CH3ab -> 0.5121
+h_O2-M4-H1-C_CH3ab -> -0.2909
+h_O2-H1-M4-C_CH3ab -> -0.2821
+a_O2-M4-H1_Hab3 -> -0.2099
+a_H1-O2-C_CH3ab -> 0.1777
+d_O2-H1_Hab3 -> 0.0894
+a_O2-H1-C_CH3ab -> -0.0802
+a_O2-H1-M4_Hab3 -> 0.0399
+--------------------
+Fold <0-40> 
+LasCV --> BestAlpha: 0.18000000000000002 
+OneShot --> BestR2Score: 0.46 
+OneShot --> N_PosCoefs: 3 
+h_O2-M4-H1-C_CH3ab -> -0.3702
+E_Hab3 -> -0.2840
+E_CH3ab -> 0.1481
+--------------------
+Fold <0-41> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-42> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-43> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-44> 
+LasCV --> BestAlpha: 0.46 
+OneShot --> BestR2Score: 0.03 
+OneShot --> N_PosCoefs: 1 
+h_O2-M4-H1-C_CH3ab -> -0.0287
+--------------------
+Fold <0-45> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-46> 
+LasCV --> BestAlpha: 0.03 
+OneShot --> BestR2Score: 0.81 
+OneShot --> N_PosCoefs: 13 
+a_O2-M4-H1_Hab3 -> -0.5291
+E_Hab3 -> -0.5269
+E_CH3ab -> 0.4850
+h_O2-M4-H1-C_CH3ab -> -0.3028
+h_O2-H1-M4-C_CH3ab -> -0.3012
+d_H1-C_CH3ab -> -0.2927
+d_O2-M4_CH3ab -> -0.1985
+a_O2-H1-C_CH3ab -> -0.1495
+d_O2-H1_Hab3 -> 0.1322
+a_O2-C-H1_CH3ab -> 0.1244
+a_O2-M4-H1_CH3ab -> 0.0937
+a_H1-O2-C_CH3ab -> 0.0411
+d_M4-H1_Hab3 -> -0.0304
+--------------------
+Fold <0-47> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+Fold <0-48> 
+LasCV --> BestAlpha: 0.14 
+OneShot --> BestR2Score: 0.53 
+OneShot --> N_PosCoefs: 3 
+h_O2-M4-H1-C_CH3ab -> -0.4395
+E_Hab3 -> -0.3529
+E_CH3ab -> 0.2307
+--------------------
+Fold <0-49> 
+LasCV --> BestAlpha: 0.44 
+OneShot --> BestR2Score: 0.05 
+OneShot --> N_PosCoefs: 1 
+h_O2-M4-H1-C_CH3ab -> -0.0487
+--------------------
+Fold <0-50> 
+LasCV --> BestAlpha: 0.5 
+OneShot --> BestR2Score: 0.0 
+OneShot --> N_PosCoefs: 0 
+--------------------
+<- Slot 0 Percentile-LASSO Done->
+
+
+mpiLasso TakeTime:  20.3481 s
+mpiLasso TakeTime:  20.3484 s
+Warning -- There may be the same mean MSE for different theta value!!!
+Gathered BestAlphas: [0.12 0.02 0.5  0.07 0.5  0.5  0.5  0.5  0.28 0.5  0.5  0.46 0.06 0.02
+ 0.5  0.5  0.5  0.41 0.07 0.5  0.5  0.14 0.07 0.32 0.5  0.5  0.5  0.1
+ 0.06 0.07 0.09 0.5  0.05 0.5  0.08 0.06 0.5  0.41 0.05 0.18 0.5  0.5
+ 0.5  0.46 0.5  0.03 0.5  0.14 0.44 0.5  0.5  0.5  0.5  0.5  0.5  0.5
+ 0.12 0.5  0.5  0.5  0.5  0.06 0.09 0.29 0.5  0.5  0.5  0.5  0.5  0.5
+ 0.5  0.5  0.5  0.5  0.5  0.09 0.5  0.5  0.5  0.5  0.5  0.5  0.5  0.5
+ 0.5  0.5  0.08 0.5  0.5  0.5  0.45 0.5  0.5  0.5  0.5  0.49 0.5  0.5
+ 0.5  0.5 ]
+Use 100 best alphas. Max: 0.5000 Min: 0.0200
+
+<- Theta-Selection Setting ->
+K-Folds Setting --> splits: 5 repeats: 1
+TestThetas --> From 0.500000 to 1.000000 Total 21
+
+<- Theta Selection START ->
+Theta <0.50> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.53> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.55> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.57> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.60> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.62> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.65> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.68> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.70> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.72> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.75> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.78> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.80> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.82> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.85> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.88> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.90> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.93> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.95> Alpha: 0.5000 MSE: 1000000.0000
+Theta <0.98> Alpha: 0.5000 MSE: 1000000.0000
+Theta <1.00> Alpha: 0.5000 MSE: 1000000.0000
+<- Theta Selection DONE ->
+
+<- Selected HyerParameter ->
+Best Theta --> 0.5
+Selected Alpha --> 0.5
+
+ThetaSelection TakeTime:  0.4912 s
+Model Score: mse --> 1.00 r2 --> 0.00

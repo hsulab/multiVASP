@@ -1,0 +1,1755 @@
+<- Percentile-LASSO Setting ->
+Processing Data --> Ets
+K-Folds Setting --> splits: 5 repeats: 100
+TestAlphs --> From 0.010000 to 0.500000 Total 50
+ Generating 100 [5-Fold]s 
+
+
+<- Slot1 Percentile-LASSO Begin->
+--------------------
+Fold <1-51> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8120
+E_Hab3 -> 0.4917
+d_H1-C_CH3ab -> -0.2827
+a_O2-M4-C_CH3ab -> 0.2796
+a_O2-M4-H1_Hab3 -> -0.2604
+h_O2-H1-M4-C_CH3ab -> -0.2086
+a_M4-O2-C_CH3ab -> -0.2080
+a_O2-C-H1_CH3ab -> -0.1347
+h_O2-C-M4-H1_CH3ab -> 0.1240
+a_M4-C-H1_CH3ab -> 0.0584
+a_O2-H1-M4_Hab3 -> 0.0322
+h_O2-M4-H1-C_CH3ab -> 0.0172
+d_M4-C_CH3ab -> -0.0156
+d_O2-H1_Hab3 -> -0.0055
+--------------------
+Fold <1-52> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 15 
+E_CH3ab -> 0.8106
+E_Hab3 -> 0.4922
+d_H1-C_CH3ab -> -0.2822
+a_O2-M4-C_CH3ab -> 0.2799
+a_O2-M4-H1_Hab3 -> -0.2625
+h_O2-H1-M4-C_CH3ab -> -0.2092
+a_M4-O2-C_CH3ab -> -0.1935
+a_O2-C-H1_CH3ab -> -0.1355
+h_O2-C-M4-H1_CH3ab -> 0.1280
+a_M4-C-H1_CH3ab -> 0.0517
+a_O2-H1-M4_Hab3 -> 0.0324
+d_M4-C_CH3ab -> -0.0320
+h_O2-M4-H1-C_CH3ab -> 0.0142
+d_O2-H1_Hab3 -> -0.0062
+a_M4-H1-C_CH3ab -> -0.0039
+--------------------
+Fold <1-53> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7998
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2187
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1688
+d_H1-C_CH3ab -> -0.1626
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0988
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <1-54> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8122
+E_Hab3 -> 0.4917
+d_H1-C_CH3ab -> -0.2826
+a_O2-M4-C_CH3ab -> 0.2791
+a_O2-M4-H1_Hab3 -> -0.2596
+a_M4-O2-C_CH3ab -> -0.2112
+h_O2-H1-M4-C_CH3ab -> -0.2083
+a_O2-C-H1_CH3ab -> -0.1349
+h_O2-C-M4-H1_CH3ab -> 0.1242
+a_M4-C-H1_CH3ab -> 0.0569
+a_O2-H1-M4_Hab3 -> 0.0319
+h_O2-M4-H1-C_CH3ab -> 0.0165
+d_M4-C_CH3ab -> -0.0137
+d_O2-H1_Hab3 -> -0.0053
+--------------------
+Fold <1-55> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7998
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2187
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1689
+d_H1-C_CH3ab -> -0.1627
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0989
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <1-56> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8109
+E_Hab3 -> 0.4921
+d_H1-C_CH3ab -> -0.2824
+a_O2-M4-C_CH3ab -> 0.2801
+a_O2-M4-H1_Hab3 -> -0.2622
+h_O2-H1-M4-C_CH3ab -> -0.2092
+a_M4-O2-C_CH3ab -> -0.1961
+a_O2-C-H1_CH3ab -> -0.1356
+h_O2-C-M4-H1_CH3ab -> 0.1272
+a_M4-C-H1_CH3ab -> 0.0559
+a_O2-H1-M4_Hab3 -> 0.0324
+d_M4-C_CH3ab -> -0.0295
+h_O2-M4-H1-C_CH3ab -> 0.0149
+d_O2-H1_Hab3 -> -0.0060
+--------------------
+Fold <1-57> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8119
+E_Hab3 -> 0.4918
+d_H1-C_CH3ab -> -0.2827
+a_O2-M4-C_CH3ab -> 0.2797
+a_O2-M4-H1_Hab3 -> -0.2609
+h_O2-H1-M4-C_CH3ab -> -0.2087
+a_M4-O2-C_CH3ab -> -0.2060
+a_O2-C-H1_CH3ab -> -0.1349
+h_O2-C-M4-H1_CH3ab -> 0.1242
+a_M4-C-H1_CH3ab -> 0.0586
+a_O2-H1-M4_Hab3 -> 0.0323
+d_M4-C_CH3ab -> -0.0174
+h_O2-M4-H1-C_CH3ab -> 0.0170
+d_O2-H1_Hab3 -> -0.0056
+--------------------
+Fold <1-58> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7997
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2189
+h_O2-H1-M4-C_CH3ab -> -0.1861
+a_O2-M4-C_CH3ab -> 0.1690
+d_H1-C_CH3ab -> -0.1629
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0987
+a_O2-H1-M4_Hab3 -> 0.0430
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <1-59> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7996
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2191
+h_O2-H1-M4-C_CH3ab -> -0.1860
+a_O2-M4-C_CH3ab -> 0.1690
+d_H1-C_CH3ab -> -0.1629
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0984
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0196
+--------------------
+Fold <1-60> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7998
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2187
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1689
+d_H1-C_CH3ab -> -0.1627
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0989
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <1-61> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7995
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2193
+h_O2-H1-M4-C_CH3ab -> -0.1859
+a_O2-M4-C_CH3ab -> 0.1692
+d_H1-C_CH3ab -> -0.1631
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0983
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0196
+--------------------
+Fold <1-62> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7999
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2199
+a_O2-M4-H1_Hab3 -> -0.2186
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1688
+d_H1-C_CH3ab -> -0.1626
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0990
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <1-63> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8125
+E_Hab3 -> 0.4916
+d_H1-C_CH3ab -> -0.2826
+a_O2-M4-C_CH3ab -> 0.2789
+a_O2-M4-H1_Hab3 -> -0.2590
+a_M4-O2-C_CH3ab -> -0.2146
+h_O2-H1-M4-C_CH3ab -> -0.2082
+a_O2-C-H1_CH3ab -> -0.1345
+h_O2-C-M4-H1_CH3ab -> 0.1234
+a_M4-C-H1_CH3ab -> 0.0575
+a_O2-H1-M4_Hab3 -> 0.0319
+h_O2-M4-H1-C_CH3ab -> 0.0172
+d_M4-C_CH3ab -> -0.0098
+d_O2-H1_Hab3 -> -0.0052
+--------------------
+Fold <1-64> 
+LasCV --> BestAlpha: 0.03 
+OneShot --> BestR2Score: 0.88 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7874
+E_Hab3 -> 0.4373
+a_O2-M4-H1_Hab3 -> -0.1945
+a_M4-O2-C_CH3ab -> -0.1706
+h_O2-H1-M4-C_CH3ab -> -0.1670
+a_O2-C-H1_CH3ab -> -0.1115
+a_O2-M4-C_CH3ab -> 0.0708
+h_O2-C-M4-H1_CH3ab -> 0.0611
+a_O2-H1-M4_Hab3 -> 0.0602
+d_H1-C_CH3ab -> -0.0489
+d_O2-H1_Hab3 -> -0.0361
+--------------------
+Fold <1-65> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.8000
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2185
+h_O2-H1-M4-C_CH3ab -> -0.1863
+a_O2-M4-C_CH3ab -> 0.1688
+d_H1-C_CH3ab -> -0.1627
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0992
+a_O2-H1-M4_Hab3 -> 0.0428
+d_O2-H1_Hab3 -> -0.0194
+--------------------
+Fold <1-66> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7994
+E_Hab3 -> 0.4647
+a_M4-O2-C_CH3ab -> -0.2202
+a_O2-M4-H1_Hab3 -> -0.2192
+h_O2-H1-M4-C_CH3ab -> -0.1859
+a_O2-M4-C_CH3ab -> 0.1695
+d_H1-C_CH3ab -> -0.1635
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0983
+a_O2-H1-M4_Hab3 -> 0.0427
+d_O2-H1_Hab3 -> -0.0193
+--------------------
+Fold <1-67> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7999
+E_Hab3 -> 0.4645
+a_M4-O2-C_CH3ab -> -0.2199
+a_O2-M4-H1_Hab3 -> -0.2186
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1687
+d_H1-C_CH3ab -> -0.1625
+a_O2-C-H1_CH3ab -> -0.1200
+h_O2-C-M4-H1_CH3ab -> 0.0990
+a_O2-H1-M4_Hab3 -> 0.0430
+d_O2-H1_Hab3 -> -0.0196
+--------------------
+Fold <1-68> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7994
+E_Hab3 -> 0.4647
+a_M4-O2-C_CH3ab -> -0.2203
+a_O2-M4-H1_Hab3 -> -0.2193
+h_O2-H1-M4-C_CH3ab -> -0.1860
+a_O2-M4-C_CH3ab -> 0.1697
+d_H1-C_CH3ab -> -0.1638
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0984
+a_O2-H1-M4_Hab3 -> 0.0425
+d_O2-H1_Hab3 -> -0.0192
+--------------------
+Fold <1-69> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7998
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2187
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1689
+d_H1-C_CH3ab -> -0.1628
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0989
+a_O2-H1-M4_Hab3 -> 0.0428
+d_O2-H1_Hab3 -> -0.0194
+--------------------
+Fold <1-70> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7993
+E_Hab3 -> 0.4647
+a_M4-O2-C_CH3ab -> -0.2202
+a_O2-M4-H1_Hab3 -> -0.2195
+h_O2-H1-M4-C_CH3ab -> -0.1860
+a_O2-M4-C_CH3ab -> 0.1696
+d_H1-C_CH3ab -> -0.1636
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0982
+a_O2-H1-M4_Hab3 -> 0.0427
+d_O2-H1_Hab3 -> -0.0194
+--------------------
+Fold <1-71> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.8000
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2185
+h_O2-H1-M4-C_CH3ab -> -0.1863
+a_O2-M4-C_CH3ab -> 0.1689
+d_H1-C_CH3ab -> -0.1627
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0992
+a_O2-H1-M4_Hab3 -> 0.0428
+d_O2-H1_Hab3 -> -0.0194
+--------------------
+Fold <1-72> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8118
+E_Hab3 -> 0.4918
+d_H1-C_CH3ab -> -0.2825
+a_O2-M4-C_CH3ab -> 0.2793
+a_O2-M4-H1_Hab3 -> -0.2603
+h_O2-H1-M4-C_CH3ab -> -0.2085
+a_M4-O2-C_CH3ab -> -0.2067
+a_O2-C-H1_CH3ab -> -0.1352
+h_O2-C-M4-H1_CH3ab -> 0.1253
+a_M4-C-H1_CH3ab -> 0.0562
+a_O2-H1-M4_Hab3 -> 0.0320
+d_M4-C_CH3ab -> -0.0188
+h_O2-M4-H1-C_CH3ab -> 0.0157
+d_O2-H1_Hab3 -> -0.0055
+--------------------
+Fold <1-73> 
+LasCV --> BestAlpha: 0.03 
+OneShot --> BestR2Score: 0.88 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7872
+E_Hab3 -> 0.4374
+a_O2-M4-H1_Hab3 -> -0.1948
+a_M4-O2-C_CH3ab -> -0.1709
+h_O2-H1-M4-C_CH3ab -> -0.1670
+a_O2-C-H1_CH3ab -> -0.1115
+a_O2-M4-C_CH3ab -> 0.0717
+h_O2-C-M4-H1_CH3ab -> 0.0610
+a_O2-H1-M4_Hab3 -> 0.0600
+d_H1-C_CH3ab -> -0.0499
+d_O2-H1_Hab3 -> -0.0360
+--------------------
+Fold <1-74> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7999
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2186
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1689
+d_H1-C_CH3ab -> -0.1627
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0990
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <1-75> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7997
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2189
+h_O2-H1-M4-C_CH3ab -> -0.1861
+a_O2-M4-C_CH3ab -> 0.1689
+d_H1-C_CH3ab -> -0.1627
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0986
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0196
+--------------------
+Fold <1-76> 
+LasCV --> BestAlpha: 0.03 
+OneShot --> BestR2Score: 0.88 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7869
+E_Hab3 -> 0.4376
+a_O2-M4-H1_Hab3 -> -0.1953
+a_M4-O2-C_CH3ab -> -0.1710
+h_O2-H1-M4-C_CH3ab -> -0.1668
+a_O2-C-H1_CH3ab -> -0.1116
+a_O2-M4-C_CH3ab -> 0.0722
+h_O2-C-M4-H1_CH3ab -> 0.0605
+a_O2-H1-M4_Hab3 -> 0.0597
+d_H1-C_CH3ab -> -0.0506
+d_O2-H1_Hab3 -> -0.0357
+--------------------
+Fold <1-77> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8117
+E_Hab3 -> 0.4919
+d_H1-C_CH3ab -> -0.2825
+a_O2-M4-C_CH3ab -> 0.2798
+a_O2-M4-H1_Hab3 -> -0.2610
+h_O2-H1-M4-C_CH3ab -> -0.2090
+a_M4-O2-C_CH3ab -> -0.2032
+a_O2-C-H1_CH3ab -> -0.1349
+h_O2-C-M4-H1_CH3ab -> 0.1256
+a_M4-C-H1_CH3ab -> 0.0572
+a_O2-H1-M4_Hab3 -> 0.0322
+d_M4-C_CH3ab -> -0.0213
+h_O2-M4-H1-C_CH3ab -> 0.0164
+d_O2-H1_Hab3 -> -0.0056
+--------------------
+Fold <1-78> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7998
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2199
+a_O2-M4-H1_Hab3 -> -0.2188
+h_O2-H1-M4-C_CH3ab -> -0.1861
+a_O2-M4-C_CH3ab -> 0.1689
+d_H1-C_CH3ab -> -0.1627
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0987
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <1-79> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8125
+E_Hab3 -> 0.4916
+d_H1-C_CH3ab -> -0.2827
+a_O2-M4-C_CH3ab -> 0.2789
+a_O2-M4-H1_Hab3 -> -0.2590
+a_M4-O2-C_CH3ab -> -0.2145
+h_O2-H1-M4-C_CH3ab -> -0.2082
+a_O2-C-H1_CH3ab -> -0.1346
+h_O2-C-M4-H1_CH3ab -> 0.1235
+a_M4-C-H1_CH3ab -> 0.0573
+a_O2-H1-M4_Hab3 -> 0.0318
+h_O2-M4-H1-C_CH3ab -> 0.0170
+d_M4-C_CH3ab -> -0.0100
+d_O2-H1_Hab3 -> -0.0051
+--------------------
+Fold <1-80> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8099
+E_Hab3 -> 0.4925
+d_H1-C_CH3ab -> -0.2821
+a_O2-M4-C_CH3ab -> 0.2809
+a_O2-M4-H1_Hab3 -> -0.2643
+h_O2-H1-M4-C_CH3ab -> -0.2099
+a_M4-O2-C_CH3ab -> -0.1838
+a_O2-C-H1_CH3ab -> -0.1361
+h_O2-C-M4-H1_CH3ab -> 0.1297
+a_M4-C-H1_CH3ab -> 0.0551
+d_M4-C_CH3ab -> -0.0424
+a_O2-H1-M4_Hab3 -> 0.0327
+h_O2-M4-H1-C_CH3ab -> 0.0136
+d_O2-H1_Hab3 -> -0.0065
+--------------------
+Fold <1-81> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7994
+E_Hab3 -> 0.4647
+a_M4-O2-C_CH3ab -> -0.2202
+a_O2-M4-H1_Hab3 -> -0.2193
+h_O2-H1-M4-C_CH3ab -> -0.1860
+a_O2-M4-C_CH3ab -> 0.1696
+d_H1-C_CH3ab -> -0.1636
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0983
+a_O2-H1-M4_Hab3 -> 0.0426
+d_O2-H1_Hab3 -> -0.0193
+--------------------
+Fold <1-82> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7993
+E_Hab3 -> 0.4648
+a_M4-O2-C_CH3ab -> -0.2203
+a_O2-M4-H1_Hab3 -> -0.2195
+h_O2-H1-M4-C_CH3ab -> -0.1859
+a_O2-M4-C_CH3ab -> 0.1701
+d_H1-C_CH3ab -> -0.1641
+a_O2-C-H1_CH3ab -> -0.1203
+h_O2-C-M4-H1_CH3ab -> 0.0983
+a_O2-H1-M4_Hab3 -> 0.0424
+d_O2-H1_Hab3 -> -0.0192
+--------------------
+Fold <1-83> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7997
+E_Hab3 -> 0.4645
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2189
+h_O2-H1-M4-C_CH3ab -> -0.1861
+a_O2-M4-C_CH3ab -> 0.1689
+d_H1-C_CH3ab -> -0.1627
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0985
+a_O2-H1-M4_Hab3 -> 0.0430
+d_O2-H1_Hab3 -> -0.0196
+--------------------
+Fold <1-84> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7999
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2186
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1688
+d_H1-C_CH3ab -> -0.1627
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0989
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <1-85> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8110
+E_Hab3 -> 0.4920
+d_H1-C_CH3ab -> -0.2821
+a_O2-M4-C_CH3ab -> 0.2797
+a_O2-M4-H1_Hab3 -> -0.2616
+h_O2-H1-M4-C_CH3ab -> -0.2090
+a_M4-O2-C_CH3ab -> -0.1984
+a_O2-C-H1_CH3ab -> -0.1356
+h_O2-C-M4-H1_CH3ab -> 0.1270
+a_M4-C-H1_CH3ab -> 0.0554
+a_O2-H1-M4_Hab3 -> 0.0323
+d_M4-C_CH3ab -> -0.0275
+h_O2-M4-H1-C_CH3ab -> 0.0147
+d_O2-H1_Hab3 -> -0.0059
+--------------------
+Fold <1-86> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8109
+E_Hab3 -> 0.4921
+d_H1-C_CH3ab -> -0.2822
+a_O2-M4-C_CH3ab -> 0.2800
+a_O2-M4-H1_Hab3 -> -0.2622
+h_O2-H1-M4-C_CH3ab -> -0.2092
+a_M4-O2-C_CH3ab -> -0.1955
+a_O2-C-H1_CH3ab -> -0.1356
+h_O2-C-M4-H1_CH3ab -> 0.1274
+a_M4-C-H1_CH3ab -> 0.0557
+a_O2-H1-M4_Hab3 -> 0.0324
+d_M4-C_CH3ab -> -0.0302
+h_O2-M4-H1-C_CH3ab -> 0.0147
+d_O2-H1_Hab3 -> -0.0060
+--------------------
+Fold <1-87> 
+LasCV --> BestAlpha: 0.03 
+OneShot --> BestR2Score: 0.88 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7868
+E_Hab3 -> 0.4375
+a_O2-M4-H1_Hab3 -> -0.1954
+a_M4-O2-C_CH3ab -> -0.1708
+h_O2-H1-M4-C_CH3ab -> -0.1667
+a_O2-C-H1_CH3ab -> -0.1116
+a_O2-M4-C_CH3ab -> 0.0719
+h_O2-C-M4-H1_CH3ab -> 0.0602
+a_O2-H1-M4_Hab3 -> 0.0599
+d_H1-C_CH3ab -> -0.0501
+d_O2-H1_Hab3 -> -0.0360
+--------------------
+Fold <1-88> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7997
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2199
+a_O2-M4-H1_Hab3 -> -0.2188
+h_O2-H1-M4-C_CH3ab -> -0.1861
+a_O2-M4-C_CH3ab -> 0.1689
+d_H1-C_CH3ab -> -0.1627
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0987
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <1-89> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7999
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2186
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1687
+d_H1-C_CH3ab -> -0.1625
+a_O2-C-H1_CH3ab -> -0.1200
+h_O2-C-M4-H1_CH3ab -> 0.0990
+a_O2-H1-M4_Hab3 -> 0.0431
+d_O2-H1_Hab3 -> -0.0196
+--------------------
+Fold <1-90> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7995
+E_Hab3 -> 0.4647
+a_M4-O2-C_CH3ab -> -0.2202
+a_O2-M4-H1_Hab3 -> -0.2192
+h_O2-H1-M4-C_CH3ab -> -0.1861
+a_O2-M4-C_CH3ab -> 0.1697
+d_H1-C_CH3ab -> -0.1636
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0986
+a_O2-H1-M4_Hab3 -> 0.0426
+d_O2-H1_Hab3 -> -0.0193
+--------------------
+Fold <1-91> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7998
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2201
+a_O2-M4-H1_Hab3 -> -0.2188
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1691
+d_H1-C_CH3ab -> -0.1630
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0988
+a_O2-H1-M4_Hab3 -> 0.0428
+d_O2-H1_Hab3 -> -0.0194
+--------------------
+Fold <1-92> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7993
+E_Hab3 -> 0.4648
+a_M4-O2-C_CH3ab -> -0.2204
+a_O2-M4-H1_Hab3 -> -0.2195
+h_O2-H1-M4-C_CH3ab -> -0.1859
+a_O2-M4-C_CH3ab -> 0.1700
+d_H1-C_CH3ab -> -0.1641
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0983
+a_O2-H1-M4_Hab3 -> 0.0424
+d_O2-H1_Hab3 -> -0.0191
+--------------------
+Fold <1-93> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.8000
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2203
+a_O2-M4-H1_Hab3 -> -0.2186
+h_O2-H1-M4-C_CH3ab -> -0.1863
+a_O2-M4-C_CH3ab -> 0.1691
+d_H1-C_CH3ab -> -0.1631
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0993
+a_O2-H1-M4_Hab3 -> 0.0428
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <1-94> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8114
+E_Hab3 -> 0.4919
+d_H1-C_CH3ab -> -0.2824
+a_O2-M4-C_CH3ab -> 0.2795
+a_O2-M4-H1_Hab3 -> -0.2610
+h_O2-H1-M4-C_CH3ab -> -0.2087
+a_M4-O2-C_CH3ab -> -0.2026
+a_O2-C-H1_CH3ab -> -0.1353
+h_O2-C-M4-H1_CH3ab -> 0.1263
+a_M4-C-H1_CH3ab -> 0.0553
+a_O2-H1-M4_Hab3 -> 0.0321
+d_M4-C_CH3ab -> -0.0236
+h_O2-M4-H1-C_CH3ab -> 0.0151
+d_O2-H1_Hab3 -> -0.0057
+--------------------
+Fold <1-95> 
+LasCV --> BestAlpha: 0.03 
+OneShot --> BestR2Score: 0.88 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7874
+E_Hab3 -> 0.4373
+a_O2-M4-H1_Hab3 -> -0.1945
+a_M4-O2-C_CH3ab -> -0.1705
+h_O2-H1-M4-C_CH3ab -> -0.1671
+a_O2-C-H1_CH3ab -> -0.1115
+a_O2-M4-C_CH3ab -> 0.0708
+h_O2-C-M4-H1_CH3ab -> 0.0612
+a_O2-H1-M4_Hab3 -> 0.0603
+d_H1-C_CH3ab -> -0.0488
+d_O2-H1_Hab3 -> -0.0362
+--------------------
+Fold <1-96> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7997
+E_Hab3 -> 0.4647
+a_M4-O2-C_CH3ab -> -0.2201
+a_O2-M4-H1_Hab3 -> -0.2189
+h_O2-H1-M4-C_CH3ab -> -0.1861
+a_O2-M4-C_CH3ab -> 0.1692
+d_H1-C_CH3ab -> -0.1631
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0987
+a_O2-H1-M4_Hab3 -> 0.0427
+d_O2-H1_Hab3 -> -0.0193
+--------------------
+Fold <1-97> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8113
+E_Hab3 -> 0.4920
+d_H1-C_CH3ab -> -0.2823
+a_O2-M4-C_CH3ab -> 0.2796
+a_O2-M4-H1_Hab3 -> -0.2613
+h_O2-H1-M4-C_CH3ab -> -0.2088
+a_M4-O2-C_CH3ab -> -0.2008
+a_O2-C-H1_CH3ab -> -0.1353
+h_O2-C-M4-H1_CH3ab -> 0.1265
+a_M4-C-H1_CH3ab -> 0.0556
+a_O2-H1-M4_Hab3 -> 0.0322
+d_M4-C_CH3ab -> -0.0251
+h_O2-M4-H1-C_CH3ab -> 0.0151
+d_O2-H1_Hab3 -> -0.0058
+--------------------
+Fold <1-98> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7993
+E_Hab3 -> 0.4647
+a_M4-O2-C_CH3ab -> -0.2203
+a_O2-M4-H1_Hab3 -> -0.2195
+h_O2-H1-M4-C_CH3ab -> -0.1859
+a_O2-M4-C_CH3ab -> 0.1697
+d_H1-C_CH3ab -> -0.1638
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0982
+a_O2-H1-M4_Hab3 -> 0.0425
+d_O2-H1_Hab3 -> -0.0193
+--------------------
+Fold <1-99> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8124
+E_Hab3 -> 0.4917
+d_H1-C_CH3ab -> -0.2826
+a_O2-M4-C_CH3ab -> 0.2793
+a_O2-M4-H1_Hab3 -> -0.2597
+a_M4-O2-C_CH3ab -> -0.2110
+h_O2-H1-M4-C_CH3ab -> -0.2086
+a_O2-C-H1_CH3ab -> -0.1344
+h_O2-C-M4-H1_CH3ab -> 0.1240
+a_M4-C-H1_CH3ab -> 0.0579
+a_O2-H1-M4_Hab3 -> 0.0321
+h_O2-M4-H1-C_CH3ab -> 0.0175
+d_M4-C_CH3ab -> -0.0130
+d_O2-H1_Hab3 -> -0.0053
+--------------------
+Fold <1-100> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7999
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2186
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1689
+d_H1-C_CH3ab -> -0.1626
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0990
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+<- Slot 1 Percentile-LASSO Done->
+
+
+<- Slot0 Percentile-LASSO Begin->
+--------------------
+Fold <0-1> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8115
+E_Hab3 -> 0.4919
+d_H1-C_CH3ab -> -0.2823
+a_O2-M4-C_CH3ab -> 0.2795
+a_O2-M4-H1_Hab3 -> -0.2609
+h_O2-H1-M4-C_CH3ab -> -0.2089
+a_M4-O2-C_CH3ab -> -0.2023
+a_O2-C-H1_CH3ab -> -0.1353
+h_O2-C-M4-H1_CH3ab -> 0.1263
+a_M4-C-H1_CH3ab -> 0.0560
+a_O2-H1-M4_Hab3 -> 0.0322
+d_M4-C_CH3ab -> -0.0232
+h_O2-M4-H1-C_CH3ab -> 0.0154
+d_O2-H1_Hab3 -> -0.0057
+--------------------
+Fold <0-2> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7998
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2188
+h_O2-H1-M4-C_CH3ab -> -0.1861
+a_O2-M4-C_CH3ab -> 0.1688
+d_H1-C_CH3ab -> -0.1627
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0987
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <0-3> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7998
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2188
+h_O2-H1-M4-C_CH3ab -> -0.1861
+a_O2-M4-C_CH3ab -> 0.1689
+d_H1-C_CH3ab -> -0.1627
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0988
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <0-4> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7997
+E_Hab3 -> 0.4647
+a_M4-O2-C_CH3ab -> -0.2201
+a_O2-M4-H1_Hab3 -> -0.2188
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1692
+d_H1-C_CH3ab -> -0.1631
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0988
+a_O2-H1-M4_Hab3 -> 0.0427
+d_O2-H1_Hab3 -> -0.0193
+--------------------
+Fold <0-5> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8100
+E_Hab3 -> 0.4924
+d_H1-C_CH3ab -> -0.2823
+a_O2-M4-C_CH3ab -> 0.2808
+a_O2-M4-H1_Hab3 -> -0.2639
+h_O2-H1-M4-C_CH3ab -> -0.2096
+a_M4-O2-C_CH3ab -> -0.1866
+a_O2-C-H1_CH3ab -> -0.1360
+h_O2-C-M4-H1_CH3ab -> 0.1292
+a_M4-C-H1_CH3ab -> 0.0546
+d_M4-C_CH3ab -> -0.0400
+a_O2-H1-M4_Hab3 -> 0.0326
+h_O2-M4-H1-C_CH3ab -> 0.0135
+d_O2-H1_Hab3 -> -0.0064
+--------------------
+Fold <0-6> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8101
+E_Hab3 -> 0.4924
+d_H1-C_CH3ab -> -0.2822
+a_O2-M4-C_CH3ab -> 0.2807
+a_O2-M4-H1_Hab3 -> -0.2638
+h_O2-H1-M4-C_CH3ab -> -0.2095
+a_M4-O2-C_CH3ab -> -0.1870
+a_O2-C-H1_CH3ab -> -0.1361
+h_O2-C-M4-H1_CH3ab -> 0.1290
+a_M4-C-H1_CH3ab -> 0.0551
+d_M4-C_CH3ab -> -0.0392
+a_O2-H1-M4_Hab3 -> 0.0327
+h_O2-M4-H1-C_CH3ab -> 0.0137
+d_O2-H1_Hab3 -> -0.0065
+--------------------
+Fold <0-7> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 15 
+E_CH3ab -> 0.8116
+E_Hab3 -> 0.4918
+d_H1-C_CH3ab -> -0.2828
+a_O2-M4-C_CH3ab -> 0.2785
+a_O2-M4-H1_Hab3 -> -0.2605
+h_O2-H1-M4-C_CH3ab -> -0.2081
+a_M4-O2-C_CH3ab -> -0.2069
+a_O2-C-H1_CH3ab -> -0.1346
+h_O2-C-M4-H1_CH3ab -> 0.1240
+a_M4-C-H1_CH3ab -> 0.0401
+a_O2-H1-M4_Hab3 -> 0.0319
+a_M4-H1-C_CH3ab -> -0.0229
+h_O2-M4-H1-C_CH3ab -> 0.0165
+d_M4-C_CH3ab -> -0.0110
+d_O2-H1_Hab3 -> -0.0056
+--------------------
+Fold <0-8> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7997
+E_Hab3 -> 0.4648
+a_M4-O2-C_CH3ab -> -0.2204
+a_O2-M4-H1_Hab3 -> -0.2189
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1698
+d_H1-C_CH3ab -> -0.1639
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0990
+a_O2-H1-M4_Hab3 -> 0.0423
+d_O2-H1_Hab3 -> -0.0190
+--------------------
+Fold <0-9> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7999
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2187
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1689
+d_H1-C_CH3ab -> -0.1627
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0990
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <0-10> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7997
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2199
+a_O2-M4-H1_Hab3 -> -0.2188
+h_O2-H1-M4-C_CH3ab -> -0.1861
+a_O2-M4-C_CH3ab -> 0.1688
+d_H1-C_CH3ab -> -0.1626
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0987
+a_O2-H1-M4_Hab3 -> 0.0431
+d_O2-H1_Hab3 -> -0.0196
+--------------------
+Fold <0-11> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8122
+E_Hab3 -> 0.4917
+d_H1-C_CH3ab -> -0.2826
+a_O2-M4-C_CH3ab -> 0.2791
+a_O2-M4-H1_Hab3 -> -0.2597
+a_M4-O2-C_CH3ab -> -0.2106
+h_O2-H1-M4-C_CH3ab -> -0.2084
+a_O2-C-H1_CH3ab -> -0.1348
+h_O2-C-M4-H1_CH3ab -> 0.1244
+a_M4-C-H1_CH3ab -> 0.0567
+a_O2-H1-M4_Hab3 -> 0.0319
+h_O2-M4-H1-C_CH3ab -> 0.0164
+d_M4-C_CH3ab -> -0.0145
+d_O2-H1_Hab3 -> -0.0053
+--------------------
+Fold <0-12> 
+LasCV --> BestAlpha: 0.03 
+OneShot --> BestR2Score: 0.88 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7873
+E_Hab3 -> 0.4373
+a_O2-M4-H1_Hab3 -> -0.1947
+a_M4-O2-C_CH3ab -> -0.1706
+h_O2-H1-M4-C_CH3ab -> -0.1670
+a_O2-C-H1_CH3ab -> -0.1114
+a_O2-M4-C_CH3ab -> 0.0710
+h_O2-C-M4-H1_CH3ab -> 0.0609
+a_O2-H1-M4_Hab3 -> 0.0603
+d_H1-C_CH3ab -> -0.0490
+d_O2-H1_Hab3 -> -0.0363
+--------------------
+Fold <0-13> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8117
+E_Hab3 -> 0.4919
+d_H1-C_CH3ab -> -0.2824
+a_O2-M4-C_CH3ab -> 0.2795
+a_O2-M4-H1_Hab3 -> -0.2608
+h_O2-H1-M4-C_CH3ab -> -0.2088
+a_M4-O2-C_CH3ab -> -0.2040
+a_O2-C-H1_CH3ab -> -0.1351
+h_O2-C-M4-H1_CH3ab -> 0.1256
+a_M4-C-H1_CH3ab -> 0.0568
+a_O2-H1-M4_Hab3 -> 0.0322
+d_M4-C_CH3ab -> -0.0209
+h_O2-M4-H1-C_CH3ab -> 0.0160
+d_O2-H1_Hab3 -> -0.0056
+--------------------
+Fold <0-14> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8108
+E_Hab3 -> 0.4922
+d_H1-C_CH3ab -> -0.2825
+a_O2-M4-C_CH3ab -> 0.2807
+a_O2-M4-H1_Hab3 -> -0.2630
+h_O2-H1-M4-C_CH3ab -> -0.2096
+a_M4-O2-C_CH3ab -> -0.1924
+a_O2-C-H1_CH3ab -> -0.1353
+h_O2-C-M4-H1_CH3ab -> 0.1276
+a_M4-C-H1_CH3ab -> 0.0566
+a_O2-H1-M4_Hab3 -> 0.0326
+d_M4-C_CH3ab -> -0.0326
+h_O2-M4-H1-C_CH3ab -> 0.0154
+d_O2-H1_Hab3 -> -0.0061
+--------------------
+Fold <0-15> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 12 
+E_CH3ab -> 0.7995
+E_Hab3 -> 0.4648
+a_O2-M4-H1_Hab3 -> -0.2186
+a_M4-O2-C_CH3ab -> -0.2137
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1725
+d_H1-C_CH3ab -> -0.1632
+a_O2-C-H1_CH3ab -> -0.1155
+h_O2-C-M4-H1_CH3ab -> 0.0990
+a_O2-H1-M4_Hab3 -> 0.0425
+d_O2-H1_Hab3 -> -0.0192
+a_O2-H1-M4_CH3ab -> 0.0081
+--------------------
+Fold <0-16> 
+LasCV --> BestAlpha: 0.03 
+OneShot --> BestR2Score: 0.88 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7874
+E_Hab3 -> 0.4373
+a_O2-M4-H1_Hab3 -> -0.1945
+a_M4-O2-C_CH3ab -> -0.1705
+h_O2-H1-M4-C_CH3ab -> -0.1671
+a_O2-C-H1_CH3ab -> -0.1115
+a_O2-M4-C_CH3ab -> 0.0708
+h_O2-C-M4-H1_CH3ab -> 0.0611
+a_O2-H1-M4_Hab3 -> 0.0603
+d_H1-C_CH3ab -> -0.0488
+d_O2-H1_Hab3 -> -0.0362
+--------------------
+Fold <0-17> 
+LasCV --> BestAlpha: 0.03 
+OneShot --> BestR2Score: 0.88 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7868
+E_Hab3 -> 0.4375
+a_O2-M4-H1_Hab3 -> -0.1955
+a_M4-O2-C_CH3ab -> -0.1709
+h_O2-H1-M4-C_CH3ab -> -0.1667
+a_O2-C-H1_CH3ab -> -0.1117
+a_O2-M4-C_CH3ab -> 0.0721
+h_O2-C-M4-H1_CH3ab -> 0.0603
+a_O2-H1-M4_Hab3 -> 0.0598
+d_H1-C_CH3ab -> -0.0504
+d_O2-H1_Hab3 -> -0.0358
+--------------------
+Fold <0-18> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.8000
+E_Hab3 -> 0.4647
+a_M4-O2-C_CH3ab -> -0.2201
+a_O2-M4-H1_Hab3 -> -0.2185
+h_O2-H1-M4-C_CH3ab -> -0.1863
+a_O2-M4-C_CH3ab -> 0.1690
+d_H1-C_CH3ab -> -0.1629
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0994
+a_O2-H1-M4_Hab3 -> 0.0426
+d_O2-H1_Hab3 -> -0.0192
+--------------------
+Fold <0-19> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7998
+E_Hab3 -> 0.4647
+a_M4-O2-C_CH3ab -> -0.2202
+a_O2-M4-H1_Hab3 -> -0.2188
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1694
+d_H1-C_CH3ab -> -0.1633
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0990
+a_O2-H1-M4_Hab3 -> 0.0426
+d_O2-H1_Hab3 -> -0.0193
+--------------------
+Fold <0-20> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8113
+E_Hab3 -> 0.4920
+d_H1-C_CH3ab -> -0.2825
+a_O2-M4-C_CH3ab -> 0.2799
+a_O2-M4-H1_Hab3 -> -0.2614
+h_O2-H1-M4-C_CH3ab -> -0.2089
+a_M4-O2-C_CH3ab -> -0.2010
+a_O2-C-H1_CH3ab -> -0.1352
+h_O2-C-M4-H1_CH3ab -> 0.1261
+a_M4-C-H1_CH3ab -> 0.0564
+a_O2-H1-M4_Hab3 -> 0.0323
+d_M4-C_CH3ab -> -0.0242
+h_O2-M4-H1-C_CH3ab -> 0.0156
+d_O2-H1_Hab3 -> -0.0058
+--------------------
+Fold <0-21> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7998
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2201
+a_O2-M4-H1_Hab3 -> -0.2187
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1690
+d_H1-C_CH3ab -> -0.1629
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0990
+a_O2-H1-M4_Hab3 -> 0.0427
+d_O2-H1_Hab3 -> -0.0193
+--------------------
+Fold <0-22> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7993
+E_Hab3 -> 0.4647
+a_M4-O2-C_CH3ab -> -0.2203
+a_O2-M4-H1_Hab3 -> -0.2194
+h_O2-H1-M4-C_CH3ab -> -0.1859
+a_O2-M4-C_CH3ab -> 0.1697
+d_H1-C_CH3ab -> -0.1638
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0982
+a_O2-H1-M4_Hab3 -> 0.0425
+d_O2-H1_Hab3 -> -0.0192
+--------------------
+Fold <0-23> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8115
+E_Hab3 -> 0.4919
+d_H1-C_CH3ab -> -0.2825
+a_O2-M4-C_CH3ab -> 0.2797
+a_O2-M4-H1_Hab3 -> -0.2610
+h_O2-H1-M4-C_CH3ab -> -0.2088
+a_M4-O2-C_CH3ab -> -0.2024
+a_O2-C-H1_CH3ab -> -0.1353
+h_O2-C-M4-H1_CH3ab -> 0.1261
+a_M4-C-H1_CH3ab -> 0.0564
+a_O2-H1-M4_Hab3 -> 0.0322
+d_M4-C_CH3ab -> -0.0229
+h_O2-M4-H1-C_CH3ab -> 0.0155
+d_O2-H1_Hab3 -> -0.0057
+--------------------
+Fold <0-24> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8123
+E_Hab3 -> 0.4916
+d_H1-C_CH3ab -> -0.2827
+a_O2-M4-C_CH3ab -> 0.2790
+a_O2-M4-H1_Hab3 -> -0.2593
+a_M4-O2-C_CH3ab -> -0.2131
+h_O2-H1-M4-C_CH3ab -> -0.2082
+a_O2-C-H1_CH3ab -> -0.1347
+h_O2-C-M4-H1_CH3ab -> 0.1239
+a_M4-C-H1_CH3ab -> 0.0567
+a_O2-H1-M4_Hab3 -> 0.0318
+h_O2-M4-H1-C_CH3ab -> 0.0166
+d_M4-C_CH3ab -> -0.0121
+d_O2-H1_Hab3 -> -0.0052
+--------------------
+Fold <0-25> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7997
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2201
+a_O2-M4-H1_Hab3 -> -0.2189
+h_O2-H1-M4-C_CH3ab -> -0.1861
+a_O2-M4-C_CH3ab -> 0.1690
+d_H1-C_CH3ab -> -0.1629
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0987
+a_O2-H1-M4_Hab3 -> 0.0428
+d_O2-H1_Hab3 -> -0.0194
+--------------------
+Fold <0-26> 
+LasCV --> BestAlpha: 0.09 
+OneShot --> BestR2Score: 0.79 
+OneShot --> N_PosCoefs: 6 
+E_CH3ab -> 0.6802
+E_Hab3 -> 0.3553
+a_O2-H1-M4_CH3ab -> 0.1158
+a_O2-M4-H1_Hab3 -> -0.0950
+h_O2-H1-M4-C_CH3ab -> -0.0568
+a_O2-C-H1_CH3ab -> -0.0116
+--------------------
+Fold <0-27> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7999
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2186
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1688
+d_H1-C_CH3ab -> -0.1625
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0990
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <0-28> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8126
+E_Hab3 -> 0.4915
+d_H1-C_CH3ab -> -0.2827
+a_O2-M4-C_CH3ab -> 0.2788
+a_O2-M4-H1_Hab3 -> -0.2588
+a_M4-O2-C_CH3ab -> -0.2159
+h_O2-H1-M4-C_CH3ab -> -0.2082
+a_O2-C-H1_CH3ab -> -0.1344
+h_O2-C-M4-H1_CH3ab -> 0.1232
+a_M4-C-H1_CH3ab -> 0.0574
+a_O2-H1-M4_Hab3 -> 0.0318
+h_O2-M4-H1-C_CH3ab -> 0.0173
+d_M4-C_CH3ab -> -0.0087
+d_O2-H1_Hab3 -> -0.0051
+--------------------
+Fold <0-29> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8118
+E_Hab3 -> 0.4918
+d_H1-C_CH3ab -> -0.2825
+a_O2-M4-C_CH3ab -> 0.2793
+a_O2-M4-H1_Hab3 -> -0.2602
+h_O2-H1-M4-C_CH3ab -> -0.2085
+a_M4-O2-C_CH3ab -> -0.2072
+a_O2-C-H1_CH3ab -> -0.1351
+h_O2-C-M4-H1_CH3ab -> 0.1253
+a_M4-C-H1_CH3ab -> 0.0560
+a_O2-H1-M4_Hab3 -> 0.0319
+d_M4-C_CH3ab -> -0.0185
+h_O2-M4-H1-C_CH3ab -> 0.0157
+d_O2-H1_Hab3 -> -0.0055
+--------------------
+Fold <0-30> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7996
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2190
+h_O2-H1-M4-C_CH3ab -> -0.1860
+a_O2-M4-C_CH3ab -> 0.1689
+d_H1-C_CH3ab -> -0.1627
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0984
+a_O2-H1-M4_Hab3 -> 0.0430
+d_O2-H1_Hab3 -> -0.0196
+--------------------
+Fold <0-31> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7996
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2191
+h_O2-H1-M4-C_CH3ab -> -0.1860
+a_O2-M4-C_CH3ab -> 0.1690
+d_H1-C_CH3ab -> -0.1629
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0984
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <0-32> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7998
+E_Hab3 -> 0.4647
+a_M4-O2-C_CH3ab -> -0.2201
+a_O2-M4-H1_Hab3 -> -0.2188
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1693
+d_H1-C_CH3ab -> -0.1632
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0989
+a_O2-H1-M4_Hab3 -> 0.0427
+d_O2-H1_Hab3 -> -0.0193
+--------------------
+Fold <0-33> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7999
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2186
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1688
+d_H1-C_CH3ab -> -0.1626
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0989
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <0-34> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7997
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2189
+h_O2-H1-M4-C_CH3ab -> -0.1861
+a_O2-M4-C_CH3ab -> 0.1690
+d_H1-C_CH3ab -> -0.1628
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0987
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <0-35> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.8000
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2185
+h_O2-H1-M4-C_CH3ab -> -0.1863
+a_O2-M4-C_CH3ab -> 0.1688
+d_H1-C_CH3ab -> -0.1626
+a_O2-C-H1_CH3ab -> -0.1200
+h_O2-C-M4-H1_CH3ab -> 0.0992
+a_O2-H1-M4_Hab3 -> 0.0430
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <0-36> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7996
+E_Hab3 -> 0.4647
+a_M4-O2-C_CH3ab -> -0.2201
+a_O2-M4-H1_Hab3 -> -0.2190
+h_O2-H1-M4-C_CH3ab -> -0.1861
+a_O2-M4-C_CH3ab -> 0.1692
+d_H1-C_CH3ab -> -0.1631
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0986
+a_O2-H1-M4_Hab3 -> 0.0427
+d_O2-H1_Hab3 -> -0.0194
+--------------------
+Fold <0-37> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8105
+E_Hab3 -> 0.4923
+d_H1-C_CH3ab -> -0.2822
+a_O2-M4-C_CH3ab -> 0.2803
+a_O2-M4-H1_Hab3 -> -0.2629
+h_O2-H1-M4-C_CH3ab -> -0.2094
+a_M4-O2-C_CH3ab -> -0.1915
+a_O2-C-H1_CH3ab -> -0.1357
+h_O2-C-M4-H1_CH3ab -> 0.1285
+a_M4-C-H1_CH3ab -> 0.0547
+d_M4-C_CH3ab -> -0.0350
+a_O2-H1-M4_Hab3 -> 0.0324
+h_O2-M4-H1-C_CH3ab -> 0.0140
+d_O2-H1_Hab3 -> -0.0062
+--------------------
+Fold <0-38> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7999
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2186
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1689
+d_H1-C_CH3ab -> -0.1628
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0991
+a_O2-H1-M4_Hab3 -> 0.0428
+d_O2-H1_Hab3 -> -0.0194
+--------------------
+Fold <0-39> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7994
+E_Hab3 -> 0.4647
+a_M4-O2-C_CH3ab -> -0.2202
+a_O2-M4-H1_Hab3 -> -0.2193
+h_O2-H1-M4-C_CH3ab -> -0.1859
+a_O2-M4-C_CH3ab -> 0.1696
+d_H1-C_CH3ab -> -0.1636
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0983
+a_O2-H1-M4_Hab3 -> 0.0426
+d_O2-H1_Hab3 -> -0.0193
+--------------------
+Fold <0-40> 
+LasCV --> BestAlpha: 0.04 
+OneShot --> BestR2Score: 0.86 
+OneShot --> N_PosCoefs: 10 
+E_CH3ab -> 0.7594
+E_Hab3 -> 0.4181
+a_O2-M4-H1_Hab3 -> -0.1916
+a_M4-O2-C_CH3ab -> -0.1407
+h_O2-H1-M4-C_CH3ab -> -0.1403
+a_O2-C-H1_CH3ab -> -0.1069
+a_O2-H1-M4_Hab3 -> 0.0560
+d_O2-H1_Hab3 -> -0.0380
+a_O2-M4-C_CH3ab -> 0.0191
+h_O2-C-M4-H1_CH3ab -> 0.0115
+--------------------
+Fold <0-41> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7999
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2186
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1688
+d_H1-C_CH3ab -> -0.1626
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0991
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <0-42> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7997
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2201
+a_O2-M4-H1_Hab3 -> -0.2189
+h_O2-H1-M4-C_CH3ab -> -0.1862
+a_O2-M4-C_CH3ab -> 0.1692
+d_H1-C_CH3ab -> -0.1631
+a_O2-C-H1_CH3ab -> -0.1201
+h_O2-C-M4-H1_CH3ab -> 0.0988
+a_O2-H1-M4_Hab3 -> 0.0428
+d_O2-H1_Hab3 -> -0.0195
+--------------------
+Fold <0-43> 
+LasCV --> BestAlpha: 0.03 
+OneShot --> BestR2Score: 0.88 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7873
+E_Hab3 -> 0.4373
+a_O2-M4-H1_Hab3 -> -0.1947
+a_M4-O2-C_CH3ab -> -0.1705
+h_O2-H1-M4-C_CH3ab -> -0.1670
+a_O2-C-H1_CH3ab -> -0.1115
+a_O2-M4-C_CH3ab -> 0.0709
+h_O2-C-M4-H1_CH3ab -> 0.0608
+a_O2-H1-M4_Hab3 -> 0.0604
+d_H1-C_CH3ab -> -0.0489
+d_O2-H1_Hab3 -> -0.0363
+--------------------
+Fold <0-44> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7999
+E_Hab3 -> 0.4647
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2187
+h_O2-H1-M4-C_CH3ab -> -0.1864
+a_O2-M4-C_CH3ab -> 0.1691
+d_H1-C_CH3ab -> -0.1629
+a_O2-C-H1_CH3ab -> -0.1202
+h_O2-C-M4-H1_CH3ab -> 0.0991
+a_O2-H1-M4_Hab3 -> 0.0427
+d_O2-H1_Hab3 -> -0.0192
+--------------------
+Fold <0-45> 
+LasCV --> BestAlpha: 0.03 
+OneShot --> BestR2Score: 0.88 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7874
+E_Hab3 -> 0.4373
+a_O2-M4-H1_Hab3 -> -0.1945
+a_M4-O2-C_CH3ab -> -0.1705
+h_O2-H1-M4-C_CH3ab -> -0.1670
+a_O2-C-H1_CH3ab -> -0.1114
+a_O2-M4-C_CH3ab -> 0.0708
+h_O2-C-M4-H1_CH3ab -> 0.0611
+a_O2-H1-M4_Hab3 -> 0.0603
+d_H1-C_CH3ab -> -0.0489
+d_O2-H1_Hab3 -> -0.0363
+--------------------
+Fold <0-46> 
+LasCV --> BestAlpha: 0.02 
+OneShot --> BestR2Score: 0.9 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7998
+E_Hab3 -> 0.4646
+a_M4-O2-C_CH3ab -> -0.2200
+a_O2-M4-H1_Hab3 -> -0.2188
+h_O2-H1-M4-C_CH3ab -> -0.1861
+a_O2-M4-C_CH3ab -> 0.1689
+d_H1-C_CH3ab -> -0.1628
+a_O2-C-H1_CH3ab -> -0.1200
+h_O2-C-M4-H1_CH3ab -> 0.0987
+a_O2-H1-M4_Hab3 -> 0.0429
+d_O2-H1_Hab3 -> -0.0196
+--------------------
+Fold <0-47> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8117
+E_Hab3 -> 0.4918
+d_H1-C_CH3ab -> -0.2826
+a_O2-M4-C_CH3ab -> 0.2796
+a_O2-M4-H1_Hab3 -> -0.2607
+h_O2-H1-M4-C_CH3ab -> -0.2087
+a_M4-O2-C_CH3ab -> -0.2054
+a_O2-C-H1_CH3ab -> -0.1350
+h_O2-C-M4-H1_CH3ab -> 0.1250
+a_M4-C-H1_CH3ab -> 0.0572
+a_O2-H1-M4_Hab3 -> 0.0322
+d_M4-C_CH3ab -> -0.0192
+h_O2-M4-H1-C_CH3ab -> 0.0163
+d_O2-H1_Hab3 -> -0.0056
+--------------------
+Fold <0-48> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8107
+E_Hab3 -> 0.4922
+d_H1-C_CH3ab -> -0.2824
+a_O2-M4-C_CH3ab -> 0.2804
+a_O2-M4-H1_Hab3 -> -0.2627
+h_O2-H1-M4-C_CH3ab -> -0.2095
+a_M4-O2-C_CH3ab -> -0.1927
+a_O2-C-H1_CH3ab -> -0.1356
+h_O2-C-M4-H1_CH3ab -> 0.1280
+a_M4-C-H1_CH3ab -> 0.0556
+d_M4-C_CH3ab -> -0.0331
+a_O2-H1-M4_Hab3 -> 0.0325
+h_O2-M4-H1-C_CH3ab -> 0.0146
+d_O2-H1_Hab3 -> -0.0061
+--------------------
+Fold <0-49> 
+LasCV --> BestAlpha: 0.03 
+OneShot --> BestR2Score: 0.88 
+OneShot --> N_PosCoefs: 11 
+E_CH3ab -> 0.7872
+E_Hab3 -> 0.4373
+a_O2-M4-H1_Hab3 -> -0.1948
+a_M4-O2-C_CH3ab -> -0.1705
+h_O2-H1-M4-C_CH3ab -> -0.1669
+a_O2-C-H1_CH3ab -> -0.1114
+a_O2-M4-C_CH3ab -> 0.0708
+h_O2-C-M4-H1_CH3ab -> 0.0606
+a_O2-H1-M4_Hab3 -> 0.0605
+d_H1-C_CH3ab -> -0.0488
+d_O2-H1_Hab3 -> -0.0365
+--------------------
+Fold <0-50> 
+LasCV --> BestAlpha: 0.01 
+OneShot --> BestR2Score: 0.91 
+OneShot --> N_PosCoefs: 14 
+E_CH3ab -> 0.8117
+E_Hab3 -> 0.4920
+d_H1-C_CH3ab -> -0.2824
+a_O2-M4-C_CH3ab -> 0.2797
+a_O2-M4-H1_Hab3 -> -0.2609
+h_O2-H1-M4-C_CH3ab -> -0.2091
+a_M4-O2-C_CH3ab -> -0.2028
+a_O2-C-H1_CH3ab -> -0.1346
+h_O2-C-M4-H1_CH3ab -> 0.1261
+a_M4-C-H1_CH3ab -> 0.0563
+a_O2-H1-M4_Hab3 -> 0.0322
+d_M4-C_CH3ab -> -0.0225
+h_O2-M4-H1-C_CH3ab -> 0.0163
+d_O2-H1_Hab3 -> -0.0056
+--------------------
+<- Slot 0 Percentile-LASSO Done->
+
+
+mpiLasso TakeTime:  18.0786 s
+mpiLasso TakeTime:  18.0792 s
+Warning -- There may be the same mean MSE for different theta value!!!
+Gathered BestAlphas: [0.01 0.02 0.02 0.02 0.01 0.01 0.01 0.02 0.02 0.02 0.01 0.03 0.01 0.01
+ 0.02 0.03 0.03 0.02 0.02 0.01 0.02 0.02 0.01 0.01 0.02 0.09 0.02 0.01
+ 0.01 0.02 0.02 0.02 0.02 0.02 0.02 0.02 0.01 0.02 0.02 0.04 0.02 0.02
+ 0.03 0.02 0.03 0.02 0.01 0.01 0.03 0.01 0.01 0.01 0.02 0.01 0.02 0.01
+ 0.01 0.02 0.02 0.02 0.02 0.02 0.01 0.03 0.02 0.02 0.02 0.02 0.02 0.02
+ 0.02 0.01 0.03 0.02 0.02 0.03 0.01 0.02 0.01 0.01 0.02 0.02 0.02 0.02
+ 0.01 0.01 0.03 0.02 0.02 0.02 0.02 0.02 0.02 0.01 0.03 0.02 0.01 0.02
+ 0.01 0.02]
+Use 100 best alphas. Max: 0.0900 Min: 0.0100
+
+<- Theta-Selection Setting ->
+K-Folds Setting --> splits: 5 repeats: 1
+TestThetas --> From 0.500000 to 1.000000 Total 11
+
+<- Theta Selection START ->
+Theta <0.50> Alpha: 0.0200 MSE: 0.2372
+Theta <0.55> Alpha: 0.0200 MSE: 0.1702
+Theta <0.60> Alpha: 0.0200 MSE: 0.1702
+Theta <0.65> Alpha: 0.0200 MSE: 0.1702
+Theta <0.70> Alpha: 0.0200 MSE: 0.1702
+Theta <0.75> Alpha: 0.0200 MSE: 0.1702
+Theta <0.80> Alpha: 0.0200 MSE: 0.1702
+Theta <0.85> Alpha: 0.0200 MSE: 0.1702
+Theta <0.90> Alpha: 0.0300 MSE: 0.1702
+Theta <0.95> Alpha: 0.0300 MSE: 0.1702
+Theta <1.00> Alpha: 0.0900 MSE: 0.2431
+<- Theta Selection DONE ->
+
+<- Selected HyerParameter ->
+Best Theta --> 0.55
+Selected Alpha --> 0.02
+
+ThetaSelection TakeTime:  0.2166 s
+E_CH3ab --> 0.80
+E_Hab3 --> 0.46
+a_M4-O2-C_CH3ab --> -0.22
+a_O2-M4-H1_Hab3 --> -0.22
+h_O2-H1-M4-C_CH3ab --> -0.19
+a_O2-M4-C_CH3ab --> 0.17
+d_H1-C_CH3ab --> -0.16
+a_O2-C-H1_CH3ab --> -0.12
+h_O2-C-M4-H1_CH3ab --> 0.10
+a_O2-H1-M4_Hab3 --> 0.04
+d_O2-H1_Hab3 --> -0.02
+Model Score: mse --> 0.10 r2 --> 0.90

@@ -1,0 +1,24 @@
+digraph Tree {
+node [shape=box] ;
+0 [label="h_O2-C-M4-H1_CH3ab <= 0.026\nentropy = 0.863\nsamples = 21\nvalue = [15, 6]\nclass = ss"] ;
+1 [label="d_H1-C_CH3ab <= 1.092\nentropy = 0.985\nsamples = 7\nvalue = [3, 4]\nclass = ra"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="d_H1-C_CH3ab <= 1.09\nentropy = 0.811\nsamples = 4\nvalue = [3, 1]\nclass = ss"] ;
+1 -> 2 ;
+3 [label="entropy = 0.0\nsamples = 1\nvalue = [0, 1]\nclass = ra"] ;
+2 -> 3 ;
+4 [label="entropy = 0.0\nsamples = 3\nvalue = [3, 0]\nclass = ss"] ;
+2 -> 4 ;
+5 [label="entropy = 0.0\nsamples = 3\nvalue = [0, 3]\nclass = ra"] ;
+1 -> 5 ;
+6 [label="a_O2-M4-H1_Hab3 <= 0.265\nentropy = 0.592\nsamples = 14\nvalue = [12, 2]\nclass = ss"] ;
+0 -> 6 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+7 [label="d_H1-C_CH3ab <= 1.097\nentropy = 1.0\nsamples = 4\nvalue = [2, 2]\nclass = ss"] ;
+6 -> 7 ;
+8 [label="entropy = 0.0\nsamples = 2\nvalue = [0, 2]\nclass = ra"] ;
+7 -> 8 ;
+9 [label="entropy = 0.0\nsamples = 2\nvalue = [2, 0]\nclass = ss"] ;
+7 -> 9 ;
+10 [label="entropy = 0.0\nsamples = 10\nvalue = [10, 0]\nclass = ss"] ;
+6 -> 10 ;
+}
